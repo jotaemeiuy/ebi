@@ -1,0 +1,24 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProximamenteLeccion from '../../../components/ProximamenteLeccion.astro';
+
+const unitId = 1;
+const unitTitle = "Números y Finanzas";
+const lessonTitle = "Interés simple";
+---
+
+<Layout title={`${lessonTitle} - EBI 9C`}>
+  <div class="py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8">
+        <a href="/" class="hover:text-violet-400 transition-colors">Inicio</a>
+        <span>/</span>
+        <a href={`/unidad/${unitId}`} class="hover:text-violet-400 transition-colors">Unidad {unitId}</a>
+        <span>/</span>
+        <span class="text-slate-300">{lessonTitle}</span>
+      </nav>
+
+      <ProximamenteLeccion title={lessonTitle} unitId={unitId} unitTitle={unitTitle} />
+    </div>
+  </div>
+</Layout>

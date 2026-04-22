@@ -1,0 +1,205 @@
+---
+import Layout from "./Layout.astro";
+
+// For Markdown files, frontmatter is passed via Astro.props.frontmatter
+// For Astro files, props are passed directly
+const frontmatter = Astro.props.frontmatter || {};
+const title = frontmatter.title || Astro.props.title;
+const unitId = frontmatter.unitId || Astro.props.unitId;
+const unitTitle = frontmatter.unitTitle || Astro.props.unitTitle;
+const prev = frontmatter.prev || Astro.props.prev;
+const next = frontmatter.next || Astro.props.next;
+---
+
+<Layout title={`${title} - EBI 9C`}>
+  <div class="py-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8">
+        <a href="/" class="hover:text-violet-400 transition-colors">Inicio</a>
+        <span>/</span>
+        <a
+          href={`/unidad/${unitId}`}
+          class="hover:text-violet-400 transition-colors">Unidad {unitId}</a
+        >
+        <span>/</span>
+        <span class="text-slate-300">{title}</span>
+      </nav>
+
+      <!-- Contenido Markdown -->
+      <article class="prose prose-invert prose-slate max-w-none">
+        <h1 class="text-4xl font-bold text-slate-100 mb-6">{title}</h1>
+        <slot />
+      </article>
+
+      <!-- Navegación -->
+      <div
+        class="flex items-center justify-between mt-12 pt-8 border-t border-slate-800"
+      >
+        <a
+          href={prev || `/unidad/${unitId}`}
+          class="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          {prev ? "Anterior" : "Volver a la unidad"}
+        </a>
+        {
+          next && (
+            <a
+              href={next}
+              class="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors"
+            >
+              Siguiente
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  @reference "tailwindcss";
+
+  /* Estilos específicos para contenido Markdown */
+  .prose h1 {
+    @apply text-4xl font-bold text-slate-100 mb-6;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-semibold text-slate-100 mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-medium text-slate-200 mt-6 mb-3;
+  }
+
+  .prose p {
+    @apply text-slate-300 leading-relaxed mb-4;
+  }
+
+  .prose strong {
+    @apply text-violet-400;
+  }
+
+  .prose ul {
+    @apply space-y-3 text-slate-300;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside space-y-2 ml-4 text-slate-300;
+  }
+
+  .prose li {
+    @apply text-slate-300;
+  }
+
+  .prose blockquote {
+    @apply bg-slate-800/50 rounded-lg p-4 my-6 border-l-4 border-violet-500;
+  }
+
+  .prose blockquote p {
+    @apply text-slate-200 font-mono text-lg mb-0;
+  }
+
+  .prose code {
+    @apply font-mono text-violet-400;
+  }
+
+  .prose hr {
+    @apply border-slate-800 my-8;
+  }
+
+  /* Estilos especiales para bloques */
+  .lesson-box {
+    @apply bg-slate-900/50 border border-slate-800 rounded-xl p-6 mb-8;
+  }
+
+  .lesson-box h2 {
+    @apply text-lg font-semibold text-violet-400 mb-3 mt-0;
+  }
+
+  .lesson-box ul {
+    @apply space-y-2;
+  }
+
+  .exercise-box {
+    @apply bg-violet-500/10 border border-violet-500/30 rounded-xl p-6 mt-8;
+  }
+
+  .exercise-box h3 {
+    @apply text-lg font-semibold text-violet-400 mb-3 mt-0;
+  }
+
+  .card-grid {
+    @apply grid gap-4 mt-6;
+  }
+
+  .card {
+    @apply bg-slate-900/50 border border-slate-800 rounded-lg p-4;
+  }
+
+  .card h4 {
+    @apply font-semibold text-violet-400 mb-2;
+  }
+
+  .card p {
+    @apply text-slate-300 text-sm;
+  }
+
+  /* Spans de código inline */
+  .font-mono.bg-slate-800 {
+    @apply bg-slate-800 px-2 py-1 rounded;
+  }
+
+  .font-mono.text-violet-400 {
+    @apply text-violet-400;
+  }
+
+  /* Tablas */
+  .prose table {
+    @apply w-full text-left border-collapse;
+  }
+
+  .prose th {
+    @apply bg-slate-800 text-slate-200 px-4 py-2 font-semibold;
+  }
+
+  .prose td {
+    @apply border-t border-slate-800 px-4 py-2 text-slate-300;
+  }
+
+  .prose tr:first-child th:first-child {
+    @apply rounded-tl-lg;
+  }
+
+  .prose tr:first-child th:last-child {
+    @apply rounded-tr-lg;
+  }
+</style>

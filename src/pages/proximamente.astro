@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const { searchParams } = Astro.url;
+const from = searchParams.get('from') || 'una lección';
+---
+
+<Layout title="Próximamente - EBI 9C">
+  <div class="min-h-[60vh] flex items-center justify-center py-20">
+    <div class="text-center max-w-md mx-auto px-4">
+      <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-violet-500/10 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+      </div>
+      
+      <h1 class="text-3xl font-bold text-slate-100 mb-4">Próximamente</h1>
+      <p class="text-slate-400 mb-8">
+        El contenido de <span class="text-violet-400 font-medium">{from}</span> está en preparación.
+        <br>Estamos trabajando para agregarlo pronto.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a 
+          href="javascript:history.back()"
+          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Volver atrás
+        </a>
+        <a 
+          href="/"
+          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 text-white transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          Ir al inicio
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

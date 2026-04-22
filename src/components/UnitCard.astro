@@ -1,0 +1,84 @@
+---
+interface Props {
+  id: number;
+  title: string;
+  subtitle: string;
+  topics: string[];
+  icon: string;
+}
+
+const { id, title, subtitle, topics, icon } = Astro.props;
+---
+
+<a
+  href={`/unidad/${id}`}
+  class="group relative block p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/10"
+>
+  <div
+    class="absolute inset-0 bg-linear-to-br from-violet-600/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+  >
+  </div>
+
+  <div class="relative">
+    <div class="flex items-start justify-between mb-4">
+      <div
+        class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-2xl overflow-hidden"
+      >
+        <span class="leading-none">{icon}</span>
+      </div>
+      <span
+        class="text-xs font-medium text-slate-500 bg-slate-800 px-2 py-1 rounded"
+      >
+        Unidad {id}
+      </span>
+    </div>
+
+    <h3
+      class="text-xl font-semibold text-slate-100 mb-2 group-hover:text-violet-300 transition-colors"
+    >
+      {title}
+    </h3>
+
+    <p class="text-sm text-slate-400 mb-4">
+      {subtitle}
+    </p>
+
+    <div class="flex flex-wrap gap-2">
+      {
+        topics
+          .slice(0, 3)
+          .map((topic) => (
+            <span class="text-xs text-slate-500 bg-slate-800/80 px-2 py-1 rounded">
+              {topic}
+            </span>
+          ))
+      }
+      {
+        topics.length > 3 && (
+          <span class="text-xs text-slate-500 bg-slate-800/80 px-2 py-1 rounded">
+            +{topics.length - 3}
+          </span>
+        )
+      }
+    </div>
+
+    <div
+      class="mt-4 flex items-center text-sm text-violet-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+    >
+      Ver contenido
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+  </div>
+</a>

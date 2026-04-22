@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import UnitCard from "../components/UnitCard.astro";
+
+const units = [
+	{
+		id: 1,
+		title: "Números y Finanzas",
+		subtitle: "Notación científica, porcentajes e interés",
+		topics: [
+			"Notación científica",
+			"Porcentajes",
+			"Interés simple",
+			"Interés compuesto",
+		],
+		icon: "💰",
+	},
+	{
+		id: 2,
+		title: "Estadística y Probabilidad",
+		subtitle: "Análisis de datos y fenómenos aleatorios",
+		topics: [
+			"Gráficos estadísticos",
+			"Media, mediana, moda",
+			"Probabilidad",
+		],
+		icon: "📊",
+	},
+	{
+		id: 3,
+		title: "Álgebra",
+		subtitle: "Expresiones algebraicas y factorización",
+		topics: ["Productos notables", "Factorización"],
+		icon: "📐",
+	},
+	{
+		id: 4,
+		title: "Ecuaciones",
+		subtitle: "Resolución de ecuaciones cuadráticas y sistemas",
+		topics: ["Ecuaciones cuadráticas", "Sistemas de ecuaciones"],
+		icon: "⚖️",
+	},
+	{
+		id: 5,
+		title: "Funciones",
+		subtitle: "Función cuadrática y su representación gráfica",
+		topics: ["Función cuadrática", "Representación gráfica"],
+		icon: "📈",
+	},
+];
+---
+
+<Layout>
+	<Hero />
+
+	<section id="unidades" class="py-20">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl font-bold text-slate-100 mb-4">
+					Unidades de Trabajo
+				</h2>
+				<p class="text-slate-400 max-w-2xl mx-auto">
+					Seleccioná una unidad para acceder a las lecciones,
+					ejercicios y materiales.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{
+					units.map((unit) => (
+						<UnitCard
+							id={unit.id}
+							title={unit.title}
+							subtitle={unit.subtitle}
+							topics={unit.topics}
+							icon={unit.icon}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</Layout>
