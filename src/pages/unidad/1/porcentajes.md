@@ -14,9 +14,8 @@ unitTitle: "Números y Finanzas"
     <li><a href="#rebajas">• Rebajas porcentuales</a></li>
     <li><a href="#descuentos">• Descuentos porcentuales</a></li>
     <li><a href="#encadenados">• Porcentajes encadenados</a></li>
-    <li><a href="#ejercicios-1">• Ejercicios básicos</a></li>
     <li><a href="#problemas">• Problemas resueltos</a></li>
-    <li><a href="#ejercicios-2">• Ejercicios de aplicación</a></li>
+    <li><a href="#ejercicios">• Ejercicios</a></li>
   </ul>
 </div>
 
@@ -95,21 +94,6 @@ unitTitle: "Números y Finanzas"
   <p class="font-mono text-violet-400">100 → 100 / 1,10 / 0,95 ≈ 96,77</p>
 </div>
 
-<div id="ejercicios-1" class="exercise-box">
-  <h3>Ejercicios de aplicación</h3>
-
-  <h3>1) Porcentajes básicos</h3>
-  <ul class="exercise-list">
-    <li>a) Calcular el 25% de 800</li>
-    <li>b) Calcular el 8% de 40</li>
-    <li>c) Calcular el 80% de 90</li>
-    <li>d) Calcular el 1% de 350</li>
-    <li>e) En una clase de 50 alumnos hay 30 chicas. ¿Qué porcentaje representan?</li>
-    <li>f) El 20% de los alumnos de un grupo de 45 hicieron mal un examen. ¿Cuántos lo hicieron bien?</li>
-    <li>g) De 240 fichas, 48 son rojas. ¿Qué porcentaje representan?</li>
-    <li>h) El 40% de 1500 alumnos son chicas. ¿Cuántas hay?</li>
-  </ul>
-</div>
 
 ## Problemas resueltos
 
@@ -158,6 +142,19 @@ unitTitle: "Números y Finanzas"
 
 <div id="ejercicios-2" class="exercise-box">
   <h3>Ejercicios de aplicación</h3>
+
+
+  <h3>1) Porcentajes básicos</h3>
+  <ul class="exercise-list">
+    <li>a) Calcular el 25% de 800</li>
+    <li>b) Calcular el 8% de 40</li>
+    <li>c) Calcular el 80% de 90</li>
+    <li>d) Calcular el 1% de 350</li>
+    <li>e) En una clase de 50 alumnos hay 30 chicas. ¿Qué porcentaje representan?</li>
+    <li>f) El 20% de los alumnos de un grupo de 45 hicieron mal un examen. ¿Cuántos lo hicieron bien?</li>
+    <li>g) De 240 fichas, 48 son rojas. ¿Qué porcentaje representan?</li>
+    <li>h) El 40% de 1500 alumnos son chicas. ¿Cuántas hay?</li>
+  </ul>
 
   <h3>2) Aumentos, rebajas y descuentos</h3>
   <ul class="exercise-list">
