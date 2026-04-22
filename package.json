@@ -16,6 +16,7 @@
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
+    "@astrojs/vercel": "^10.0.4",
     "@tailwindcss/vite": "^4.2.4"
   }
 }
