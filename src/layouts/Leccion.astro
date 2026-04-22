@@ -82,7 +82,32 @@ const next = frontmatter.next || Astro.props.next;
       </div>
     </div>
   </div>
+
+  <!-- Botón volver arriba -->
+  <button
+    id="back-to-top"
+    aria-label="Volver al inicio"
+    title="Volver al inicio"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 </Layout>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn?.classList.add('visible');
+    } else {
+      btn?.classList.remove('visible');
+    }
+  });
+  btn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
 <style is:global>
   @reference "tailwindcss";
@@ -149,12 +174,50 @@ const next = frontmatter.next || Astro.props.next;
     @apply space-y-2;
   }
 
+  /* Links del índice de contenidos */
+  .lesson-box ul a {
+    @apply text-slate-300 no-underline transition-colors duration-200;
+  }
+
+  .lesson-box ul a:hover {
+    @apply text-violet-400;
+  }
+
   .exercise-box {
     @apply bg-violet-500/10 border border-violet-500/30 rounded-xl p-6 mt-8;
   }
 
   .exercise-box h3 {
-    @apply text-lg font-semibold text-violet-400 mb-3 mt-0;
+    @apply text-lg font-semibold text-violet-400 mb-3 mt-6;
+  }
+
+  .exercise-box h3:first-of-type {
+    @apply mt-0;
+  }
+
+  /* Lista de ejercicios en 2 columnas responsiva */
+  .prose .exercise-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem 2rem;
+    list-style: none;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    color: rgb(226 232 240);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 640px) {
+    .prose .exercise-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .prose .exercise-list > li {
+    margin: 0;
+    padding: 0;
   }
 
   .card-grid {
@@ -201,5 +264,38 @@ const next = frontmatter.next || Astro.props.next;
 
   .prose tr:first-child th:last-child {
     @apply rounded-tr-lg;
+  }
+
+  /* Botón volver arriba */
+  #back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background-color: rgb(139 92 246 / 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgb(139 92 246 / 0.4);
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+    pointer-events: none;
+  }
+
+  #back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #back-to-top:hover {
+    background-color: rgb(124 58 237 / 0.95);
   }
 </style>
