@@ -140,7 +140,7 @@ unitTitle: "Números y Finanzas"
   <p class="font-mono text-violet-400">500 → 500 × 1,02 × 1,05 = 531</p>
 </div>
 
-<div id="ejercicios-2" class="exercise-box">
+<div id="ejercicios" class="exercise-box">
   <h3>Ejercicios de aplicación</h3>
 
 
