@@ -257,12 +257,10 @@ unitTitle: "Números y Finanzas"
       a) Una persona pide un préstamo de $15000 al 9% anual durante 2 años.
       ¿Cuánto interés pagará?
     </li>
-
     <li>
       b) Un capital de $8000 se invierte al 6% anual durante 5 años.
       ¿Cuál será el monto final?
     </li>
-
     <li>
       c) ¿Qué capital produce $1000 de interés al 4% anual en 5 años?
     </li>
