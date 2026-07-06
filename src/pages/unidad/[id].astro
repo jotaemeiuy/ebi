@@ -29,8 +29,9 @@ export function getStaticPaths() {
     {
       id: 3,
       title: "Álgebra",
-      description: "Productos notables y factorización de expresiones algebraicas",
+      description: "Propiedad distributiva, productos notables y factorización de expresiones algebraicas",
       lessons: [
+        { title: "Propiedad distributiva", slug: "propiedad-distributiva" },
         { title: "Productos notables", slug: "productos-notables" },
         { title: "Factorización", slug: "factorizacion" }
       ],
@@ -39,10 +40,15 @@ export function getStaticPaths() {
     {
       id: 4,
       title: "Ecuaciones",
-      description: "Ecuaciones cuadráticas y sistemas de ecuaciones",
+      description: "Ecuaciones cuadráticas por factorización y sistemas lineales 2×2",
       lessons: [
-        { title: "Ecuaciones cuadráticas", slug: "ecuaciones-cuadraticas" },
-        { title: "Sistemas de ecuaciones", slug: "sistemas-ecuaciones" }
+        { title: "Ecuación ax² + c = 0", slug: "ecuacion-ax2-c" },
+        { title: "Ecuación ax² + bx = 0", slug: "ecuacion-ax2-bx" },
+        { title: "Ecuación ax² + bx + c = 0", slug: "ecuacion-ax2-bx-c" },
+        { title: "Sistemas: Sustitución", slug: "sistemas-sustitucion" },
+        { title: "Sistemas: Igualación", slug: "sistemas-igualacion" },
+        { title: "Sistemas: Reducción", slug: "sistemas-reduccion" },
+        { title: "Sistemas: Método gráfico", slug: "sistemas-grafico" }
       ],
       pdfs: []
     },
