@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@astrojs/vercel": "^11.0.2",
-    "@tailwindcss/vite": "^4.2.4"
+    "@tailwindcss/vite": "^4.2.4",
+    "pdfkit": "^0.19.1"
   }
 }

@@ -28,7 +28,7 @@ unitTitle: "Álgebra"
     a · (b + c) = a · b + a · c
   </p>
   <p>
-    Esta propiedad es fundamental en álgebra, ya que permite simplificar expresiones y resolver ecuaciones.
+    Esta propiedad es fundamental en álgebra, ya que permite simplificar expresiones y operar con polinomios.
     También funciona "al revés": si identificamos un factor común, podemos extraerlo.
   </p>
 </div>
@@ -44,6 +44,7 @@ unitTitle: "Álgebra"
     <li>3 · (4 + 5) = 3 · 4 + 3 · 5 = 12 + 15 = 27</li>
     <li>5 · (2 + 8) = 5 · 2 + 5 · 8 = 10 + 40 = 50</li>
     <li>-2 · (6 + 3) = -2 · 6 + (-2) · 3 = -12 + (-6) = -18</li>
+    <li>7 · (5 + 9) = 7 · 5 + 7 · 9 = 35 + 63 = 98</li>
   </ul>
   <p>Ejemplos con variables:</p>
   <ul class="list-disc pl-5 marker:text-red-500">
@@ -51,6 +52,7 @@ unitTitle: "Álgebra"
     <li>2a · (a + 5) = 2a² + 10a</li>
     <li>3m · (2m + 4n) = 6m² + 12mn</li>
     <li>-4x · (x + 2) = -4x² - 8x</li>
+    <li>5y · (3y + 2z) = 15y² + 10yz</li>
   </ul>
 </div>
 
@@ -65,6 +67,7 @@ unitTitle: "Álgebra"
     <li>4 · (10 - 3) = 4 · 10 - 4 · 3 = 40 - 12 = 28</li>
     <li>6 · (9 - 2) = 6 · 9 - 6 · 2 = 54 - 12 = 42</li>
     <li>-3 · (7 - 5) = -3 · 7 - (-3) · 5 = -21 + 15 = -6</li>
+    <li>8 · (12 - 4) = 8 · 12 - 8 · 4 = 96 - 32 = 64</li>
   </ul>
   <p>Ejemplos con variables:</p>
   <ul class="list-disc pl-5 marker:text-red-500">
@@ -72,6 +75,7 @@ unitTitle: "Álgebra"
     <li>3a · (2a - 1) = 6a² - 3a</li>
     <li>5y · (y - 3) = 5y² - 15y</li>
     <li>-2b · (3b - 7) = -6b² + 14b</li>
+    <li>4mn · (2m - 3n) = 8m²n - 12mn²</li>
   </ul>
 </div>
 
@@ -88,6 +92,7 @@ unitTitle: "Álgebra"
     <li>(2a + 3)(a + 5) = 2a² + 10a + 3a + 15 = 2a² + 13a + 15</li>
     <li>(3x - 2)(x + 4) = 3x² + 12x - 2x - 8 = 3x² + 10x - 8</li>
     <li>(m - 3)(m - 5) = m² - 5m - 3m + 15 = m² - 8m + 15</li>
+    <li>(2x + 5)(3x - 1) = 6x² - 2x + 15x - 5 = 6x² + 13x - 5</li>
   </ul>
 </div>
 
@@ -107,6 +112,7 @@ unitTitle: "Álgebra"
     <li>4xy - 8x = 4x(y - 2)</li>
     <li>5m²n + 10mn² = 5mn(m + 2n)</li>
     <li>15x³ - 10x² + 5x = 5x(3x² - 2x + 1)</li>
+    <li>14a²b - 21ab² = 7ab(2a - 3b)</li>
   </ul>
 </div>
 
@@ -122,7 +128,7 @@ unitTitle: "Álgebra"
   </ol>
   <p>Comprobamos: 7 · 11 = 77 ✓</p>
 
-  <h3>2) Distributiva con variables</h3>
+  <h3>2) Distributiva con variables (trinomio)</h3>
   <p>Resolver: 4x · (3x + 2y - 5)</p>
   <ol>
     <li>Distribuimos 4x a cada término del paréntesis</li>
@@ -155,12 +161,33 @@ unitTitle: "Álgebra"
     <li>Resultado: 6ab(3a - 2b + 1)</li>
   </ol>
 
-  <h3>5) Aplicación en ecuaciones</h3>
-  <p>Resolver: 3(x + 4) = 21</p>
+  <h3>5) Distributiva con signo negativo</h3>
+  <p>Resolver: -5x · (2x - 3y + 1)</p>
   <ol>
-    <li>Aplicamos distributiva: 3x + 12 = 21</li>
-    <li>Restamos 12 a ambos lados: 3x = 9</li>
-    <li>Dividimos por 3: x = 3</li>
+    <li>Distribuimos -5x a cada término (¡cuidado con los signos!)</li>
+    <li>-5x · 2x = -10x²</li>
+    <li>-5x · (-3y) = +15xy</li>
+    <li>-5x · 1 = -5x</li>
+    <li>Resultado: -10x² + 15xy - 5x</li>
+  </ol>
+
+  <h3>6) Doble distributiva con coeficientes</h3>
+  <p>Resolver: (3a - 2)(4a + 5)</p>
+  <ol>
+    <li>3a · 4a = 12a²</li>
+    <li>3a · 5 = 15a</li>
+    <li>-2 · 4a = -8a</li>
+    <li>-2 · 5 = -10</li>
+    <li>Sumamos y simplificamos: 12a² + 15a - 8a - 10</li>
+    <li>Resultado: 12a² + 7a - 10</li>
+  </ol>
+
+  <h3>7) Verificar igualdad usando distributiva</h3>
+  <p>¿Es verdad que 6 · (5 + 4) = 6 · 5 + 6 · 4?</p>
+  <ol>
+    <li>Lado izquierdo: 6 · 9 = 54</li>
+    <li>Lado derecho: 30 + 24 = 54</li>
+    <li>Ambos lados son iguales → la propiedad distributiva se cumple ✓</li>
   </ol>
 </div>
 
@@ -174,6 +201,8 @@ unitTitle: "Álgebra"
     <li>c) x · (x + 5)</li>
     <li>d) 3a · (a + 4)</li>
     <li>e) 2m · (3m + 7n)</li>
+    <li>f) -6k · (k + 9)</li>
+    <li>g) 4pq · (2p + 3q)</li>
   </ul>
 
   <h3>2) Distributiva respecto a la resta</h3>
@@ -183,32 +212,37 @@ unitTitle: "Álgebra"
     <li>c) x · (x - 6)</li>
     <li>d) 4y · (2y - 3)</li>
     <li>e) -3a · (a - 5)</li>
+    <li>f) 7x · (4x - y)</li>
+    <li>g) -2mn · (5m - n)</li>
   </ul>
 
-  <h3>3) Doble distributiva (binomio por binomio)</h3>
+  <h3>3) Distributiva con trinomios</h3>
+  <ul class="exercise-list">
+    <li>a) 2x · (x² + 3x - 4)</li>
+    <li>b) 3a · (2a² - a + 5)</li>
+    <li>c) -m · (m² + 4m - 7)</li>
+    <li>d) 5xy · (x - 2y + 1)</li>
+  </ul>
+
+  <h3>4) Doble distributiva (binomio por binomio)</h3>
   <ul class="exercise-list">
     <li>a) (x + 1)(x + 4)</li>
     <li>b) (x + 5)(x - 2)</li>
     <li>c) (2a + 1)(a + 3)</li>
     <li>d) (3x - 4)(x + 2)</li>
     <li>e) (m - 6)(m - 3)</li>
+    <li>f) (4y + 3)(2y - 5)</li>
+    <li>g) (x - 7)(x + 7)</li>
   </ul>
 
-  <h3>4) Distributiva inversa (extraer factor común)</h3>
+  <h3>5) Distributiva inversa (extraer factor común)</h3>
   <ul class="exercise-list">
     <li>a) 10x + 15</li>
     <li>b) 8a² + 4a</li>
     <li>c) 6xy - 9x</li>
     <li>d) 12m²n + 18mn²</li>
     <li>e) 20x³ - 15x² + 5x</li>
-  </ul>
-
-  <h3>5) Aplicación en ecuaciones</h3>
-  <ul class="exercise-list">
-    <li>a) 2(x + 3) = 14</li>
-    <li>b) 5(x - 2) = 15</li>
-    <li>c) 4(2x + 1) = 20</li>
-    <li>d) -3(x + 4) = -18</li>
-    <li>e) 6(x - 1) + 2x = 26</li>
+    <li>f) 21a²b - 14ab²</li>
+    <li>g) 16x³y² - 8x²y + 4xy</li>
   </ul>
 </div>

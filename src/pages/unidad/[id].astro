@@ -6,14 +6,17 @@ export function getStaticPaths() {
     {
       id: 1,
       title: "Números y Finanzas",
-      description: "Notación científica, porcentajes e interés simple y compuesto",
+      description: "Notación científica, porcentajes e interés simple",
       lessons: [
         { title: "Notación científica", slug: "notacion-cientifica" },
         { title: "Porcentajes y porcentajes encadenados", slug: "porcentajes" },
-        { title: "Interés simple", slug: "interes-simple" },
-        { title: "Interés compuesto", slug: "interes-compuesto" }
+        { title: "Interés simple", slug: "interes-simple" }
       ],
-      pdfs: []
+      pdfs: [
+        { title: "Ejercicios - Notación científica", url: "/pdfs/1-1-notacion-cientifica.pdf" },
+        { title: "Ejercicios - Porcentajes", url: "/pdfs/1-2-porcentajes.pdf" },
+        { title: "Ejercicios - Interés simple", url: "/pdfs/1-3-interes-simple.pdf" }
+      ]
     },
     {
       id: 2,
@@ -35,7 +38,11 @@ export function getStaticPaths() {
         { title: "Productos notables", slug: "productos-notables" },
         { title: "Factorización", slug: "factorizacion" }
       ],
-      pdfs: []
+      pdfs: [
+        { title: "Ejercicios - Propiedad distributiva", url: "/pdfs/3-1-propiedad-distributiva.pdf" },
+        { title: "Ejercicios - Productos notables", url: "/pdfs/3-2-productos-notables.pdf" },
+        { title: "Ejercicios - Factorización", url: "/pdfs/3-3-factorizacion.pdf" }
+      ]
     },
     {
       id: 4,
