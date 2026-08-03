@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
 export function getStaticPaths() {
   const units = [
@@ -10,44 +10,93 @@ export function getStaticPaths() {
       lessons: [
         { title: "Notación científica", slug: "notacion-cientifica" },
         { title: "Porcentajes y porcentajes encadenados", slug: "porcentajes" },
-        { title: "Interés simple", slug: "interes-simple" }
+        { title: "Interés simple", slug: "interes-simple" },
       ],
       pdfs: [
-        { title: "Ejercicios - Notación científica", url: "/pdfs/1-1-notacion-cientifica.pdf" },
+        {
+          title: "Ejercicios - Notación científica",
+          url: "/pdfs/1-1-notacion-cientifica.pdf",
+        },
         { title: "Ejercicios - Porcentajes", url: "/pdfs/1-2-porcentajes.pdf" },
-        { title: "Ejercicios - Interés simple", url: "/pdfs/1-3-interes-simple.pdf" }
-      ]
+        {
+          title: "Ejercicios - Interés simple",
+          url: "/pdfs/1-3-interes-simple.pdf",
+        },
+      ],
     },
     {
       id: 2,
       title: "Estadística y Probabilidad",
-      description: "Gráficos estadísticos, medidas de tendencia central y probabilidad",
+      description:
+        "Gráficos estadísticos, medidas de tendencia central y probabilidad",
       lessons: [
         { title: "Gráficos estadísticos", slug: "graficos" },
         { title: "Media, mediana y moda", slug: "medidas-tendencia" },
-        { title: "Probabilidad", slug: "probabilidad" }
+        { title: "Probabilidad", slug: "probabilidad" },
       ],
-      pdfs: []
+      pdfs: [],
     },
     {
       id: 3,
       title: "Álgebra",
-      description: "Propiedad distributiva, productos notables y factorización de expresiones algebraicas",
+      description:
+        "Propiedad distributiva, productos notables y factorización de expresiones algebraicas",
       lessons: [
         { title: "Propiedad distributiva", slug: "propiedad-distributiva" },
         { title: "Productos notables", slug: "productos-notables" },
-        { title: "Factorización", slug: "factorizacion" }
+        { title: "Factorización", slug: "factorizacion" },
       ],
       pdfs: [
-        { title: "Ejercicios - Propiedad distributiva", url: "/pdfs/3-1-propiedad-distributiva.pdf" },
-        { title: "Ejercicios - Productos notables", url: "/pdfs/3-2-productos-notables.pdf" },
-        { title: "Ejercicios - Factorización", url: "/pdfs/3-3-factorizacion.pdf" }
-      ]
+        {
+          title: "Ejercicios - Propiedad distributiva",
+          url: "/pdfs/3-1-propiedad-distributiva.pdf",
+        },
+        {
+          title: "Ejercicios - Productos notables",
+          url: "/pdfs/3-2-productos-notables.pdf",
+        },
+        {
+          title: "Ejercicios - Factorización",
+          url: "/pdfs/3-3-factorizacion.pdf",
+        },
+      ],
     },
+    {
+      id: 6,
+      title: "Ecuaciones",
+      description: "Ecuaciones de primer grado",
+      lessons: [
+        { title: "Igualdad Algebraica", slug: "igualdad-algebraica" },
+        { title: "Identidad", slug: "identidad" },
+        { title: "Ecuación", slug: "ecuacion" },
+        { title: "Ecuaciones equivalentes", slug: "ecuaciones-equivalentes" },
+        { title: "Resolver una ecuación", slug: "resolucion-ecuaciones" },
+        { title: "Transposición de terminos", slug: "transposicion-terminos" },
+        {
+          title: "Método general de resolución de ecuaciones",
+          slug: "metodo-general-resolucion-ecuaciones",
+        },
+        {
+          title: "Resolución de ecuaciones con denominador",
+          slug: "resolucion-ecuaciones-denominador",
+        },
+      ],
+      pdfs: [
+        { title: "Ejercicios - Igualdad algebraica", url: "/pdfs/6-1-igualdad-algebraica.pdf" },
+        { title: "Ejercicios - Identidad", url: "/pdfs/6-2-identidad.pdf" },
+        { title: "Ejercicios - Ecuación", url: "/pdfs/6-3-ecuacion.pdf" },
+        { title: "Ejercicios - Ecuaciones equivalentes", url: "/pdfs/6-4-ecuaciones-equivalentes.pdf" },
+        { title: "Ejercicios - Transposición de términos", url: "/pdfs/6-5-transposicion-terminos.pdf" },
+        { title: "Ejercicios - Método general de resolución", url: "/pdfs/6-6-metodo-general.pdf" },
+        { title: "Ejercicios - Ecuaciones con denominador", url: "/pdfs/6-7-ecuaciones-denominador.pdf" }
+      ],
+    },
+
     {
       id: 4,
       title: "Ecuaciones",
-      description: "Ecuaciones cuadráticas por factorización y sistemas lineales 2×2",
+      description:
+        "Ecuaciones cuadráticas por factorización y sistemas lineales 2×2",
       lessons: [
         { title: "Ecuación ax² + c = 0", slug: "ecuacion-ax2-c" },
         { title: "Ecuación ax² + bx = 0", slug: "ecuacion-ax2-bx" },
@@ -55,9 +104,9 @@ export function getStaticPaths() {
         { title: "Sistemas: Sustitución", slug: "sistemas-sustitucion" },
         { title: "Sistemas: Igualación", slug: "sistemas-igualacion" },
         { title: "Sistemas: Reducción", slug: "sistemas-reduccion" },
-        { title: "Sistemas: Método gráfico", slug: "sistemas-grafico" }
+        { title: "Sistemas: Método gráfico", slug: "sistemas-grafico" },
       ],
-      pdfs: []
+      pdfs: [],
     },
     {
       id: 5,
@@ -65,15 +114,15 @@ export function getStaticPaths() {
       description: "Función cuadrática y su representación gráfica",
       lessons: [
         { title: "Función cuadrática", slug: "funcion-cuadratica" },
-        { title: "Representación gráfica", slug: "representacion-grafica" }
+        { title: "Representación gráfica", slug: "representacion-grafica" },
       ],
-      pdfs: []
-    }
+      pdfs: [],
+    },
   ];
 
-  return units.map(unit => ({
+  return units.map((unit) => ({
     params: { id: unit.id.toString() },
-    props: { unit }
+    props: { unit },
   }));
 }
 
@@ -92,7 +141,9 @@ const { unit } = Astro.props;
 
       <!-- Header -->
       <div class="mb-12">
-        <span class="inline-flex items-center px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 text-sm font-medium mb-4">
+        <span
+          class="inline-flex items-center px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 text-sm font-medium mb-4"
+        >
           Unidad {unit.id}
         </span>
         <h1 class="text-4xl font-bold text-slate-100 mb-4">{unit.title}</h1>
@@ -101,82 +152,157 @@ const { unit } = Astro.props;
 
       <!-- Lecciones -->
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <h2
+          class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 text-violet-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
           </svg>
           Lecciones
         </h2>
-        
+
         <div class="grid gap-4">
-          {unit.lessons.map((lesson, index) => (
-            <a 
-              href={`/unidad/${unit.id}/${lesson.slug}`}
-              class="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
-            >
-              <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 font-semibold">
-                {index + 1}
-              </div>
-              <div class="flex-1">
-                <h3 class="font-medium text-slate-100 group-hover:text-violet-300 transition-colors">
-                  {lesson.title}
-                </h3>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-500 group-hover:text-violet-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          ))}
+          {
+            unit.lessons.map((lesson, index) => (
+              <a
+                href={`/unidad/${unit.id}/${lesson.slug}`}
+                class="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
+              >
+                <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 font-semibold">
+                  {index + 1}
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-medium text-slate-100 group-hover:text-violet-300 transition-colors">
+                    {lesson.title}
+                  </h3>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-slate-500 group-hover:text-violet-400 transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            ))
+          }
         </div>
       </section>
 
       <!-- Materiales PDF -->
       <section>
-        <h2 class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        <h2
+          class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 text-violet-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+            ></path>
           </svg>
           Materiales PDF
         </h2>
-        
-        {unit.pdfs.length > 0 ? (
-          <div class="grid gap-4">
-            {unit.pdfs.map((pdf) => (
-              <a 
-                href={pdf.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
-              >
-                <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+
+        {
+          unit.pdfs.length > 0 ? (
+            <div class="grid gap-4">
+              {unit.pdfs.map((pdf) => (
+                <a
+                  href={pdf.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
+                >
+                  <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 text-red-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-medium text-slate-100">{pdf.title}</h3>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 text-slate-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
-                </div>
-                <div class="flex-1">
-                  <h3 class="font-medium text-slate-100">{pdf.title}</h3>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            ))}
-          </div>
-        ) : (
-          <div class="p-6 rounded-xl bg-slate-900/30 border border-slate-800/50 text-center">
-            <p class="text-slate-500">Los materiales PDF se agregarán próximamente.</p>
-          </div>
-        )}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div class="p-6 rounded-xl bg-slate-900/30 border border-slate-800/50 text-center">
+              <p class="text-slate-500">
+                Los materiales PDF se agregarán próximamente.
+              </p>
+            </div>
+          )
+        }
       </section>
 
       <!-- Volver -->
       <div class="mt-12">
-        <a 
+        <a
           href="/"
           class="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
           </svg>
           Volver al inicio
         </a>
