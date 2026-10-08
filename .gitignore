@@ -24,3 +24,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# libros locales (no subir a github)
+/fcuad.pdf
+/Libro4eso.pdf
