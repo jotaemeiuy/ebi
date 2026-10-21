@@ -3,4 +3,7 @@ allowBuilds:
   esbuild: false
   sharp: false
 minimumReleaseAgeExclude:
-  - astro@7.3.7
+  - astro@7.3.7 || 7.4.2
+  - '@astrojs/markdown-satteri@0.4.5'
+  - '@astrojs/prism@4.1.1'
+  - '@astrojs/telemetry@3.4.1'
