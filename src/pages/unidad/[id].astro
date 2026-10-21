@@ -82,13 +82,28 @@ export function getStaticPaths() {
         },
       ],
       pdfs: [
-        { title: "Ejercicios - Igualdad algebraica", url: "/pdfs/6-1-igualdad-algebraica.pdf" },
+        {
+          title: "Ejercicios - Igualdad algebraica",
+          url: "/pdfs/6-1-igualdad-algebraica.pdf",
+        },
         { title: "Ejercicios - Identidad", url: "/pdfs/6-2-identidad.pdf" },
         { title: "Ejercicios - Ecuación", url: "/pdfs/6-3-ecuacion.pdf" },
-        { title: "Ejercicios - Ecuaciones equivalentes", url: "/pdfs/6-4-ecuaciones-equivalentes.pdf" },
-        { title: "Ejercicios - Transposición de términos", url: "/pdfs/6-5-transposicion-terminos.pdf" },
-        { title: "Ejercicios - Método general de resolución", url: "/pdfs/6-6-metodo-general.pdf" },
-        { title: "Ejercicios - Ecuaciones con denominador", url: "/pdfs/6-7-ecuaciones-denominador.pdf" }
+        {
+          title: "Ejercicios - Ecuaciones equivalentes",
+          url: "/pdfs/6-4-ecuaciones-equivalentes.pdf",
+        },
+        {
+          title: "Ejercicios - Transposición de términos",
+          url: "/pdfs/6-5-transposicion-terminos.pdf",
+        },
+        {
+          title: "Ejercicios - Método general de resolución",
+          url: "/pdfs/6-6-metodo-general.pdf",
+        },
+        {
+          title: "Ejercicios - Ecuaciones con denominador",
+          url: "/pdfs/6-7-ecuaciones-denominador.pdf",
+        },
       ],
     },
 
@@ -111,20 +126,21 @@ export function getStaticPaths() {
     {
       id: 5,
       title: "Funciones",
-      description: "Función cuadrática y su representación gráfica",
-      lessons: [
-        { title: "Función cuadrática", slug: "funcion-cuadratica" },
-        { title: "Representación gráfica", slug: "representacion-grafica" },
-      ],
-      pdfs: [],
+      description: "Teoría de funciones cuadráticas",
+      lessons: [],
+      pdfs: [{ title: "Teoría - Funciones", url: "/pdfs/funciones.pdf" }],
     },
     {
       id: 7,
       title: "Trigonometría",
-      description: "Trigonometría en triángulos rectángulos: Pitágoras, seno, coseno y tangente",
+      description:
+        "Trigonometría en triángulos rectángulos: Pitágoras, seno, coseno y tangente",
       lessons: [
         { title: "Trigonometría - Teoría", slug: "teoria" },
-        { title: "Trigonometría - Práctico con soluciones", slug: "practico-soluciones" },
+        {
+          title: "Trigonometría - Práctico con soluciones",
+          slug: "practico-soluciones",
+        },
       ],
       pdfs: [
         {
@@ -166,61 +182,61 @@ const { unit } = Astro.props;
       </div>
 
       <!-- Lecciones -->
-      <section class="mb-12">
-        <h2
-          class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 text-violet-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-            ></path>
-          </svg>
-          Lecciones
-        </h2>
-
-        <div class="grid gap-4">
-          {
-            unit.lessons.map((lesson, index) => (
-              <a
-                href={`/unidad/${unit.id}/${lesson.slug}`}
-                class="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
+      {
+        unit.lessons.length > 0 && (
+          <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 text-violet-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 font-semibold">
-                  {index + 1}
-                </div>
-                <div class="flex-1">
-                  <h3 class="font-medium text-slate-100 group-hover:text-violet-300 transition-colors">
-                    {lesson.title}
-                  </h3>
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-slate-500 group-hover:text-violet-400 transition-colors"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+              Lecciones
+            </h2>
+
+            <div class="grid gap-4">
+              {unit.lessons.map((lesson, index) => (
+                <a
+                  href={`/unidad/${unit.id}/${lesson.slug}`}
+                  class="group flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            ))
-          }
-        </div>
-      </section>
+                  <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 font-semibold">
+                    {index + 1}
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-medium text-slate-100 group-hover:text-violet-300 transition-colors">
+                      {lesson.title}
+                    </h3>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 text-slate-500 group-hover:text-violet-400 transition-colors"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
 
       <!-- Materiales PDF -->
       <section>
