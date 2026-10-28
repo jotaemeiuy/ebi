@@ -185,14 +185,15 @@ function createDoc(filename, unitId, topicTitle, callback) {
 async function generateU4EcuacionAx2C() {
   const topic = 'Ecuacion ax² + c = 0';
   await createDoc('4-1-ecuacion-ax2-c.pdf', 4, topic, (doc) => {
-    addIntroBox(doc, 'ax² + c = 0  ->  x² = -c/a  ->  x = ± raiz(-c/a)');
+    addIntroBox(doc, 'ax² + c = 0  ->  x² = -c/a  ->  x = ± raiz(-c/a)', 34);
 
-    writeSectionTitle(doc, '1) Resolver por diferencia de cuadrados', 4, topic);
+    writeSectionTitle(doc, '1) Resolver despejando x² y aplicando raiz cuadrada', 4, topic);
     [
       'a) x^2 - 4 = 0', 'b) x^2 - 36 = 0', 'c) x^2 - 64 = 0',
       'd) x^2 - 100 = 0', 'e) x^2 - 81 = 0', 'f) 4x^2 - 1 = 0',
       'g) 9x^2 - 25 = 0', 'h) 16x^2 - 49 = 0', 'i) 2x^2 - 32 = 0',
-      'j) 5x^2 - 45 = 0', 'k) 3x^2 - 48 = 0', 'l) 7x^2 - 63 = 0'
+      'j) 5x^2 - 45 = 0', 'k) 3x^2 - 48 = 0', 'l) 7x^2 - 63 = 0',
+      'm) x^2 + 16 = 0', 'n) 2x^2 + 18 = 0', 'o) 3x^2 = 0'
     ].forEach(e => writeExerciseItem(doc, e, 3, 4, topic));
   });
 }
