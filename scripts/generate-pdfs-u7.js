@@ -289,6 +289,38 @@ function drawPoint(doc, x, y, color, label, labelDx = 8, labelDy = -12) {
   }
 }
 
+// ─── Recta numérica para completar signos ───────────────────────
+
+function drawSignLineBlank(doc, roots, topicTitle) {
+  checkPageBreak(doc, 84, topicTitle);
+
+  const y = doc.y + 30;
+  const left = 60;
+  const right = 430;
+  const rs = (roots || []).slice().sort((a, b) => a - b);
+  const span = rs.length ? rs[rs.length - 1] - rs[0] : 0;
+  const pad = span > 0 ? span * 0.55 : 2.2;
+  const dmin = rs.length ? rs[0] - pad : -2.5;
+  const dmax = rs.length ? rs[rs.length - 1] + pad : 2.5;
+  const px = (x) => left + ((x - dmin) / (dmax - dmin)) * (right - left);
+
+  doc.moveTo(left, y).lineTo(right + 10, y)
+    .strokeColor(COLOR_AXIS).lineWidth(1.2).stroke();
+  doc.moveTo(right + 10, y).lineTo(right + 2, y - 3).strokeColor(COLOR_AXIS).stroke();
+  doc.moveTo(right + 10, y).lineTo(right + 2, y + 3).strokeColor(COLOR_AXIS).stroke();
+  doc.fontSize(8).fillColor(COLOR_AXIS).text('x', right + 12, y - 4);
+
+  rs.forEach((r) => {
+    doc.moveTo(px(r), y - 5).lineTo(px(r), y + 5)
+      .strokeColor(COLOR_ROOT).lineWidth(1.6).stroke();
+    doc.fontSize(9).fillColor(COLOR_ROOT)
+      .text(String(r), px(r) - 10, y + 8, { width: 20, align: 'center' });
+  });
+
+  doc.fontSize(8).fillColor(COLOR_AXIS).text('f(x)', left - 26, y - 9);
+  doc.y = y + 32;
+}
+
 // ─── PDF ────────────────────────────────────────────────────────
 
 function createDoc(filename, topicTitle, callback) {
@@ -339,32 +371,37 @@ async function generateFuncionCuadratica() {
 
     writeExerciseItem(doc, '4) Para f(x) = x² - 3x + 1, calculá f(2), f(0) y f(-1).', 2, topic);
     writeExerciseItem(doc, '5) Para f(x) = -2x² + 8x - 5, calculá f(1), f(3) y f(0).', 2, topic);
+    doc.fontSize(11).fillColor(COLOR_ITEM).text('En los ejercicios 6 a 9, indicá el método que usás: despeje, factorización o Bhaskara.', 60, doc.y);
+    doc.moveDown(0.4);
     writeExerciseItem(doc, '6) Para f(x) = x², encontrá todas las preimágenes de 0, de 4 y de 9.', 3, topic);
-    writeExerciseItem(doc, '7) Para f(x) = x² - 4, encontrá todas las preimágenes de 0, de 5 y de -1.', 3, topic);
+    writeExerciseItem(doc, '7) Para f(x) = x² - 4, encontrá todas las preimágenes de 0, de 5 y de -5.', 3, topic);
     writeExerciseItem(doc, '8) Para f(x) = x² + 2x - 3, encontrá todas las preimágenes de 0, de -3 y de -4.', 4, topic);
     writeExerciseItem(doc, '9) Para f(x) = -x² + 6x - 5, encontrá todas las preimágenes de 0 y de 4.', 3, topic);
 
     // C) Raíces
     checkPageBreak(doc, 120, topic);
-    writeSectionTitle(doc, 'C) Raíces y ordenada en el origen', topic);
+    writeSectionTitle(doc, 'C) Raíces: despeje, factor común y Bhaskara', topic);
 
     doc.fontSize(11).fillColor(COLOR_ITEM)
-      .text('10) Resolvé cada ecuación y encontrá las raíces. Usá el método que convenga (factor común, despeje o Bhaskara):', 60, doc.y, { width: doc.page.width - 120 });
+      .text('10) Resolvé cada ecuación con el método que convenga. Escribí las raíces:', 60, doc.y, { width: doc.page.width - 120 });
     doc.moveDown(0.3);
     [
-      'a) f(x) = x² - 5x + 6',
-      'b) f(x) = x² - 4x + 4',
-      'c) f(x) = x² + 2x + 5',
-      'd) f(x) = 2x² - 8',
-      'e) f(x) = -x² + 2x + 3',
-      'f) f(x) = 3x² + 6x',
+      'a) x² - 16 = 0',
+      'b) x² - 5x = 0',
+      'c) x² - 7x + 12 = 0',
+      'd) x² + 2x + 5 = 0',
+      'e) 2x² - 8 = 0',
+      'f) 3x² + 6x = 0',
+      'g) 2x² + 3x + 1 = 0',
+      'h) x² - 4x + 4 = 0',
     ].forEach((e) => writeExerciseItem(doc, e, 2, topic));
 
     writeTextExerciseItem(doc,
-      '11) Resolvé y decidí cuántas raíces reales tiene cada función:\n' +
-      'a) f(x) = x² - 3x + 7\n' +
-      'b) f(x) = 4x² - 4x + 1\n' +
-      'c) f(x) = -2x² + 5x - 1', 3, topic);
+      '11) Encontrá las raíces y decí cuántas raíces reales tiene cada función:\n' +
+      'a) f(x) = x² - 6x + 9\n' +
+      'b) f(x) = x² + 4\n' +
+      'c) f(x) = 2x² - 8x\n' +
+      'd) f(x) = x² + x - 6', 4, topic);
 
     writeExerciseItem(doc, '12) Escribí la ordenada en el origen de las funciones del ejercicio 10.', 3, topic);
     writeExerciseItem(doc, '13) Una parábola corta al eje x en -2 y en 5. Escribí una fórmula posible y su ordenada en el origen.', 3, topic);
@@ -389,16 +426,24 @@ async function generateFuncionCuadratica() {
     writeSectionTitle(doc, 'E) Signo de las imágenes', topic);
 
     doc.fontSize(11).fillColor(COLOR_ITEM)
-      .text('16) Escribí el signo de las imágenes en la recta numérica, marcando las raíces con 0:', 60, doc.y, { width: doc.page.width - 120 });
+      .text('16) Completá el esquema de signos. Escribí +, − o 0 arriba de cada tramo:', 60, doc.y, { width: doc.page.width - 120 });
     doc.moveDown(0.3);
-    [
-      'a) f(x) = x² - 9',
-      'b) f(x) = x² - 4x + 4',
-      'c) f(x) = -x² - 4',
-      'd) f(x) = 2x² - 8x + 6',
-    ].forEach((e) => writeExerciseItem(doc, e, 2, topic));
 
-    writeExerciseItem(doc, '17) Para f(x) = x² - 2x - 8, indicá en qué intervalos f(x) > 0, f(x) < 0 y f(x) = 0.', 3, topic);
+    [
+      { label: 'a) f(x) = x² - 9', roots: [-3, 3] },
+      { label: 'b) f(x) = x² - 4x + 4', roots: [2] },
+      { label: 'c) f(x) = -x² - 4', roots: [] },
+      { label: 'd) f(x) = 2x² - 8x + 6', roots: [1, 3] },
+    ].forEach((item) => {
+      checkPageBreak(doc, 120, topic);
+      doc.fontSize(11).fillColor(COLOR_ITEM).text(item.label, 60, doc.y);
+      doc.moveDown(0.2);
+      drawSignLineBlank(doc, item.roots, topic);
+      doc.moveDown(0.3);
+    });
+
+    writeTextExerciseItem(doc,
+      '17) Para f(x) = x² - 2x - 8, encontrá las raíces y escribí el esquema de signos en la recta numérica.', 4, topic);
 
     // F) Gráficas
     checkPageBreak(doc, 260, topic);
@@ -434,7 +479,7 @@ async function generateFuncionCuadratica() {
       'a) ¿Cuáles son las raíces?',
       'b) ¿Cuál es el vértice y cuál el eje de simetría?',
       'c) ¿La parábola abre hacia arriba o hacia abajo?',
-      'd) ¿En qué intervalo f(x) > 0?',
+      'd) ¿Para qué valores de x es f(x) > 0?',
     ].forEach((e) => writeExerciseItem(doc, e, 1, topic));
 
     writeExerciseItem(doc, '20) Graficá f(x) = -x² + 2x + 3 e indicá raíces, vértice, eje de simetría y signo.', 3, topic);
@@ -456,8 +501,8 @@ async function generateFuncionCuadratica() {
       'c) ¿Cuál es esa área máxima?', 3, topic);
 
     writeTextExerciseItem(doc,
-      '23) Una empresa vende remeras a $2000 cada una y vende 100 por mes. Por cada $100 de aumento, vende 5 menos.\n' +
-      'El ingreso es I(x) = (2000 + 100x)(100 - 5x).\n' +
+      '23) Una empresa vende remeras a $2000 cada una y vende 100 por mes. Por cada $200 de aumento, vende 5 menos.\n' +
+      'El ingreso es I(x) = (2000 + 200x)(100 - 5x).\n' +
       'a) Desarrollá I(x).\n' +
       'b) ¿Cuántos aumentos conviene hacer para maximizar el ingreso?\n' +
       'c) ¿Cuál es el ingreso máximo?', 3, topic);
@@ -469,6 +514,15 @@ async function generateFuncionCuadratica() {
     writeExerciseItem(doc, '25) Una parábola pasa por (0, 3), (1, 0) y (3, 0). Encontrá a, b y c.', 3, topic);
     writeExerciseItem(doc, '26) Encontrá el valor de k para que f(x) = x² - 6x + k tenga una sola raíz real.', 2, topic);
     writeExerciseItem(doc, '27) Encontrá dos números que sumen 10 y cuyo producto sea lo más grande posible.', 4, topic);
+
+    // I) Para pensar
+    writeSectionTitle(doc, 'I) Para pensar', topic);
+
+    writeTextExerciseItem(doc,
+      '28) ¿Qué es una parábola como lugar geométrico? ¿Qué relación cumplen las distancias de un punto P al foco y a la directriz?', 3, topic);
+
+    writeTextExerciseItem(doc,
+      '29) En la construcción con hilo, ¿por qué el punto P queda sobre la parábola? Explicá usando PF y PA.', 3, topic);
   });
 }
 
