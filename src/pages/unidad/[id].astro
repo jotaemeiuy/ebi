@@ -110,16 +110,11 @@ export function getStaticPaths() {
     {
       id: 4,
       title: "Ecuaciones",
-      description:
-        "Ecuaciones cuadráticas por factorización y sistemas lineales 2×2",
+      description: "Ecuaciones cuadráticas por factorización",
       lessons: [
         { title: "Ecuación ax² + c = 0", slug: "ecuacion-ax2-c" },
         { title: "Ecuación ax² + bx = 0", slug: "ecuacion-ax2-bx" },
         { title: "Ecuación ax² + bx + c = 0", slug: "ecuacion-ax2-bx-c" },
-        { title: "Sistemas: Sustitución", slug: "sistemas-sustitucion" },
-        { title: "Sistemas: Igualación", slug: "sistemas-igualacion" },
-        { title: "Sistemas: Reducción", slug: "sistemas-reduccion" },
-        { title: "Sistemas: Método gráfico", slug: "sistemas-grafico" },
       ],
       pdfs: [],
     },
@@ -148,6 +143,18 @@ export function getStaticPaths() {
           url: "/pdfs/7-1-trigonometria.pdf",
         },
       ],
+    },
+    {
+      id: 8,
+      title: "Sistemas",
+      description: "Sistemas de ecuaciones lineales 2×2: sustitución, igualación, reducción y método gráfico",
+      lessons: [
+        { title: "Sistemas: Sustitución", slug: "sistemas-sustitucion" },
+        { title: "Sistemas: Igualación", slug: "sistemas-igualacion" },
+        { title: "Sistemas: Reducción", slug: "sistemas-reduccion" },
+        { title: "Sistemas: Método gráfico", slug: "sistemas-grafico" },
+      ],
+      pdfs: [],
     },
   ];
 

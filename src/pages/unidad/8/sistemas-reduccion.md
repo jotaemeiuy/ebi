@@ -1,8 +1,8 @@
 ---
 layout: ../../../layouts/Leccion.astro
 title: "Sistemas de ecuaciones - Método de Reducción"
-unitId: 4
-unitTitle: "Ecuaciones"
+unitId: 8
+unitTitle: "Sistemas"
 ---
 
 <div class="lesson-box">
