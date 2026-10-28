@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/Leccion.astro
 title: "Propiedad Distributiva"
-unitId: 3
+unitId: 2
 unitTitle: "Álgebra"
 ---
 

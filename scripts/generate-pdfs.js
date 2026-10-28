@@ -25,7 +25,7 @@ const COLOR_BG_BOX  = '#f5f3ff';
 function addHeader(doc, topicTitle) {
   const W = doc.page.width;
   doc.rect(0, 0, W, 50).fill('#4c1d95');
-  doc.fontSize(8).fillColor('#c4b5fd').text('UNIDAD 3 - ALGEBRA', 50, 12);
+  doc.fontSize(8).fillColor('#c4b5fd').text('UNIDAD 2 - ALGEBRA', 50, 12);
   doc.fontSize(13).fillColor('#ffffff').text(topicTitle, 50, 25);
   doc.fillColor(COLOR_ITEM);
   doc.y = 70;
@@ -86,7 +86,7 @@ function generateDistributiva() {
   return new Promise(resolve => {
     const topic = 'Propiedad Distributiva';
     const doc = new PDFDocument({ margins: { top: 50, bottom: 20, left: 50, right: 50 } });
-    const out = fs.createWriteStream(join(outputDir, '3-1-propiedad-distributiva.pdf'));
+    const out = fs.createWriteStream(join(outputDir, '2-1-propiedad-distributiva.pdf'));
     doc.pipe(out);
 
     addHeader(doc, topic);
@@ -136,7 +136,7 @@ function generateNotables() {
   return new Promise(resolve => {
     const topic = 'Productos Notables';
     const doc = new PDFDocument({ margins: { top: 50, bottom: 20, left: 50, right: 50 } });
-    const out = fs.createWriteStream(join(outputDir, '3-2-productos-notables.pdf'));
+    const out = fs.createWriteStream(join(outputDir, '2-2-productos-notables.pdf'));
     doc.pipe(out);
 
     addHeader(doc, topic);
@@ -178,7 +178,7 @@ function generateFactorizacion() {
   return new Promise(resolve => {
     const topic = 'Factorizacion';
     const doc = new PDFDocument({ margins: { top: 50, bottom: 20, left: 50, right: 50 } });
-    const out = fs.createWriteStream(join(outputDir, '3-3-factorizacion.pdf'));
+    const out = fs.createWriteStream(join(outputDir, '2-3-factorizacion.pdf'));
     doc.pipe(out);
 
     addHeader(doc, topic);
@@ -224,11 +224,11 @@ function generateFactorizacion() {
 async function generateAll() {
   console.log('Generando PDFs...');
   await generateDistributiva();
-  console.log('  OK 3-1-propiedad-distributiva.pdf');
+  console.log('  OK 2-1-propiedad-distributiva.pdf');
   await generateNotables();
-  console.log('  OK 3-2-productos-notables.pdf');
+  console.log('  OK 2-2-productos-notables.pdf');
   await generateFactorizacion();
-  console.log('  OK 3-3-factorizacion.pdf');
+  console.log('  OK 2-3-factorizacion.pdf');
   console.log('Listo! PDFs en public/pdfs/');
 }
 

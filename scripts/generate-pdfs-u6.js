@@ -25,7 +25,7 @@ const COLOR_BG_BOX  = '#f5f3ff';
 function addHeader(doc, topicTitle) {
   const W = doc.page.width;
   doc.rect(0, 0, W, 50).fill('#4c1d95');
-  doc.fontSize(8).fillColor('#c4b5fd').text('UNIDAD 6 - ECUACIONES', 50, 12);
+  doc.fontSize(8).fillColor('#c4b5fd').text('UNIDAD 3 - ECUACIONES DE PRIMER GRADO', 50, 12);
   doc.fontSize(13).fillColor('#ffffff').text(topicTitle, 50, 25);
   doc.fillColor(COLOR_ITEM);
   doc.y = 70;
@@ -166,11 +166,11 @@ function createDoc(filename, topicTitle, callback) {
   });
 }
 
-// ─── PDF 6-1: IGUALDAD ALGEBRAICA ─────────────────────────────
+// ─── PDF 3-1: IGUALDAD ALGEBRAICA ─────────────────────────────
 
 async function generateIgualdad() {
   const topic = 'Igualdad Algebraica';
-  await createDoc('6-1-igualdad-algebraica.pdf', topic, (doc) => {
+  await createDoc('3-1-igualdad-algebraica.pdf', topic, (doc) => {
     addIntroBox(doc, 'Igualdad algebraica = dos expresiones separadas por el signo =');
 
     writeSectionTitle(doc, '1) Indica si cada igualdad es verdadera o falsa', topic);
@@ -191,11 +191,11 @@ async function generateIgualdad() {
   });
 }
 
-// ─── PDF 6-2: IDENTIDAD ─────────────────────────────────────────
+// ─── PDF 3-2: IDENTIDAD ─────────────────────────────────────────
 
 async function generateIdentidad() {
   const topic = 'Identidad y Ecuacion';
-  await createDoc('6-2-identidad.pdf', topic, (doc) => {
+  await createDoc('3-2-identidad.pdf', topic, (doc) => {
     addIntroBox(doc, 'Identidad: igualdad que se cumple para cualquier valor.  Ecuacion: solo para algunos.');
 
     writeSectionTitle(doc, '1) Indica si cada igualdad es identidad o ecuacion', topic);
@@ -212,11 +212,11 @@ async function generateIdentidad() {
   });
 }
 
-// ─── PDF 6-3: ECUACION ──────────────────────────────────────────
+// ─── PDF 3-3: ECUACION ──────────────────────────────────────────
 
 async function generateEcuacion() {
   const topic = 'La Ecuacion';
-  await createDoc('6-3-ecuacion.pdf', topic, (doc) => {
+  await createDoc('3-3-ecuacion.pdf', topic, (doc) => {
     addIntroBox(doc, 'Una ecuacion es una igualdad que solo es cierta para algunos valores de la incognita.');
 
     writeSectionTitle(doc, '1) Senala la incognita, los miembros y el grado', topic);
@@ -233,11 +233,11 @@ async function generateEcuacion() {
   });
 }
 
-// ─── PDF 6-4: ECUACIONES EQUIVALENTES ─────────────────────────────
+// ─── PDF 3-4: ECUACIONES EQUIVALENTES ─────────────────────────────
 
 async function generateEquivalentes() {
   const topic = 'Ecuaciones Equivalentes';
-  await createDoc('6-4-ecuaciones-equivalentes.pdf', topic, (doc) => {
+  await createDoc('3-4-ecuaciones-equivalentes.pdf', topic, (doc) => {
     addIntroBox(doc, 'Equivalentes: tienen las mismas soluciones.  Ej.: x + 4 = 10 y 2x = 12 (ambas x = 6).');
 
     writeSectionTitle(doc, '1) Escribe una ecuacion equivalente y halla su solucion', topic);
@@ -254,11 +254,11 @@ async function generateEquivalentes() {
   });
 }
 
-// ─── PDF 6-5: TRANSPOSICION DE TERMINOS ────────────────────────────
+// ─── PDF 3-5: TRANSPOSICION DE TERMINOS ────────────────────────────
 
 async function generateTransposicion() {
   const topic = 'Transposicion de Terminos';
-  await createDoc('6-5-transposicion-terminos.pdf', topic, (doc) => {
+  await createDoc('3-5-transposicion-terminos.pdf', topic, (doc) => {
     addIntroBox(doc, 'Regla de la suma: x - 4 = 10  =>  x = 10 + 4');
 
     writeSectionTitle(doc, '1) Aplica la transposicion de terminos y resuelve', topic);
@@ -275,11 +275,11 @@ async function generateTransposicion() {
   });
 }
 
-// ─── PDF 6-6: METODO GENERAL ──────────────────────────────────────
+// ─── PDF 3-6: METODO GENERAL ──────────────────────────────────────
 
 async function generateMetodo() {
   const topic = 'Metodo General de Resolucion';
-  await createDoc('6-6-metodo-general.pdf', topic, (doc) => {
+  await createDoc('3-6-metodo-general.pdf', topic, (doc) => {
     addIntroBox(doc, 'Pasos: 1) Eliminar parentesis  2) Reducir  3) Transponer  4) Despejar');
 
     writeSectionTitle(doc, '1) Resuelve por el metodo general', topic);
@@ -296,44 +296,22 @@ async function generateMetodo() {
   });
 }
 
-// ─── PDF 6-7: ECUACIONES CON DENOMINADOR ──────────────────────────
-
-async function generateDenominador() {
-  const topic = 'Ecuaciones con Denominador';
-  await createDoc('6-7-ecuaciones-denominador.pdf', topic, (doc) => {
-    addIntroBox(doc, 'Pasos: 1) m.c.m.  2) Eliminar parentesis  3) Reducir  4) Transponer  5) Despejar');
-
-    writeSectionTitle(doc, '1) Calcula el m.c.m. de los denominadores', topic);
-    ['a) 2 y 4', 'b) 3 y 6', 'c) 2 y 5', 'd) 3, 4 y 6']
-      .forEach(e => writeExerciseItem(doc, e, 3, topic));
-
-    writeSectionTitle(doc, '2) Resuelve las ecuaciones con denominador', topic);
-    [
-      'a) x/2 + 1 = 5', 'b) x/5 = 4', 'c) x/3 + 2 = 7',
-      'd) x/4 - 1 = 2', 'e) x/2 + x/6 = 8', 'f) x/3 = 6',
-      'g) 2x/3 + x/2 = 7', 'h) x/2 - 1 = x/4 + 1'
-    ].forEach(e => writeExerciseItem(doc, e, 5, topic));
-  });
-}
-
 // ─── Main ──────────────────────────────────────────────────────────
 
 async function generateAll() {
-  console.log('Generando PDFs Unidad 6...');
+  console.log('Generando PDFs Unidad 3...');
   await generateIgualdad();
-  console.log('  OK 6-1-igualdad-algebraica.pdf');
+  console.log('  OK 3-1-igualdad-algebraica.pdf');
   await generateIdentidad();
-  console.log('  OK 6-2-identidad.pdf');
+  console.log('  OK 3-2-identidad.pdf');
   await generateEcuacion();
-  console.log('  OK 6-3-ecuacion.pdf');
+  console.log('  OK 3-3-ecuacion.pdf');
   await generateEquivalentes();
-  console.log('  OK 6-4-ecuaciones-equivalentes.pdf');
+  console.log('  OK 3-4-ecuaciones-equivalentes.pdf');
   await generateTransposicion();
-  console.log('  OK 6-5-transposicion-terminos.pdf');
+  console.log('  OK 3-5-transposicion-terminos.pdf');
   await generateMetodo();
-  console.log('  OK 6-6-metodo-general.pdf');
-  await generateDenominador();
-  console.log('  OK 6-7-ecuaciones-denominador.pdf');
+  console.log('  OK 3-6-metodo-general.pdf');
   console.log('Listo!');
 }
 

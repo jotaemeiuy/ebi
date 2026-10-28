@@ -1,8 +1,8 @@
 ---
 layout: ../../../layouts/Leccion.astro
 title: "Método General de Resolución de Ecuaciones"
-unitId: 6
-unitTitle: "Ecuaciones"
+unitId: 3
+unitTitle: "Ecuaciones de primer grado"
 ---
 
 <div class="lesson-box">

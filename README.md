@@ -5,11 +5,13 @@ Sitio web de matemática para 9° EBI - UTU Uruguay.
 ##  Contenido
 
 - **Unidad 1**: Números y Finanzas (Notación científica, Porcentajes, Interés)
-- **Unidad 2**: Estadística y Probabilidad (Gráficos, Media/mediana/moda, Probabilidad)
-- **Unidad 3**: Álgebra (Productos notables, Factorización)
-- **Unidad 4**: Ecuaciones (Ecuaciones cuadráticas, Sistemas)
-- **Unidad 5**: Funciones (Función cuadrática, Representación gráfica)
-- **Unidad 6**: Ecuaciones de primer grado.
+- **Unidad 2**: Álgebra (Propiedad distributiva, Productos notables, Factorización)
+- **Unidad 3**: Ecuaciones de primer grado (Igualdad, Transposición, Método general)
+- **Unidad 4**: Ecuaciones de segundo grado (Ecuaciones cuadráticas)
+- **Unidad 5**: Trigonometría (Pitágoras, Seno, coseno y tangente)
+- **Unidad 6**: Función lineal
+- **Unidad 7**: Función cuadrática
+- **Unidad 8**: Sistemas de Ecuaciones
 
 ## 🚀 Deploy
 

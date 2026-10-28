@@ -1,8 +1,8 @@
 ---
 layout: ../../../layouts/Leccion.astro
 title: "Resolver una Ecuación"
-unitId: 6
-unitTitle: "Ecuaciones"
+unitId: 3
+unitTitle: "Ecuaciones de primer grado"
 ---
 
 <div class="lesson-box">

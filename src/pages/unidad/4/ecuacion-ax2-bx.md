@@ -2,7 +2,7 @@
 layout: ../../../layouts/Leccion.astro
 title: "Ecuación ax² + bx = 0"
 unitId: 4
-unitTitle: "Ecuaciones"
+unitTitle: "Ecuaciones de segundo grado"
 ---
 
 <div class="lesson-box">

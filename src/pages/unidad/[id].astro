@@ -25,7 +25,7 @@ export function getStaticPaths() {
       ],
     },
     {
-      id: 3,
+      id: 2,
       title: "Álgebra",
       description:
         "Propiedad distributiva, productos notables y factorización de expresiones algebraicas",
@@ -37,22 +37,23 @@ export function getStaticPaths() {
       pdfs: [
         {
           title: "Ejercicios - Propiedad distributiva",
-          url: "/pdfs/3-1-propiedad-distributiva.pdf",
+          url: "/pdfs/2-1-propiedad-distributiva.pdf",
         },
         {
           title: "Ejercicios - Productos notables",
-          url: "/pdfs/3-2-productos-notables.pdf",
+          url: "/pdfs/2-2-productos-notables.pdf",
         },
         {
           title: "Ejercicios - Factorización",
-          url: "/pdfs/3-3-factorizacion.pdf",
+          url: "/pdfs/2-3-factorizacion.pdf",
         },
       ],
     },
     {
-      id: 6,
-      title: "Ecuaciones",
-      description: "Ecuaciones de primer grado",
+      id: 3,
+      title: "Ecuaciones de primer grado",
+      description:
+        "Igualdad algebraica, identidad, ecuación, ecuaciones equivalentes, transposición de términos y método general de resolución",
       lessons: [
         { title: "Igualdad Algebraica", slug: "igualdad-algebraica" },
         { title: "Identidad", slug: "identidad" },
@@ -64,41 +65,33 @@ export function getStaticPaths() {
           title: "Método general de resolución de ecuaciones",
           slug: "metodo-general-resolucion-ecuaciones",
         },
-        {
-          title: "Resolución de ecuaciones con denominador",
-          slug: "resolucion-ecuaciones-denominador",
-        },
       ],
       pdfs: [
         {
           title: "Ejercicios - Igualdad algebraica",
-          url: "/pdfs/6-1-igualdad-algebraica.pdf",
+          url: "/pdfs/3-1-igualdad-algebraica.pdf",
         },
-        { title: "Ejercicios - Identidad", url: "/pdfs/6-2-identidad.pdf" },
-        { title: "Ejercicios - Ecuación", url: "/pdfs/6-3-ecuacion.pdf" },
+        { title: "Ejercicios - Identidad", url: "/pdfs/3-2-identidad.pdf" },
+        { title: "Ejercicios - Ecuación", url: "/pdfs/3-3-ecuacion.pdf" },
         {
           title: "Ejercicios - Ecuaciones equivalentes",
-          url: "/pdfs/6-4-ecuaciones-equivalentes.pdf",
+          url: "/pdfs/3-4-ecuaciones-equivalentes.pdf",
         },
         {
           title: "Ejercicios - Transposición de términos",
-          url: "/pdfs/6-5-transposicion-terminos.pdf",
+          url: "/pdfs/3-5-transposicion-terminos.pdf",
         },
         {
           title: "Ejercicios - Método general de resolución",
-          url: "/pdfs/6-6-metodo-general.pdf",
-        },
-        {
-          title: "Ejercicios - Ecuaciones con denominador",
-          url: "/pdfs/6-7-ecuaciones-denominador.pdf",
+          url: "/pdfs/3-6-metodo-general.pdf",
         },
       ],
     },
-
     {
       id: 4,
-      title: "Ecuaciones",
-      description: "Ecuaciones cuadráticas: ax² + c, ax² + bx y fórmula de Bhaskara",
+      title: "Ecuaciones de segundo grado",
+      description:
+        "Ecuaciones cuadráticas: ax² + c, ax² + bx y fórmula de Bhaskara",
       lessons: [
         { title: "Ecuación ax² + c = 0", slug: "ecuacion-ax2-c" },
         { title: "Ecuación ax² + bx = 0", slug: "ecuacion-ax2-bx" },
@@ -121,13 +114,6 @@ export function getStaticPaths() {
     },
     {
       id: 5,
-      title: "Funciones",
-      description: "Teoría de funciones cuadráticas",
-      lessons: [],
-      pdfs: [],
-    },
-    {
-      id: 7,
       title: "Trigonometría",
       description:
         "Trigonometría en triángulos rectángulos: Pitágoras, seno, coseno y tangente",
@@ -141,22 +127,39 @@ export function getStaticPaths() {
       pdfs: [
         {
           title: "Repartido - Trigonometría",
-          url: "/pdfs/7-1-trigonometria.pdf",
+          url: "/pdfs/5-1-trigonometria.pdf",
         },
         {
           title: "Resumen y ejercicios - Trigonometría",
-          url: "/pdfs/7-1-trigonometria-teoria.pdf",
+          url: "/pdfs/5-2-trigonometria-teoria.pdf",
         },
         {
           title: "Práctico - Trigonometría",
-          url: "/pdfs/7-2-trigonometria-practico.pdf",
+          url: "/pdfs/5-3-trigonometria-practico.pdf",
         },
       ],
     },
     {
+      id: 6,
+      title: "Función lineal",
+      description:
+        "Función lineal: ecuación de la recta, pendiente, ordenada al origen y representación gráfica",
+      lessons: [],
+      pdfs: [],
+    },
+    {
+      id: 7,
+      title: "Función cuadrática",
+      description:
+        "Función cuadrática: parábola, vértice, eje de simetría y representación gráfica",
+      lessons: [],
+      pdfs: [],
+    },
+    {
       id: 8,
       title: "Sistemas de Ecuaciones",
-      description: "Sistemas de ecuaciones lineales 2×2: sustitución, igualación, reducción y método gráfico",
+      description:
+        "Sistemas de ecuaciones lineales 2×2: sustitución, igualación, reducción y método gráfico",
       lessons: [
         { title: "Sistemas: Sustitución", slug: "sistemas-sustitucion" },
         { title: "Sistemas: Igualación", slug: "sistemas-igualacion" },
@@ -216,7 +219,7 @@ const { unit } = Astro.props;
 
       <!-- Lecciones -->
       {
-        unit.lessons.length > 0 && (
+        unit.lessons.length > 0 ? (
           <section class="mb-12">
             <h2 class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3">
               <svg
@@ -266,6 +269,17 @@ const { unit } = Astro.props;
                   </svg>
                 </a>
               ))}
+            </div>
+          </section>
+        ) : (
+          <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-slate-100 mb-6 flex items-center gap-3">
+              Lecciones
+            </h2>
+            <div class="p-6 rounded-xl bg-slate-900/30 border border-slate-800/50 text-center">
+              <p class="text-slate-500">
+                Las lecciones de esta unidad se agregarán próximamente.
+              </p>
             </div>
           </section>
         )
