@@ -35,9 +35,16 @@ unitTitle: "Ecuaciones"
   <p>Partimos de la ecuación y despejamos x²:</p>
   <p class="font-mono text-violet-400">ax² + c = 0 → ax² = −c → x² = −c/a</p>
   <p>Luego aplicamos raíz cuadrada a ambos lados:</p>
-  <blockquote>
-    <p>x = ± √(−c/a)</p>
-  </blockquote>
+  <svg viewBox="0 0 320 120" role="img" aria-label="x igual a más menos la raíz cuadrada de menos c sobre a" style="display:block;margin:1.5rem auto;max-width:340px;width:100%">
+    <text x="18" y="78" fill="#c4b5fd" font-size="34" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">x = ±</text>
+    <path d="M 132 62 L 142 92 L 158 40 L 252 40" fill="none" stroke="#c4b5fd" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="168" y1="74" x2="240" y2="74" stroke="#c4b5fd" stroke-width="2"/>
+    <text x="204" y="66" text-anchor="middle" fill="#c4b5fd" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">−c</text>
+    <text x="204" y="108" text-anchor="middle" fill="#c4b5fd" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">a</text>
+  </svg>
+  <p style="text-align:center;color:#94a3b8;font-size:.95rem;margin-top:-.5rem">
+    El radical cubre toda la fracción <strong>−c/a</strong>.
+  </p>
   <p>El signo <strong>±</strong> indica que hay dos soluciones: una positiva y una negativa.</p>
   <p>Pasos:</p>
   <ol>

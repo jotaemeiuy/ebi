@@ -71,6 +71,53 @@ function addIntroBox(doc, text, height = 30) {
   doc.y = y + height + 8;
 }
 
+// Dibuja x = ± √(-c/a) con radical y fracción bien delimitados.
+function drawRootFormula(doc, centerX, y) {
+  const fontSize = 15;
+  doc.fontSize(fontSize).fillColor(COLOR_FORMULA);
+
+  const left = 'x = ±';
+  const leftW = doc.widthOfString(left);
+  const num = '-c';
+  const den = 'a';
+  const numW = doc.widthOfString(num);
+  const denW = doc.widthOfString(den);
+  const fracW = Math.max(numW, denW) + 12;
+  const total = leftW + 14 + fracW + 10;
+  const startX = centerX - total / 2;
+
+  doc.text(left, startX, y, { lineBreak: false });
+
+  const rx = startX + leftW + 14;
+  const topY = y - 4;
+  const barY = y + 9;
+
+  // Signo radical y barra superior que cubre toda la fracción.
+  doc.moveTo(rx, y + 7)
+    .lineTo(rx + 5, y + 13)
+    .lineTo(rx + 10, topY)
+    .lineTo(rx + 10 + fracW, topY)
+    .strokeColor(COLOR_FORMULA).lineWidth(1.3).stroke();
+
+  // Barra de fracción.
+  doc.moveTo(rx + 14, barY)
+    .lineTo(rx + 14 + fracW - 4, barY)
+    .strokeColor(COLOR_FORMULA).lineWidth(1).stroke();
+
+  doc.fontSize(12).fillColor(COLOR_FORMULA);
+  doc.text(num, rx + 10 + (fracW - numW) / 2, y - 3, { lineBreak: false });
+  doc.text(den, rx + 10 + (fracW - denW) / 2, barY + 3, { lineBreak: false });
+}
+
+function addRootIntroBox(doc) {
+  const y = doc.y;
+  doc.rect(50, y, doc.page.width - 100, 58).fill(COLOR_BG_BOX);
+  drawRootFormula(doc, doc.page.width / 2, y + 22);
+  doc.fillColor(COLOR_ITEM);
+  doc.x = 50;
+  doc.y = y + 66;
+}
+
 // Splits "ax^2 - b/c" into rich tokens: strings, superscripts and fractions.
 function parseMath(text) {
   const tokens = [];
@@ -185,7 +232,7 @@ function createDoc(filename, unitId, topicTitle, callback) {
 async function generateU4EcuacionAx2C() {
   const topic = 'Ecuacion ax² + c = 0';
   await createDoc('4-1-ecuacion-ax2-c.pdf', 4, topic, (doc) => {
-    addIntroBox(doc, 'ax² + c = 0  ->  x² = -c/a  ->  x = ± raiz(-c/a)', 34);
+    addRootIntroBox(doc);
 
     writeSectionTitle(doc, '1) Resolver despejando x² y aplicando raiz cuadrada', 4, topic);
     [
