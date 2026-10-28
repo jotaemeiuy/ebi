@@ -10,6 +10,7 @@ unitTitle: "Ecuaciones"
   <ul>
     <li><a href="#forma">• Forma de la ecuación</a></li>
     <li><a href="#metodo">• Método de resolución</a></li>
+    <li><a href="#hankeliana">• Propiedad hankeliana</a></li>
     <li><a href="#problemas">• Problemas resueltos</a></li>
     <li><a href="#ejercicios">• Ejercicios</a></li>
   </ul>
@@ -36,17 +37,54 @@ unitTitle: "Ecuaciones"
   <ol>
     <li>Identificar el factor común (al menos x)</li>
     <li>Extraer el factor común: x(ax + b) = 0</li>
-    <li>Igualar cada factor a cero y resolver</li>
+    <li>Aplicar la propiedad hankeliana para igualar cada factor a cero</li>
+    <li>Resolver cada una de las ecuaciones que quedan</li>
   </ol>
   <p>Ejemplo:</p>
   <p class="font-mono text-violet-400">x² + 5x = 0</p>
   <ol>
     <li>Factor común x: x(x + 5) = 0</li>
+    <li>Por la propiedad hankeliana: x = 0 o x + 5 = 0</li>
     <li>x = 0</li>
     <li>x + 5 = 0 → x = -5</li>
     <li>Soluciones: x = 0 y x = -5</li>
   </ol>
   <p><strong>Importante:</strong> Nunca dividas ambos lados por x, porque perderías la solución x = 0.</p>
+</div>
+
+<div id="hankeliana" class="lesson-box">
+  <h2>Propiedad hankeliana (producto nulo)</h2>
+  <p>
+    Después de factorizar, la ecuación queda como un <strong>producto igualado a cero</strong>:
+  </p>
+  <p class="font-mono text-violet-400">x(ax + b) = 0</p>
+  <p>
+    Para resolverla aplicamos la <strong>propiedad hankeliana</strong>, también llamada
+    propiedad del producto nulo:
+  </p>
+  <blockquote>
+    <p>a · b = 0 ⇔ a = 0 y/o b = 0</p>
+  </blockquote>
+  <p>
+    Es decir: si un producto da cero, <strong>al menos uno de los factores debe ser cero</strong>.
+    En la fórmula, <strong>a</strong> y <strong>b</strong> representan los factores, no los coeficientes
+    de la ecuación.
+  </p>
+  <p>Aplicada a x(ax + b) = 0, nos deja dos ecuaciones simples:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><strong>Primer factor:</strong> x = 0</li>
+    <li><strong>Segundo factor:</strong> ax + b = 0 → ax = −b → x = −b/a (con a ≠ 0)</li>
+  </ul>
+  <p>Por eso este tipo de ecuación siempre tiene <strong>x = 0</strong> como una de sus soluciones.</p>
+  <p>Ejemplo completo:</p>
+  <p class="font-mono text-violet-400">3x² − 12x = 0</p>
+  <ol>
+    <li>Factor común 3x: 3x(x − 4) = 0</li>
+    <li>Propiedad hankeliana: 3x = 0 y/o x − 4 = 0</li>
+    <li>3x = 0 → x = 0</li>
+    <li>x − 4 = 0 → x = 4</li>
+  </ol>
+  <p class="font-mono text-violet-400">Soluciones: x = 0 y x = 4</p>
 </div>
 
 <div id="problemas" class="lesson-box">
