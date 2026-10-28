@@ -236,37 +236,52 @@ unitTitle: "Ecuaciones"
 
 <div id="ejercicios" class="exercise-box">
   <h3>Ejercicios de práctica</h3>
-  <p>Resolver cada ecuación aplicando la fórmula de Bhaskara. Calcular siempre el discriminante antes de resolver.</p>
 
-  <h3>1) Coeficiente a = 1</h3>
+  <h3>1) Indicar los coeficientes (sin resolver)</h3>
+  <p>
+    Escribir <strong>a</strong>, <strong>b</strong> y <strong>c</strong> con sus signos.
+    Si hace falta, primero ordenar la ecuación e igualarla a cero.
+  </p>
+  <ul class="exercise-list">
+    <li>a) 3x² − 10x + 8 = 0</li>
+    <li>b) −2x² + 5x − 3 = 0</li>
+    <li>c) x² = 7x − 12</li>
+    <li>d) 5x² + 11x + 2 = 0</li>
+    <li>e) 6x² + x − 1 = 0</li>
+    <li>f) 2(x² − 3x + 1) = 0</li>
+    <li>g) (x + 2)(x − 5) = 0</li>
+    <li>h) 4x² − 9 = 12x</li>
+  </ul>
+
+  <h3>2) Bhaskara con dos soluciones (Δ &gt; 0)</h3>
+  <p>Calcular el discriminante y resolver con la fórmula completa.</p>
   <ul class="exercise-list">
     <li>a) x² + 6x + 8 = 0</li>
     <li>b) x² − 5x + 6 = 0</li>
     <li>c) x² + 3x − 10 = 0</li>
     <li>d) x² − 7x + 10 = 0</li>
-    <li>e) x² + x − 20 = 0</li>
-    <li>f) x² − 2x − 8 = 0</li>
-    <li>g) x² + 10x + 21 = 0</li>
-    <li>h) x² − 11x + 24 = 0</li>
+    <li>e) 2x² + 3x + 1 = 0</li>
+    <li>f) 3x² + 7x + 2 = 0</li>
+    <li>g) 2x² − 5x + 3 = 0</li>
+    <li>h) 3x² − 10x + 8 = 0</li>
   </ul>
 
-  <h3>2) Coeficiente a ≠ 1</h3>
-  <ul class="exercise-list">
-    <li>a) 2x² + 3x + 1 = 0</li>
-    <li>b) 3x² + 7x + 2 = 0</li>
-    <li>c) 2x² − 5x + 3 = 0</li>
-    <li>d) 5x² + 11x + 2 = 0</li>
-    <li>e) 4x² − 12x + 9 = 0</li>
-    <li>f) 6x² + x − 1 = 0</li>
-  </ul>
-
-  <h3>3) Analizar el discriminante</h3>
-  <p>Sin resolver, indicar cuántas soluciones reales tiene cada ecuación:</p>
+  <h3>3) Bhaskara con una solución doble (Δ = 0)</h3>
+  <p>Verificar que el discriminante sea cero y hallar la solución única.</p>
   <ul class="exercise-list">
     <li>a) x² − 4x + 4 = 0</li>
-    <li>b) x² + 2x + 5 = 0</li>
-    <li>c) x² − 6x + 5 = 0</li>
-    <li>d) 3x² + 2x + 1 = 0</li>
+    <li>b) x² + 6x + 9 = 0</li>
+    <li>c) 4x² − 12x + 9 = 0</li>
+    <li>d) 9x² + 6x + 1 = 0</li>
+  </ul>
+
+  <h3>4) Bhaskara sin soluciones reales (Δ &lt; 0)</h3>
+  <p>Calcular el discriminante y justificar por qué no hay solución real.</p>
+  <ul class="exercise-list">
+    <li>a) x² + 2x + 5 = 0</li>
+    <li>b) 3x² + 2x + 1 = 0</li>
+    <li>c) 2x² − 3x + 4 = 0</li>
+    <li>d) x² + x + 2 = 0</li>
   </ul>
 </div>
 
