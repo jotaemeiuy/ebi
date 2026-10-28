@@ -28,3 +28,4 @@ pnpm-debug.log*
 # libros locales (no subir a github)
 /fcuad.pdf
 /Libro4eso.pdf
+/public/pdfs/funciones.pdf
