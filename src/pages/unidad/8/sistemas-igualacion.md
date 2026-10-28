@@ -2,7 +2,7 @@
 layout: ../../../layouts/Leccion.astro
 title: "Sistemas de ecuaciones - Método de Igualación"
 unitId: 8
-unitTitle: "Sistemas"
+unitTitle: "Sistemas de Ecuaciones"
 ---
 
 <div class="lesson-box">
