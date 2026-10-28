@@ -98,13 +98,26 @@ export function getStaticPaths() {
     {
       id: 4,
       title: "Ecuaciones",
-      description: "Ecuaciones cuadráticas por factorización",
+      description: "Ecuaciones cuadráticas: ax² + c, ax² + bx y fórmula de Bhaskara",
       lessons: [
         { title: "Ecuación ax² + c = 0", slug: "ecuacion-ax2-c" },
         { title: "Ecuación ax² + bx = 0", slug: "ecuacion-ax2-bx" },
         { title: "Ecuación ax² + bx + c = 0", slug: "ecuacion-ax2-bx-c" },
       ],
-      pdfs: [],
+      pdfs: [
+        {
+          title: "Ejercicios - Ecuación ax² + c = 0",
+          url: "/pdfs/4-1-ecuacion-ax2-c.pdf",
+        },
+        {
+          title: "Ejercicios - Ecuación ax² + bx = 0",
+          url: "/pdfs/4-2-ecuacion-ax2-bx.pdf",
+        },
+        {
+          title: "Ejercicios - Ecuación ax² + bx + c = 0",
+          url: "/pdfs/4-3-ecuacion-ax2-bx-c.pdf",
+        },
+      ],
     },
     {
       id: 5,
@@ -130,6 +143,14 @@ export function getStaticPaths() {
           title: "Repartido - Trigonometría",
           url: "/pdfs/7-1-trigonometria.pdf",
         },
+        {
+          title: "Resumen y ejercicios - Trigonometría",
+          url: "/pdfs/7-1-trigonometria-teoria.pdf",
+        },
+        {
+          title: "Práctico - Trigonometría",
+          url: "/pdfs/7-2-trigonometria-practico.pdf",
+        },
       ],
     },
     {
@@ -142,7 +163,24 @@ export function getStaticPaths() {
         { title: "Sistemas: Reducción", slug: "sistemas-reduccion" },
         { title: "Sistemas: Método gráfico", slug: "sistemas-grafico" },
       ],
-      pdfs: [],
+      pdfs: [
+        {
+          title: "Ejercicios - Sustitución",
+          url: "/pdfs/8-1-sistemas-sustitucion.pdf",
+        },
+        {
+          title: "Ejercicios - Igualación",
+          url: "/pdfs/8-2-sistemas-igualacion.pdf",
+        },
+        {
+          title: "Ejercicios - Reducción",
+          url: "/pdfs/8-3-sistemas-reduccion.pdf",
+        },
+        {
+          title: "Ejercicios - Método gráfico",
+          url: "/pdfs/8-4-sistemas-grafico.pdf",
+        },
+      ],
     },
   ];
 
