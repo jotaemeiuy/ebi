@@ -136,18 +136,59 @@ function graphSvg(o) {
   return parts.join("");
 }
 
-function signStrip(kind, rootsText) {
-  const plus = '<span style="color:#34d399;letter-spacing:2px">+ + +</span>';
-  const minus = '<span style="color:#f87171;letter-spacing:2px">− − −</span>';
-  const zero = '<span style="color:#f59e0b;font-weight:700;padding:0 4px">0</span>';
-  let inner = "";
-  if (kind === "pos-out") inner = `${plus} ${zero} ${minus} ${zero} ${plus}`;
-  if (kind === "neg-out") inner = `${minus} ${zero} ${plus} ${zero} ${minus}`;
-  if (kind === "double-pos") inner = `${plus} ${zero} ${plus}`;
-  if (kind === "double-neg") inner = `${minus} ${zero} ${minus}`;
-  if (kind === "always-pos") inner = `${plus} ${plus} ${plus}`;
-  if (kind === "always-neg") inner = `${minus} ${minus} ${minus}`;
-  return `<div style="margin-top:.5rem;font-family:ui-monospace,monospace;font-size:.95rem;text-align:center">${inner}<div style="color:#94a3b8;font-size:.72rem;margin-top:.2rem">${rootsText}</div></div>`;
+function signLine(kind, roots, note) {
+  const w = 380, h = 112;
+  const y = 58, left = 30, right = 342;
+  const rs = (roots || []).slice().sort((a, b) => a - b);
+  const span = rs.length ? rs[rs.length - 1] - rs[0] : 0;
+  const pad = span > 0 ? span * 0.55 : 2.2;
+  const dmin = rs.length ? rs[0] - pad : -2.5;
+  const dmax = rs.length ? rs[rs.length - 1] + pad : 2.5;
+  const px = (x) => left + ((x - dmin) / (dmax - dmin)) * (right - left);
+
+  const P = { t: "+", c: "#34d399" };
+  const M = { t: "−", c: "#f87171" };
+  const Z = { t: "0", c: "#f59e0b" };
+  const signs = [];
+
+  if (kind === "pos-out" || kind === "neg-out") {
+    const [r1, r2] = rs;
+    const outside = kind === "pos-out" ? P : M;
+    const inside = kind === "pos-out" ? M : P;
+    signs.push({ x: dmin + (r1 - dmin) * 0.5, ...outside });
+    signs.push({ x: r1, ...Z, root: true });
+    signs.push({ x: (r1 + r2) / 2, ...inside });
+    signs.push({ x: r2, ...Z, root: true });
+    signs.push({ x: r2 + (dmax - r2) * 0.5, ...outside });
+  } else if (kind === "double-pos" || kind === "double-neg") {
+    const [r] = rs;
+    const c = kind === "double-pos" ? P : M;
+    signs.push({ x: dmin + (r - dmin) * 0.5, ...c });
+    signs.push({ x: r, ...Z, root: true });
+    signs.push({ x: r + (dmax - r) * 0.5, ...c });
+  } else {
+    const c = kind === "always-pos" ? P : M;
+    [0.2, 0.5, 0.8].forEach((f) => signs.push({ x: dmin + (dmax - dmin) * f, ...c }));
+  }
+
+  const parts = [];
+  parts.push(`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Esquema de signos sobre la recta numérica" style="display:block;width:100%;max-width:380px;margin:.35rem auto 0">`);
+  parts.push(`<line x1="${left}" y1="${y}" x2="${right + 10}" y2="${y}" stroke="#94a3b8" stroke-width="1.8"/>`);
+  parts.push(`<path d="M ${right + 19} ${y} l -10 -5 v 10 z" fill="#94a3b8"/>`);
+  parts.push(`<text x="${right + 12}" y="${y - 9}" fill="#94a3b8" font-size="11">x</text>`);
+  signs.forEach((s) => {
+    const sx = px(s.x).toFixed(1);
+    if (s.root) {
+      parts.push(`<line x1="${sx}" y1="${y - 6}" x2="${sx}" y2="${y + 6}" stroke="#f59e0b" stroke-width="2.5"/>`);
+      parts.push(`<text x="${sx}" y="${y + 24}" text-anchor="middle" fill="#f59e0b" font-size="12" font-family="ui-monospace, monospace">${fmt(s.x)}</text>`);
+    }
+    parts.push(`<text x="${sx}" y="${y - 12}" text-anchor="middle" fill="${s.c}" font-size="21" font-weight="700" font-family="ui-monospace, monospace">${s.t}</text>`);
+  });
+  parts.push("</svg>");
+  if (note) {
+    parts.push(`<div style="text-align:center;color:#94a3b8;font-size:.72rem;margin-top:.15rem">${note}</div>`);
+  }
+  return parts.join("");
 }
 ---
 
@@ -620,7 +661,9 @@ function signStrip(kind, rootsText) {
     </li>
     <li>
       <strong>Preimagen de −5:</strong> x² − 2x − 3 = −5 → x² − 2x + 2 = 0.
-      Su discriminante es Δ = 4 − 8 = −4 &lt; 0, así que{" "}
+      Al aplicar Bhaskara queda{" "}
+      <span class="font-mono text-violet-400">√((−2)² − 4·1·2) = √(−4)</span>, y un
+      número negativo no tiene raíz cuadrada real:{" "}
       <strong>no tiene preimagen real</strong>.
     </li>
   </ul>
@@ -635,25 +678,61 @@ function signStrip(kind, rootsText) {
   </p>
   <p>
     Para encontrarlas resolvemos{" "}
-    <span class="font-mono text-violet-400">ax² + bx + c = 0</span>. El número
-    que decide cuántas raíces hay es el <strong>discriminante</strong>:
+    <span class="font-mono text-violet-400">ax² + bx + c = 0</span>. Según cómo
+    sea la ecuación, conviene usar un método distinto.
   </p>
-  <p class="font-mono text-violet-400" style="font-size:1.2rem">Δ = b² − 4ac</p>
-  <p>Y las raíces se calculan con la fórmula:</p>
-  <p class="font-mono text-violet-400" style="font-size:1.2rem">x = (−b ± √Δ) / (2a)</p>
+
+  <h3>Si falta el término lineal (b = 0): despejar y aplicar raíz</h3>
+  <p class="font-mono text-violet-400">x² − 9 = 0 → x² = 9 → x = ±√9</p>
+  <p class="font-mono text-violet-400">x = 3 o x = −3</p>
+  <p>
+    El <strong>±</strong> aparece porque 3² = 9 y también (−3)² = 9. Si al
+    despejar queda un número negativo, no hay solución real:
+  </p>
+  <p class="font-mono text-violet-400">x² = −4 → x = ±√(−4) → sin solución real</p>
+
+  <h3>Si falta el término independiente (c = 0): factor común</h3>
+  <p class="font-mono text-violet-400">x² − 3x = 0 → x(x − 3) = 0</p>
+  <p class="font-mono text-violet-400">x = 0 o x − 3 = 0 → x = 0 o x = 3</p>
+  <p>
+    Usamos la <strong>propiedad hankeliana</strong>: un producto es cero cuando
+    <strong>alguno de sus factores es cero</strong>. Por eso estas ecuaciones
+    siempre tienen a x = 0 como una de sus raíces.
+  </p>
+
+  <h3>Si la ecuación está completa: Bhaskara</h3>
+  <p>Cuando aparecen los tres términos, usamos la fórmula de Bhaskara:</p>
+  <p class="font-mono text-violet-400" style="font-size:1.1rem">
+    x = (−b ± √(b² − 4ac)) / (2a)
+  </p>
+  <p><strong>Ejemplo:</strong> f(x) = x² − 2x − 3 → a = 1, b = −2, c = −3</p>
+  <p class="font-mono text-violet-400">
+    x = (2 ± √((−2)² − 4·1·(−3))) / (2·1)
+  </p>
+  <p class="font-mono text-violet-400">
+    x = (2 ± √(4 + 12)) / 2 = (2 ± √16) / 2 = (2 ± 4) / 2
+  </p>
+  <p class="font-mono text-violet-400">
+    x₁ = (2 − 4)/2 = −1 &nbsp;&nbsp; x₂ = (2 + 4)/2 = 3
+  </p>
+
+  <p>
+    Al resolver, pueden pasar <strong>tres cosas</strong>. Lo importante es
+    mirar <strong>lo que queda dentro de la raíz</strong>:
+  </p>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem;margin:1.5rem 0">
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: 1, b: -2, c: -3, xmin: -3, xmax: 5, ymin: -5, ymax: 4, w: 380, h: 340, uid: "r1" })}></div>
-      <p style="margin:.5rem 0 0;color:#cbd5e1;font-size:.9rem"><strong style="color:#f59e0b">Δ &gt; 0:</strong> dos raíces distintas.</p>
+      <p style="margin:.5rem 0 0;color:#cbd5e1;font-size:.9rem"><strong style="color:#f59e0b">Dos raíces distintas:</strong> dentro de la raíz queda un número positivo.</p>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: 1, b: -2, c: 1, xmin: -2, xmax: 4, ymin: -2, ymax: 5, w: 380, h: 340, uid: "r2" })}></div>
-      <p style="margin:.5rem 0 0;color:#cbd5e1;font-size:.9rem"><strong style="color:#f59e0b">Δ = 0:</strong> una raíz doble.</p>
+      <p style="margin:.5rem 0 0;color:#cbd5e1;font-size:.9rem"><strong style="color:#f59e0b">Una raíz doble:</strong> dentro de la raíz queda 0.</p>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: 1, b: 0, c: 1, xmin: -3, xmax: 3, ymin: -1, ymax: 6, w: 380, h: 340, uid: "r3" })}></div>
-      <p style="margin:.5rem 0 0;color:#cbd5e1;font-size:.9rem"><strong style="color:#f59e0b">Δ &lt; 0:</strong> no tiene raíces reales.</p>
+      <p style="margin:.5rem 0 0;color:#cbd5e1;font-size:.9rem"><strong style="color:#f59e0b">Sin raíces reales:</strong> dentro de la raíz queda un número negativo.</p>
     </div>
   </div>
 
@@ -664,27 +743,39 @@ function signStrip(kind, rootsText) {
     <strong style="color:#f59e0b">naranjas</strong> son las raíces.
   </p>
 
-  <h3>Ejemplos</h3>
-  <p><strong>1) f(x) = x² − 2x − 3</strong></p>
-  <p class="font-mono text-violet-400">Δ = (−2)² − 4·1·(−3) = 4 + 12 = 16</p>
-  <p class="font-mono text-violet-400">x = (2 ± √16) / 2 = (2 ± 4) / 2</p>
-  <p class="font-mono text-violet-400">x₁ = (2 − 4)/2 = −1 &nbsp;&nbsp; x₂ = (2 + 4)/2 = 3</p>
-  <p>Como Δ &gt; 0, hay dos raíces: <strong>−1 y 3</strong>.</p>
+  <h3>Más ejemplos</h3>
 
-  <p><strong>2) f(x) = x² − 2x + 1</strong></p>
-  <p class="font-mono text-violet-400">Δ = (−2)² − 4·1·1 = 4 − 4 = 0</p>
-  <p class="font-mono text-violet-400">x = (2 ± 0) / 2 = 1</p>
-  <p>Como Δ = 0, hay <strong>una raíz doble</strong>: x = 1.</p>
+  <p><strong>1) f(x) = x² − 5x + 6</strong> (dos raíces)</p>
+  <p class="font-mono text-violet-400">a = 1, b = −5, c = 6</p>
+  <p class="font-mono text-violet-400">
+    x = (5 ± √((−5)² − 4·1·6)) / 2 = (5 ± √(25 − 24)) / 2 = (5 ± 1) / 2
+  </p>
+  <p class="font-mono text-violet-400">
+    x₁ = (5 − 1)/2 = 2 &nbsp;&nbsp; x₂ = (5 + 1)/2 = 3
+  </p>
 
-  <p><strong>3) f(x) = x² + 1</strong></p>
-  <p class="font-mono text-violet-400">Δ = 0² − 4·1·1 = −4</p>
+  <p><strong>2) f(x) = x² − 4x + 4</strong> (una raíz doble)</p>
+  <p class="font-mono text-violet-400">
+    x = (4 ± √((−4)² − 4·1·4)) / 2 = (4 ± √0) / 2 = 4/2 = 2
+  </p>
   <p>
-    Como Δ &lt; 0, <strong>no hay raíces reales</strong>: la parábola no corta al
-    eje x.
+    La solución es <strong>x = 2</strong>. También se puede ver como{" "}
+    <span class="font-mono text-violet-400">(x − 2)² = 0</span>: la parábola
+    toca el eje x en un solo punto.
+  </p>
+
+  <p><strong>3) f(x) = x² + 2x + 5</strong> (sin raíces reales)</p>
+  <p class="font-mono text-violet-400">
+    x = (−2 ± √(2² − 4·1·5)) / 2 = (−2 ± √(−16)) / 2
+  </p>
+  <p>
+    Dentro de la raíz queda <strong>−16</strong>, que no tiene raíz cuadrada
+    real. Entonces <strong>no hay raíces reales</strong>: la parábola no corta
+    al eje x.
   </p>
   <p>
     Si <span class="font-mono text-violet-400">a &lt; 0</span> la parábola se
-    abre hacia abajo, pero el discriminante y la fórmula de las raíces se usan
+    abre hacia abajo, pero los métodos y la fórmula de Bhaskara se usan
     exactamente igual.
   </p>
 </div>
@@ -704,7 +795,7 @@ function signStrip(kind, rootsText) {
 
   <p>Las fórmulas son:</p>
   <p class="font-mono text-violet-400" style="font-size:1.15rem">xᵥ = −b / (2a)</p>
-  <p class="font-mono text-violet-400" style="font-size:1.15rem">yᵥ = f(xᵥ) = (4ac − b²) / (4a)</p>
+  <p class="font-mono text-violet-400" style="font-size:1.15rem">yᵥ = f(xᵥ)</p>
   <p class="font-mono text-violet-400" style="font-size:1.15rem">eje de simetría: x = xᵥ</p>
   <p>
     Si la función tiene raíces, el vértice está justo en el punto medio entre
@@ -757,66 +848,75 @@ function signStrip(kind, rootsText) {
     <li>Si <strong>corta</strong> el eje x: f(x) = 0 (son las raíces).</li>
   </ul>
   <p>
-    El signo depende de <strong>a</strong> y de las <strong>raíces</strong>. Estos
-    son todos los casos:
+    El signo depende de <strong>a</strong> y de las <strong>raíces</strong>. En
+    cada esquema, el <strong style="color:#f59e0b">0</strong> va arriba de cada
+    raíz y los <strong>+</strong> o <strong>−</strong> en cada tramo de la recta.
+    Estos son todos los casos:
   </p>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin:1.25rem 0">
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: 1, b: -2, c: -3, xmin: -3, xmax: 5, ymin: -5, ymax: 4, w: 360, h: 300, uid: "s1" })}></div>
-      <div set:html={signStrip("pos-out", "Δ &gt; 0, a &gt; 0 · raíces: −1 y 3")}></div>
+      <div set:html={signLine("pos-out", [-1, 3], "a &gt; 0 · dos raíces: −1 y 3")}></div>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: -1, b: 2, c: 3, xmin: -3, xmax: 5, ymin: -2, ymax: 5, w: 360, h: 300, uid: "s2" })}></div>
-      <div set:html={signStrip("neg-out", "Δ &gt; 0, a &lt; 0 · raíces: −1 y 3")}></div>
+      <div set:html={signLine("neg-out", [-1, 3], "a &lt; 0 · dos raíces: −1 y 3")}></div>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: 1, b: -2, c: 1, xmin: -2, xmax: 4, ymin: -2, ymax: 5, w: 360, h: 300, uid: "s3" })}></div>
-      <div set:html={signStrip("double-pos", "Δ = 0, a &gt; 0 · raíz doble: 1")}></div>
+      <div set:html={signLine("double-pos", [1], "a &gt; 0 · raíz doble: 1")}></div>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: -1, b: 2, c: -1, xmin: -2, xmax: 4, ymin: -5, ymax: 2, w: 360, h: 300, uid: "s4" })}></div>
-      <div set:html={signStrip("double-neg", "Δ = 0, a &lt; 0 · raíz doble: 1")}></div>
+      <div set:html={signLine("double-neg", [1], "a &lt; 0 · raíz doble: 1")}></div>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: 1, b: 0, c: 1, xmin: -3, xmax: 3, ymin: -1, ymax: 6, w: 360, h: 300, uid: "s5" })}></div>
-      <div set:html={signStrip("always-pos", "Δ &lt; 0, a &gt; 0 · sin raíces")}></div>
+      <div set:html={signLine("always-pos", [], "a &gt; 0 · sin raíces")}></div>
     </div>
     <div style="background:rgba(15,23,42,.45);border:1px solid #334155;border-radius:10px;padding:.75rem">
       <div set:html={graphSvg({ a: -1, b: 0, c: -1, xmin: -3, xmax: 3, ymin: -6, ymax: 1, w: 360, h: 300, uid: "s6" })}></div>
-      <div set:html={signStrip("always-neg", "Δ &lt; 0, a &lt; 0 · sin raíces")}></div>
+      <div set:html={signLine("always-neg", [], "a &lt; 0 · sin raíces")}></div>
     </div>
   </div>
 
-  <h3>El signo desde la fórmula</h3>
+  <h3>Cómo se arma el esquema</h3>
   <p>
-    También podemos factorizar y probar intervalos. Para{" "}
-    <span class="font-mono text-violet-400">f(x) = x² − 2x − 3 = (x − 3)(x + 1)</span>:
+    Tomemos <span class="font-mono text-violet-400">f(x) = x² − 2x − 3</span>.
+    Primero encontramos las raíces:
   </p>
-
-  <table>
-    <thead>
-      <tr><th>Intervalo</th><th>x &lt; −1</th><th>x = −1</th><th>−1 &lt; x &lt; 3</th><th>x = 3</th><th>x &gt; 3</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Signo de f(x)</td><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td></tr>
-    </tbody>
-  </table>
-
+  <p class="font-mono text-violet-400">x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0</p>
+  <p class="font-mono text-violet-400">x = 3 o x = −1</p>
   <p>
-    La regla general es:
+    Esas dos raíces <strong>dividen la recta numérica en tres tramos</strong>.
+    Probamos un valor de cada tramo:
   </p>
   <ul class="list-disc pl-5 marker:text-red-500">
+    <li><span class="font-mono text-violet-400">f(−2) = (−2)² − 2·(−2) − 3 = 5 &gt; 0</span></li>
+    <li><span class="font-mono text-violet-400">f(0) = 0² − 2·0 − 3 = −3 &lt; 0</span></li>
+    <li><span class="font-mono text-violet-400">f(4) = 4² − 2·4 − 3 = 5 &gt; 0</span></li>
+  </ul>
+  <p>Con esos signos armamos la recta:</p>
+  <div set:html={signLine("pos-out", [-1, 3], "f(x) = x² − 2x − 3")}></div>
+  <p style="margin-top:.75rem">
+    <strong>Truco:</strong> a la derecha de la raíz más grande, el signo es
+    siempre el de <strong>a</strong>. Después, al pasar por cada raíz, el signo
+    cambia (si es raíz simple) o se mantiene (si es raíz doble).
+  </p>
+
+  <p>La regla general es:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
     <li>
-      <strong>Si Δ &gt; 0:</strong> el signo es el de <strong>a</strong> por
+      <strong>Con dos raíces:</strong> el signo es el de <strong>a</strong> por
       fuera de las raíces y el contrario entre ellas.
     </li>
     <li>
-      <strong>Si Δ = 0:</strong> el signo es el de <strong>a</strong> en todo el
-      dominio, salvo 0 en la raíz doble.
+      <strong>Con una raíz doble:</strong> el signo es el de <strong>a</strong>{" "}
+      en todo el dominio, salvo 0 en la raíz.
     </li>
     <li>
-      <strong>Si Δ &lt; 0:</strong> el signo es el de <strong>a</strong> siempre.
+      <strong>Sin raíces:</strong> el signo es el de <strong>a</strong> siempre.
     </li>
   </ul>
 </div>
@@ -829,8 +929,8 @@ function signStrip(kind, rootsText) {
     <li>La parábola es el lugar geométrico de los puntos que equidistan del <strong>foco</strong> y de la <strong>directriz</strong>.</li>
     <li>La <strong>imagen</strong> se calcula reemplazando x en la fórmula.</li>
     <li>La <strong>preimagen</strong> se calcula resolviendo <span class="font-mono text-violet-400">f(x) = valor</span>; puede haber dos, una o ninguna.</li>
-    <li>Las <strong>raíces</strong> se obtienen con <span class="font-mono text-violet-400">x = (−b ± √Δ)/(2a)</span>, con <span class="font-mono text-violet-400">Δ = b² − 4ac</span>.</li>
-    <li>Si <strong>Δ &gt; 0</strong> hay dos raíces; si <strong>Δ = 0</strong>, una raíz doble; si <strong>Δ &lt; 0</strong>, no hay raíces reales.</li>
+    <li>Para las <strong>raíces</strong>: si falta b, despejá x² y aplicá raíz; si falta c, sacá factor común; si está completa, usá Bhaskara.</li>
+    <li>Puede haber <strong>dos raíces</strong>, <strong>una raíz doble</strong> o <strong>ninguna raíz real</strong>, según lo que quede dentro de la raíz.</li>
     <li>La <strong>ordenada en el origen</strong> es <span class="font-mono text-violet-400">(0, c)</span>.</li>
     <li>El <strong>vértice</strong> es <span class="font-mono text-violet-400">V(−b/(2a), f(−b/(2a)))</span> y el <strong>eje de simetría</strong> es <span class="font-mono text-violet-400">x = −b/(2a)</span>.</li>
     <li>El <strong>signo</strong> de las imágenes se lee de la gráfica o se deduce con las raíces y el signo de a.</li>

@@ -349,7 +349,7 @@ async function generateFuncionCuadratica() {
     writeSectionTitle(doc, 'C) Raíces y ordenada en el origen', topic);
 
     doc.fontSize(11).fillColor(COLOR_ITEM)
-      .text('10) Calculá el discriminante y las raíces. Indicá cuántas raíces reales hay:', 60, doc.y, { width: doc.page.width - 120 });
+      .text('10) Resolvé cada ecuación y encontrá las raíces. Usá el método que convenga (factor común, despeje o Bhaskara):', 60, doc.y, { width: doc.page.width - 120 });
     doc.moveDown(0.3);
     [
       'a) f(x) = x² - 5x + 6',
@@ -361,7 +361,7 @@ async function generateFuncionCuadratica() {
     ].forEach((e) => writeExerciseItem(doc, e, 2, topic));
 
     writeTextExerciseItem(doc,
-      '11) Sin resolver la ecuación, decidí cuántas raíces tiene cada función:\n' +
+      '11) Resolvé y decidí cuántas raíces reales tiene cada función:\n' +
       'a) f(x) = x² - 3x + 7\n' +
       'b) f(x) = 4x² - 4x + 1\n' +
       'c) f(x) = -2x² + 5x - 1', 3, topic);
@@ -389,7 +389,7 @@ async function generateFuncionCuadratica() {
     writeSectionTitle(doc, 'E) Signo de las imágenes', topic);
 
     doc.fontSize(11).fillColor(COLOR_ITEM)
-      .text('16) Escribí el signo de las imágenes según los intervalos determinados por las raíces:', 60, doc.y, { width: doc.page.width - 120 });
+      .text('16) Escribí el signo de las imágenes en la recta numérica, marcando las raíces con 0:', 60, doc.y, { width: doc.page.width - 120 });
     doc.moveDown(0.3);
     [
       'a) f(x) = x² - 9',
