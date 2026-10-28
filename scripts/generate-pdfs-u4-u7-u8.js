@@ -322,60 +322,6 @@ async function generateU5Teoria() {
   });
 }
 
-async function generateU5Practico() {
-  const topic = 'Trigonometria - Practico';
-  await createDoc('5-3-trigonometria-practico.pdf', 5, topic, (doc) => {
-    addIntroBox(doc, 'Completar y resolver. Verificar con Pitagoras y con A + B = 90 grados.', 30);
-
-    writeSectionTitle(doc, '1) Completar la tabla pitagorica', 5, topic);
-    [
-      'a) Hipotenusa = ?; catetos 113 y 156',
-      'b) Hipotenusa 701; cateto 651; cateto = ?',
-      'c) Hipotenusa 653; cateto 315; cateto = ?'
-    ].forEach(e => writeTextExerciseItem(doc, e, 4, 5, topic));
-
-    writeSectionTitle(doc, '2) Coseno', 5, topic);
-    [
-      'a) Triangulo ABC, hipotenusa AB = 16 cm y BC = 6 cm (recto en C). De que angulo se puede calcular el coseno? Calculalo y halla el angulo.',
-      'b) Triangulo ABC rectangulo en C, B = 35 grados y AB = 12 cm. Cuanto vale cos B? Se puede calcular la hipotenusa? Calcula los lados.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 6, 5, topic));
-
-    writeSectionTitle(doc, '3) Seno', 5, topic);
-    [
-      'a) Triangulo ABC con C = 90 grados, A = 25 grados y AB = 34 cm. Que lado se calcula con el seno de A? Calculalo y halla B.',
-      'b) Hipotenusa 40 cm y un cateto 18 cm. Que linea trigonometrica usar? Calcula el angulo comprendido y termina el triangulo.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 6, 5, topic));
-
-    writeSectionTitle(doc, '4) Tangente', 5, topic);
-    [
-      'a) Triangulo rectangulo en A, B = 50 grados y AB = 12 cm. Calcula AC sin hallar la hipotenusa y verifica.',
-      'b) Catetos 12 cm y 30 cm. Calcula los angulos restantes y la hipotenusa.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 6, 5, topic));
-
-    writeSectionTitle(doc, '5) Resolver los triangulos (casos I, II y III)', 5, topic);
-    [
-      'a) CASO I: catetos 6 cm y 8 cm.',
-      'b) CASO II: hipotenusa 12 cm y angulo 35 grados.',
-      'c) CASO III: cateto 8 cm e hipotenusa 12 cm.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 6, 5, topic));
-
-    writeSectionTitle(doc, '6) Piramide de base cuadrada', 5, topic);
-    [
-      'Base cuadrada de 233 m de lado y arista de 220 m. Calcular la altura y la apotema de una cara.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 8, 5, topic));
-
-    writeSectionTitle(doc, '7) Cateto menor igual a la cuarta parte de la hipotenusa', 5, topic);
-    [
-      'En un triangulo rectangulo el cateto menor es la cuarta parte de la hipotenusa y el cateto mayor mide 12 cm. Calcular los lados y los angulos.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 8, 5, topic));
-
-    writeSectionTitle(doc, '8) Calcular el valor de x', 5, topic);
-    [
-      'F, A y C estan alineados; AB es perpendicular a FC; FA = 3 cm, AC = 9 cm, BC = 12 cm y FB = x. Calcular x.'
-    ].forEach(e => writeTextExerciseItem(doc, e, 8, 5, topic));
-  });
-}
-
 // ─── UNIDAD 8 ───────────────────────────────────────────────────
 
 async function generateU8Sustitucion() {
@@ -452,8 +398,6 @@ async function generateAll() {
 
   await generateU5Teoria();
   console.log('  OK 5-2-trigonometria-teoria.pdf');
-  await generateU5Practico();
-  console.log('  OK 5-3-trigonometria-practico.pdf');
 
   await generateU8Sustitucion();
   console.log('  OK 8-1-sistemas-sustitucion.pdf');
