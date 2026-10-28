@@ -396,9 +396,6 @@ async function generateAll() {
   await generateU4EcuacionAx2BxC();
   console.log('  OK 4-3-ecuacion-ax2-bx-c.pdf');
 
-  await generateU5Teoria();
-  console.log('  OK 5-2-trigonometria-teoria.pdf');
-
   await generateU8Sustitucion();
   console.log('  OK 8-1-sistemas-sustitucion.pdf');
   await generateU8Igualacion();
