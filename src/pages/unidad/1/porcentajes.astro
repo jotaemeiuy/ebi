@@ -1,0 +1,261 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Porcentajes y Porcentajes encadenados" unitId={1} unitTitle="Números y Finanzas">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#concepto">• Definición de porcentaje</a></li>
+    <li><a href="#calculo">• Cálculo de porcentajes</a></li>
+    <li><a href="#aumentos">• Aumentos porcentuales</a></li>
+    <li><a href="#rebajas">• Rebajas porcentuales</a></li>
+    <li><a href="#descuentos">• Descuentos porcentuales</a></li>
+    <li><a href="#encadenados">• Porcentajes encadenados</a></li>
+    <li><a href="#problemas">• Problemas resueltos</a></li>
+    <li><a href="#ejercicios">• Ejercicios</a></li>
+  </ul>
+</div>
+
+<div id="concepto" class="lesson-box">
+  <h2>Concepto de porcentaje</h2>
+  <p>Un porcentaje representa una parte de 100.</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`p\% = \frac{p}{100}`} /></div>
+  <p>Indica cuántas partes de 100 se consideran.</p>
+  <p>Para calcular un porcentaje de una cantidad, se multiplica dicha cantidad por su expresión decimal.</p>
+  <div class="formula"><Formula display tex={String.raw`40\% = 0{,}40`} /></div>
+</div>
+
+<h3>Cálculo de porcentajes</h3>
+
+<div id="calculo" class="lesson-box">
+  <p>Para calcular el <Formula tex={String.raw`p\%`} /> de una cantidad <Formula tex={String.raw`C`} />:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`p\% \text{ de } C = \frac{p}{100} \cdot C`} /></div>
+  <p>Ejemplo:</p>
+  <div class="formula"><Formula display tex={String.raw`40\% \text{ de } 24 = 0{,}40 \times 24 = 9{,}6`} /></div>
+  <p class="text-center text-violet-400">Observación: en clase veremos técnicas para calcular porcentajes mentalmente.</p>
+</div>
+
+<h3>Aumento o incrementos porcentuales</h3>
+
+<div id="aumentos" class="lesson-box">
+  <p>Para calcular un aumento del <Formula tex={String.raw`p\%`} /> en una cantidad <Formula tex={String.raw`C`} />:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`\left(1 + \frac{p}{100}\right) \cdot C`} /></div>
+  <p>Ejemplo:</p>
+  <p>Si un producto cuesta $1500 y aumenta un 22%, el nuevo precio es:</p>
+  <div class="formula"><Formula display tex={String.raw`1500 \;\to\; 1500 \times 1{,}22 = 1830`} /></div>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li>Aumentar 40% → multiplicar por <Formula tex={String.raw`1{,}40`} /></li>
+    <li>Aumentar 50% → multiplicar por <Formula tex={String.raw`1{,}50`} /></li>
+    <li>Aumentar 8% → multiplicar por <Formula tex={String.raw`1{,}08`} /></li>
+  </ul>
+</div>
+
+<h3>Quita, decremento o rebaja porcentual</h3>
+
+<div id="rebajas" class="lesson-box">
+  <p>Para calcular una disminución (rebaja) del <Formula tex={String.raw`p\%`} /> en una cantidad <Formula tex={String.raw`C`} />:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`\left(1 - \frac{p}{100}\right) \cdot C`} /></div>
+  <p>Ejemplo:</p>
+  <p>Si un producto cuesta $1500 y se rebaja un 20%, el nuevo precio es:</p>
+  <div class="formula"><Formula display tex={String.raw`1500 \;\to\; 1500 \times 0{,}80 = 1200`} /></div>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li>Rebajar 40% → multiplicar por <Formula tex={String.raw`0{,}60`} /></li>
+    <li>Rebajar 50% → multiplicar por <Formula tex={String.raw`0{,}50`} /></li>
+    <li>Rebajar 8% → multiplicar por <Formula tex={String.raw`0{,}92`} /></li>
+  </ul>
+</div>
+
+<h3>Descuentos porcentuales</h3>
+
+<div id="descuentos" class="lesson-box">
+  <p>
+    Para calcular una rebaja del <Formula tex={String.raw`p\%`} /> en una cantidad <Formula tex={String.raw`C`} /> se piensa en hacer lo
+    <strong>contrario</strong> de un aumento porcentual, es decir, se divide por <Formula tex={String.raw`\left(1 + \frac{p}{100}\right)`} />.
+  </p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`\text{valor de descuento} = \frac{\text{valor}}{1 + \frac{p}{100}}`} /></div>
+  <p>Ejemplo:</p>
+  <p>Si un producto cuesta $1500 y se descuenta un 20%, el nuevo precio es:</p>
+  <div class="formula"><Formula display tex={String.raw`1500 \;\to\; \frac{1500}{1{,}20} = 1250`} /></div>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li>Descontar 40% → dividir por <Formula tex={String.raw`1{,}40`} /></li>
+    <li>Descontar 50% → dividir entre <Formula tex={String.raw`1{,}50`} /></li>
+    <li>Descontar 22% → dividir entre <Formula tex={String.raw`1{,}22`} /></li>
+  </ul>
+</div>
+
+<h3>Porcentajes encadenados</h3>
+
+<div id="encadenados" class="lesson-box">
+  <p>Para calcular un porcentaje encadenado, se multiplican los factores de cambio.</p>
+  <p>Ejemplo:</p>
+  <p>Si un producto cuesta $100 y aumenta un 10% y luego disminuye un 20%, el nuevo precio es:</p>
+  <div class="formula"><Formula display tex={String.raw`100 \;\to\; 100 \times 1{,}10 \times 0{,}80 = 88`} /></div>
+  <p>
+    Si un producto cuesta $100 en 2025, en 2024 aumenta un 10% y en 2023 disminuye un 5%,
+    ¿cuál era el precio en 2023?
+  </p>
+  <div class="formula"><Formula display tex={String.raw`100 \;\to\; \frac{100}{1{,}10 \cdot 0{,}95} \approx 96{,}77`} /></div>
+</div>
+
+<h2>Problemas resueltos</h2>
+
+<h3>1) Cálculo directo</h3>
+
+<div id="problemas" class="lesson-box">
+  <div class="formula"><Formula display tex={String.raw`40\% \text{ de } 24 = 0{,}40 \cdot 24 = 9{,}6`} /></div>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li>30% → multiplicar por <Formula tex={String.raw`0{,}30`} /></li>
+    <li>25% → multiplicar por <Formula tex={String.raw`0{,}25`} /></li>
+    <li>75% → multiplicar por <Formula tex={String.raw`0{,}75`} /></li>
+    <li>5% → multiplicar por <Formula tex={String.raw`0{,}05`} /></li>
+  </ul>
+</div>
+
+<h3>2) Cálculo de total</h3>
+
+<div class="lesson-box">
+  <p>En un grupo, 36 personas representan el 60% del total.</p>
+  <div class="formula"><Formula display tex={String.raw`x = \frac{100 \cdot 36}{60} = 60`} /></div>
+  <p><strong>Respuesta:</strong> 60 personas.</p>
+</div>
+
+<h3>3) Porcentaje de aumento</h3>
+
+<div class="lesson-box">
+  <p>Un artículo pasa de $1200 a $1400. ¿Cuál es el porcentaje de aumento?</p>
+  <div class="formula"><Formula display tex={String.raw`1400 - 1200 = 200`} /></div>
+  <div class="formula"><Formula display tex={String.raw`x = \frac{200}{1200} \times 100 = 16{,}67\%`} /></div>
+</div>
+
+<h3>4) Porcentaje de reducción</h3>
+
+<div class="lesson-box">
+  <p>Un artículo pasa de $1800 a $1500.</p>
+  <div class="formula"><Formula display tex={String.raw`1800 - 1500 = 300`} /></div>
+  <div class="formula"><Formula display tex={String.raw`x = \frac{300}{1800} \times 100 = 16{,}67\%`} /></div>
+</div>
+
+<h3>5) Porcentajes encadenados</h3>
+
+<div class="lesson-box">
+  <p>
+    Si un producto costaba $500 hace dos años, y tuvo aumentos anuales de 2% y 5%
+    respectivamente, ¿cuál es su precio actual?
+  </p>
+  <div class="formula"><Formula display tex={String.raw`500 \;\to\; 500 \times 1{,}02 \times 1{,}05 = 531`} /></div>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de aplicación</h3>
+
+  <h3>1) Porcentajes básicos</h3>
+  <ul class="exercise-list">
+    <li>a) Calcular el 25% de 800</li>
+    <li>b) Calcular el 8% de 40</li>
+    <li>c) Calcular el 80% de 90</li>
+    <li>d) Calcular el 1% de 350</li>
+    <li>e) En una clase de 50 alumnos hay 30 chicas. ¿Qué porcentaje representan?</li>
+    <li>f) El 20% de los alumnos de un grupo de 45 hicieron mal un examen. ¿Cuántos lo hicieron bien?</li>
+    <li>g) De 240 fichas, 48 son rojas. ¿Qué porcentaje representan?</li>
+    <li>h) El 40% de 1500 alumnos son chicas. ¿Cuántas hay?</li>
+  </ul>
+
+  <h3>2) Aumentos, rebajas y descuentos</h3>
+  <ul class="exercise-list">
+    <li>a) Un artículo cuesta $1500 y aumenta un 12%. ¿Precio final?</li>
+    <li>b) Un abrigo de $400 se rebaja un 25%. ¿Nuevo precio?</li>
+    <li>c) Un producto cuesta $50 y tiene 8% de descuento. ¿Cuánto se paga?</li>
+    <li>d) Un artículo baja de $800 a $640. ¿Qué porcentaje de descuento se aplicó?</li>
+  </ul>
+
+  <h3>3) Problemas con IVA</h3>
+  <ul class="exercise-list">
+    <li>a) Un artículo cuesta $25 sin IVA. ¿Precio final? (IVA 22%)</li>
+    <li>b) Si pagaste $53 con IVA (22%), ¿precio sin IVA?</li>
+    <li>c) Un producto cuesta $4500 con IVA (22%). ¿Precio sin IVA?</li>
+  </ul>
+
+  <h3>4) Porcentajes inversos</h3>
+  <ul class="exercise-list">
+    <li>a) Un balón cuesta $9 tras 5% de descuento. ¿Precio original?</li>
+    <li>b) Tras aumentar 40% cuesta $301. ¿Precio inicial?</li>
+    <li>c) Una cantidad se multiplicó por 2,23. ¿Qué porcentaje aumentó?</li>
+  </ul>
+
+  <h3>5) Problemas aplicados</h3>
+  <ul class="exercise-list">
+    <li>a) Vendedor gana 6% de $80.000 con ganancia del 10%. ¿Cuánto gana?</li>
+    <li>b) 110 Ha: 20% pinos, 25% abetos, 35% robles. ¿Resto?</li>
+    <li>c) 240 trabajadores son 75%. ¿Total?</li>
+  </ul>
+
+  <h3>6) Porcentajes encadenados</h3>
+  <ul class="exercise-list">
+    <li>a) Precio original es de 1500, luego sube 10% y baja 20%. ¿Precio final?</li>
+    <li>b) Precio original desconocido, baja 20%, luego sube 10%. Precio final es de 1500. ¿Precio original?</li>
+    <li>c) Un producto en el 2023 costaba $100, en 2024 subió 5%, en 2025 subió 10%. ¿Cuánto cuesta en 2025?</li>
+    <li>d) Un producto en el 2023 costaba $500, en 2024 subió 5%, en 2025 bajó 5%. ¿Cuánto cuesta en 2025?</li>
+    <li>e) Un producto en el 2025 costaba $500, en 2024 subió 5%, en 2023 subió 3%. ¿Cuánto costaba en 2023?</li>
+  </ul>
+
+  <h3>7) Interpretación</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`\times 1{,}6`} /> → ¿% de aumento?</li>
+    <li>b) <Formula tex={String.raw`\times 0{,}62`} /> → ¿% de disminución?</li>
+    <li>c) <Formula tex={String.raw`\times 2{,}2`} /> → ¿% de aumento?</li>
+  </ul>
+
+  <h3>8) Popurrí</h3>
+  <ul class="exercise-list">
+    <li>a) Deuda $90.000 con 5% de rebaja. ¿Pago?</li>
+    <li>b) Producto $1500. ¿Precio para ganar 20%?</li>
+    <li>c) 125 alumnos, 36% mujeres. ¿Varones?</li>
+    <li>d) Deuda baja de $4500 a $3600. ¿% de rebaja?</li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

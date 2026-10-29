@@ -1,0 +1,206 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion
+  title="Notación científica"
+  unitId={1}
+  unitTitle="Números y Finanzas"
+  next="/unidad/1/porcentajes"
+>
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li>• Qué es la notación científica y para qué sirve</li>
+    <li>• Cómo convertir números a notación científica</li>
+    <li>• Ejercicios de práctica de conversión</li>
+    <li>• Operaciones con números en notación científica</li>
+    <li>• Ejercicios de práctica de operaciones</li>
+  </ul>
+</div>
+
+<h2>¿Qué es la notación científica?</h2>
+
+<p>
+  La <strong>notación científica</strong> es una forma de escribir números muy grandes o muy
+  pequeños de manera más compacta. Consiste en expresar un número como el producto de un
+  número entre 1 y 10, multiplicado por una potencia de 10.
+</p>
+
+<blockquote>
+  <p class="text-center"><Formula display tex={String.raw`a \times 10^{n}`} /></p>
+  <p class="text-slate-400 text-sm mt-2">
+    Donde <Formula tex={String.raw`1 \le a < 10`} /> es un número decimal, y <Formula tex={String.raw`n`} /> es un número entero.
+  </p>
+  <p class="text-slate-400 text-sm mt-2">
+    <Formula tex={String.raw`a`} /> se llama mantisa, y <Formula tex={String.raw`n`} /> se llama exponente.
+  </p>
+</blockquote>
+
+<h2>Ejemplos</h2>
+
+<h3>Números grandes</h3>
+
+<ul class="space-y-3">
+  <li>
+    <span class="font-mono bg-slate-800 px-2 py-1 rounded">6.000.000</span> = <Formula tex={String.raw`6 \times 10^6`} />
+  </li>
+  <li>
+    <span class="font-mono bg-slate-800 px-2 py-1 rounded">300.000.000</span> = <Formula tex={String.raw`3 \times 10^8`} />
+  </li>
+  <li>
+    <span class="font-mono bg-slate-800 px-2 py-1 rounded">25.000</span> = <Formula tex={String.raw`2{,}5 \times 10^4`} />
+  </li>
+</ul>
+
+<h3>Números pequeños</h3>
+
+<ul class="space-y-3">
+  <li>
+    <span class="font-mono bg-slate-800 px-2 py-1 rounded">0,000004</span> = <Formula tex={String.raw`4 \times 10^{-6}`} />
+  </li>
+  <li>
+    <span class="font-mono bg-slate-800 px-2 py-1 rounded">0,000000003</span> = <Formula tex={String.raw`3 \times 10^{-9}`} />
+  </li>
+  <li>
+    <span class="font-mono bg-slate-800 px-2 py-1 rounded">0,00025</span> = <Formula tex={String.raw`2{,}5 \times 10^{-4}`} />
+  </li>
+</ul>
+
+<h2>Cómo convertir a notación científica</h2>
+
+<p><strong>Para números grandes:</strong></p>
+
+<ol>
+  <li>Contá cuántas cifras hay desde la coma hasta el final del número.</li>
+  <li>Colocá la coma después de la primera cifra distinta de cero.</li>
+  <li>El exponente será positivo e igual a la cantidad de lugares que moviste la coma.</li>
+</ol>
+
+<p><strong>Para números pequeños:</strong></p>
+
+<ol>
+  <li>Contá cuántos ceros hay desde la coma hasta la primera cifra distinta de cero.</li>
+  <li>Colocá la coma después de esa primera cifra.</li>
+  <li>El exponente será negativo e igual a la cantidad de lugares que moviste la coma.</li>
+</ol>
+
+<div class="exercise-box">
+  <h3>Ejercicio de práctica</h3>
+  <p>Convertí los siguientes números a notación científica:</p>
+  <ul class="exercise-list">
+    <li>a) 45 000 000</li>
+    <li>b) 0,0000072</li>
+    <li>c) 890 000</li>
+    <li>d) 0,00000045</li>
+    <li>e) 1 230 000 000</li>
+    <li>f) 0,000000000789</li>
+    <li>g) 8998,789</li>
+    <li>h) 0,0123</li>
+  </ul>
+</div>
+
+<h2>Operaciones con notación científica</h2>
+
+<div class="card-grid">
+  <div class="card">
+    <h4>Multiplicación</h4>
+    <p>Multiplicá los coeficientes y sumá los exponentes.</p>
+    <div class="formula">
+      <Formula display tex={String.raw`(a \times 10^{n}) \times (b \times 10^{m}) = (a \times b) \times 10^{n+m}`} />
+    </div>
+    <p>Ejemplo: <Formula tex={String.raw`(2 \times 10^3) \times (3 \times 10^2) = 6 \times 10^5`} /></p>
+  </div>
+</div>
+
+<div class="card-grid">
+  <div class="card">
+    <h4>División</h4>
+    <p>Dividí los coeficientes y restá los exponentes.</p>
+    <div class="formula">
+      <Formula display tex={String.raw`(a \times 10^{n}) \div (b \times 10^{m}) = (a \div b) \times 10^{n-m}`} />
+    </div>
+    <p>Ejemplo: <Formula tex={String.raw`(8 \times 10^5) \div (2 \times 10^2) = 4 \times 10^3`} /></p>
+  </div>
+</div>
+
+<div class="card-grid">
+  <div class="card">
+    <h4>Suma y resta</h4>
+    <p>
+      Para sumar o restar números en notación científica, primero igualamos los exponentes,
+      es decir, ambos deben tener el mismo exponente, por ejemplo <Formula tex={String.raw`10^{p}`} />.
+    </p>
+    <ul class="list-disc pl-5 marker:text-red-500">
+      <li>Igualar los exponentes: ambos deben tener el mismo exponente, por ejemplo <Formula tex={String.raw`10^{p}`} />.</li>
+      <li>Sumar o restar las mantisas (coeficientes).</li>
+      <li>Mantener el mismo exponente.</li>
+      <li>Si el resultado no está en notación científica, convertirlo.</li>
+    </ul>
+    <p>Ejemplo: <Formula tex={String.raw`(3{,}2 \times 10^5) + (4{,}5 \times 10^3)`} /></p>
+    <p>Primero igualamos los exponentes:</p>
+    <p><Formula tex={String.raw`4{,}5 \times 10^3 = 0{,}045 \times 10^5`} /></p>
+    <p>Luego sumamos las mantisas y mantenemos el exponente:</p>
+    <p><Formula tex={String.raw`(3{,}2 \times 10^5) + (0{,}045 \times 10^5) = 3{,}245 \times 10^5`} /></p>
+  </div>
+</div>
+
+<div class="exercise-box">
+  <h3>Ejercicios</h3>
+  <p>Realizá las siguientes operaciones en notación científica:</p>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`(1{,}23 \times 10^7) + (8{,}9 \times 10^8)`} /></li>
+    <li>b) <Formula tex={String.raw`(4{,}05 \times 10^{-4}) + (2{,}1 \times 10^{-5})`} /></li>
+    <li>c) <Formula tex={String.raw`(3{,}2 \times 10^3) - (2{,}5 \times 10^2)`} /></li>
+    <li>d) <Formula tex={String.raw`(25 \times 10^5) \div (5 \times 10^2)`} /></li>
+    <li>e) <Formula tex={String.raw`(5{,}5 \times 10^3) \div (10 \times 10^8)`} /></li>
+    <li>f) <Formula tex={String.raw`(7{,}2 \times 10^{-2}) \times (4{,}0 \times 10^{-3})`} /></li>
+    <li>g) <Formula tex={String.raw`(9 \times 10^6) \times (2 \times 10^3)`} /></li>
+    <li>h) <Formula tex={String.raw`(1{,}2 \times 10^4) + (3{,}8 \times 10^3)`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

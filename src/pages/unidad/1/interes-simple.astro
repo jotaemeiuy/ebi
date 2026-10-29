@@ -1,0 +1,275 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Interés simple" unitId={1} unitTitle="Números y Finanzas">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#concepto">• Concepto de interés simple</a></li>
+    <li><a href="#formula">• Fórmula del interés</a></li>
+    <li><a href="#monto">• Monto final</a></li>
+    <li><a href="#despejes">• Despejes</a></li>
+    <li><a href="#problemas">• Problemas resueltos</a></li>
+    <li><a href="#ejercicios">• Ejercicios</a></li>
+  </ul>
+</div>
+
+<div id="concepto" class="lesson-box">
+  <h2>Concepto de interés simple</h2>
+
+  <p>
+    El interés simple es una forma de calcular intereses donde los intereses
+    generados no se suman al capital inicial.
+  </p>
+
+  <p>
+    El interés siempre se calcula sobre el capital original.
+  </p>
+
+  <p>
+    Se utiliza habitualmente en préstamos cortos, multas, recargos y algunas
+    operaciones financieras simples.
+  </p>
+</div>
+
+<h3>Fórmula del interés simple</h3>
+
+<div id="formula" class="lesson-box">
+  <p>La fórmula principal es:</p>
+
+  <div class="formula formula-lg"><Formula display tex={String.raw`I = C \cdot i \cdot t`} /></div>
+
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`I`} /> → interés generado</li>
+    <li><Formula tex={String.raw`C`} /> → capital inicial</li>
+    <li><Formula tex={String.raw`i`} /> → tasa de interés</li>
+    <li><Formula tex={String.raw`t`} /> → tiempo</li>
+  </ul>
+
+  <p>Ejemplo:</p>
+
+  <p>
+    Un capital de $1000 se presta al 10% anual durante 2 años.
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`I = 1000 \cdot 0{,}10 \cdot 2 = 200`} /></div>
+
+  <p>
+    El interés generado es de <strong>$200</strong>.
+  </p>
+</div>
+
+<h3>Monto final</h3>
+
+<div id="monto" class="lesson-box">
+  <p>
+    El monto final es la suma del capital más el interés generado.
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`M = C + I`} /></div>
+
+  <p>
+    También puede escribirse:
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`M = C \cdot (1 + i \cdot t)`} /></div>
+
+  <p>Ejemplo:</p>
+
+  <div class="formula"><Formula display tex={String.raw`M = 1000 \cdot (1 + 0{,}10 \cdot 2)`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`M = 1000 \cdot 1{,}20 = 1200`} /></div>
+
+  <p>
+    El monto final es de <strong>$1200</strong>.
+  </p>
+</div>
+
+<h3>Despejes importantes</h3>
+
+<div id="despejes" class="lesson-box">
+  <p>
+    A veces necesitamos calcular la tasa o el tiempo.
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`i = \frac{I}{C \cdot t}`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`t = \frac{I}{C \cdot i}`} /></div>
+
+  <p>Ejemplo:</p>
+
+  <p>
+    Si un capital de $500 genera $100 de interés al 5%, ¿durante cuánto tiempo?
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`t = \frac{100}{500 \cdot 0{,}05}`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`t = \frac{100}{25} = 4`} /></div>
+
+  <p>
+    El tiempo es de <strong>4 años</strong>.
+  </p>
+</div>
+
+<h2>Problemas resueltos</h2>
+
+<h3>1) Calcular interés</h3>
+
+<div id="problemas" class="lesson-box">
+  <p>
+    Calcular el interés producido por $2000 al 8% anual durante 3 años.
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`I = 2000 \cdot 0{,}08 \cdot 3`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`I = 480`} /></div>
+
+  <p>
+    El interés generado es de <strong>$480</strong>.
+  </p>
+</div>
+
+<h3>2) Calcular monto final</h3>
+
+<div class="lesson-box">
+  <p>
+    Un capital de $1500 se coloca al 12% anual durante 2 años.
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`I = 1500 \cdot 0{,}12 \cdot 2 = 360`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`M = 1500 + 360 = 1860`} /></div>
+
+  <p>
+    El monto final es de <strong>$1860</strong>.
+  </p>
+</div>
+
+<h3>3) Calcular tasa</h3>
+
+<div class="lesson-box">
+  <p>
+    Un capital de $1000 produce $150 en 3 años.
+    ¿Cuál fue la tasa anual?
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`i = \frac{150}{1000 \cdot 3}`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`i = 0{,}05 = 5\%`} /></div>
+</div>
+
+<h3>4) Calcular tiempo</h3>
+
+<div class="lesson-box">
+  <p>
+    ¿Durante cuánto tiempo debe invertirse $4000 al 6%
+    para obtener $720 de interés?
+  </p>
+
+  <div class="formula"><Formula display tex={String.raw`t = \frac{720}{4000 \cdot 0{,}06}`} /></div>
+
+  <div class="formula"><Formula display tex={String.raw`t = \frac{720}{240} = 3`} /></div>
+
+  <p>
+    El tiempo es de <strong>3 años</strong>.
+  </p>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de aplicación</h3>
+
+  <h3>1) Calcular interés</h3>
+
+  <ul class="exercise-list">
+    <li>a) $1000 al 5% durante 2 años</li>
+    <li>b) $3500 al 12% durante 4 años</li>
+    <li>c) $800 al 7% durante 6 años</li>
+    <li>d) $12000 al 3% durante 5 años</li>
+  </ul>
+
+  <h3>2) Calcular monto final</h3>
+
+  <ul class="exercise-list">
+    <li>a) $5000 al 10% durante 2 años</li>
+    <li>b) $2400 al 8% durante 3 años</li>
+    <li>c) $900 al 15% durante 1 año</li>
+  </ul>
+
+  <h3>3) Calcular tasa</h3>
+
+  <ul class="exercise-list">
+    <li>a) $1000 producen $200 en 4 años</li>
+    <li>b) $3000 producen $540 en 3 años</li>
+    <li>c) $1500 producen $90 en 2 años</li>
+  </ul>
+
+  <h3>4) Calcular tiempo</h3>
+
+  <ul class="exercise-list">
+    <li>a) $2000 al 5% generan $300</li>
+    <li>b) $4000 al 8% generan $960</li>
+    <li>c) $1200 al 10% generan $240</li>
+  </ul>
+
+  <h3>5) Problemas aplicados</h3>
+
+  <ul class="exercise-list">
+    <li>
+      a) Una persona pide un préstamo de $15000 al 9% anual durante 2 años.
+      ¿Cuánto interés pagará?
+    </li>
+    <li>
+      b) Un capital de $8000 se invierte al 6% anual durante 5 años.
+      ¿Cuál será el monto final?
+    </li>
+    <li>
+      c) ¿Qué capital produce $1000 de interés al 4% anual en 5 años?
+    </li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>
