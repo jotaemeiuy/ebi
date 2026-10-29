@@ -121,7 +121,36 @@ import Formula from "../../../components/Formula.astro";
   </ol>
 </div>
 
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
 
+  <h3>1) Señala la incógnita, los miembros y el grado</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x + 5 = 11`} /></li>
+    <li>b) <Formula tex={String.raw`2y = 12`} /></li>
+    <li>c) <Formula tex={String.raw`3x - 1 = x + 7`} /></li>
+    <li>d) <Formula tex={String.raw`m + 4 = m + 2`} /></li>
+    <li>e) <Formula tex={String.raw`5 - a = 2`} /></li>
+  </ul>
+
+  <h3>2) Indica si el valor dado es solución</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x + 6 = 11`} />; ¿<Formula tex={String.raw`x = 5`} />?</li>
+    <li>b) <Formula tex={String.raw`3y - 4 = 8`} />; ¿<Formula tex={String.raw`y = 4`} />?</li>
+    <li>c) <Formula tex={String.raw`2m = 14`} />; ¿<Formula tex={String.raw`m = 7`} />?</li>
+    <li>d) <Formula tex={String.raw`x + 2 = 9`} />; ¿<Formula tex={String.raw`x = 6`} />?</li>
+    <li>e) <Formula tex={String.raw`4a = 20`} />; ¿<Formula tex={String.raw`a = 5`} />?</li>
+    <li>f) <Formula tex={String.raw`x - 3 = 5`} />; ¿<Formula tex={String.raw`x = 8`} />?</li>
+  </ul>
+
+  <h3>3) Averigua la solución por tanteo</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x + 5 = 9`} /></li>
+    <li>b) <Formula tex={String.raw`x - 2 = 7`} /></li>
+    <li>c) <Formula tex={String.raw`3x = 21`} /></li>
+    <li>d) <Formula tex={String.raw`x + 10 = 16`} /></li>
+  </ul>
+</div>
 
 <style is:global>
   .formula {
@@ -163,11 +192,5 @@ import Formula from "../../../components/Formula.astro";
     }
   }
 </style>
-
-      <div class="practico-box mt-10">
-        <h3>¿Querés practicar?</h3>
-        <p>Descargá los ejercicios de ecuación.</p>
-        <a href="/pdfs/3-3-ecuacion.pdf" target="_blank" rel="noopener">Descargar práctico (PDF)</a>
-      </div>
 
 </Leccion>
