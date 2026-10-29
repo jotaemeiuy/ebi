@@ -138,7 +138,7 @@ const next = frontmatter.next || Astro.props.next;
   }
 
   .prose ol {
-    @apply list-decimal list-inside space-y-2 ml-4 text-slate-300;
+    @apply list-decimal list-inside space-y-2 ml-4 mb-4 text-slate-300;
   }
 
   .prose li {
@@ -193,6 +193,27 @@ const next = frontmatter.next || Astro.props.next;
 
   .exercise-box h3:first-of-type {
     @apply mt-0;
+  }
+
+  /* Aviso de descarga del práctico */
+  .practico-box {
+    @apply bg-violet-500/10 border border-violet-500/30 rounded-xl p-6 mt-10;
+  }
+
+  .practico-box h3 {
+    @apply text-lg font-semibold text-violet-400 mb-2 mt-0;
+  }
+
+  .practico-box p {
+    @apply text-slate-300 mb-4;
+  }
+
+  .practico-box a {
+    @apply inline-flex items-center gap-2 rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white no-underline transition-colors;
+  }
+
+  .practico-box a:hover {
+    @apply bg-violet-500;
   }
 
   /* Lista de ejercicios en 2 columnas responsiva */
