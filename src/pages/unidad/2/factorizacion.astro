@@ -1,0 +1,308 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Factorización Detallada" unitId={2} unitTitle="Álgebra">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#concepto">• Concepto de factorización</a></li>
+    <li><a href="#factor-comun">• Factor común</a></li>
+    <li><a href="#factor-grupo">• Factorización por agrupación</a></li>
+    <li><a href="#cuadrado-perfecto">• Trinomio cuadrado perfecto</a></li>
+    <li><a href="#diferencia-cuadrados">• Diferencia de cuadrados</a></li>
+    <li><a href="#trinomio">• Trinomio tipo x² + bx + c</a></li>
+    <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
+  </ul>
+</div>
+
+<div id="concepto" class="lesson-box">
+  <h2>Concepto de factorización</h2>
+  <p>
+    La factorización consiste en expresar un polinomio como un producto de factores más simples.
+    Es el proceso inverso de la multiplicación.
+  </p>
+  <p>Ejemplo:</p>
+  <div class="formula"><Formula display tex={String.raw`x^2 + 5x = x(x + 5)`} /></div>
+  <p>Observación: extraemos lo que se repite en todos los términos (factor común).</p>
+  <p>Existen varias técnicas de factorización; elegimos la que corresponde según la forma del polinomio.</p>
+</div>
+
+<div id="factor-comun" class="lesson-box">
+  <h2>Factor común</h2>
+  <p>Para factorizar un polinomio mediante factor común:</p>
+  <ol>
+    <li>Identificar el factor que se repite en todos los términos.</li>
+    <li>Extraerlo multiplicando por el paréntesis restante.</li>
+  </ol>
+  <p>Ejemplos resueltos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`6x + 12`} /> → factor común <Formula tex={String.raw`6`} /> → <Formula tex={String.raw`6(x + 2)`} /></li>
+    <li><Formula tex={String.raw`5ab + 10a`} /> → factor común <Formula tex={String.raw`5a`} /> → <Formula tex={String.raw`5a(b + 2)`} /></li>
+    <li><Formula tex={String.raw`3x^2y + 6xy^2`} /> → factor común <Formula tex={String.raw`3xy`} /> → <Formula tex={String.raw`3xy(x + 2y)`} /></li>
+    <li><Formula tex={String.raw`m^2n + mn^2`} /> → factor común <Formula tex={String.raw`mn`} /> → <Formula tex={String.raw`mn(m + n)`} /></li>
+    <li><Formula tex={String.raw`8a^3 - 12a^2 + 4a`} /> → factor común <Formula tex={String.raw`4a`} /> → <Formula tex={String.raw`4a(2a^2 - 3a + 1)`} /></li>
+    <li><Formula tex={String.raw`9x^2y^3 + 6xy^2 - 3xy`} /> → factor común <Formula tex={String.raw`3xy`} /> → <Formula tex={String.raw`3xy(3xy^2 + 2y - 1)`} /></li>
+  </ul>
+</div>
+
+<div id="factor-grupo" class="lesson-box">
+  <h2>Factorización por agrupación</h2>
+  <p>Se agrupan los términos en pares o grupos para extraer factores comunes de cada grupo y luego factorizar nuevamente:</p>
+  <p>Ejemplo resuelto:</p>
+  <div class="formula"><Formula display tex={String.raw`x^2 + 3x + 2x + 6`} /></div>
+  <ol>
+    <li>Agrupamos: <Formula tex={String.raw`(x^2 + 3x) + (2x + 6)`} /></li>
+    <li>Factorizamos cada grupo: <Formula tex={String.raw`x(x + 3) + 2(x + 3)`} /></li>
+    <li>Factor común final: <Formula tex={String.raw`(x + 2)(x + 3)`} /></li>
+  </ol>
+  <p>Otro ejemplo:</p>
+  <div class="formula"><Formula display tex={String.raw`ab + ac + bd + bc`} /></div>
+  <ol>
+    <li>Agrupamos: <Formula tex={String.raw`(ab + ac) + (bd + bc)`} /></li>
+    <li>Factorizamos: <Formula tex={String.raw`a(b + c) + b(d + c)`} /></li>
+    <li>Factor común final: <Formula tex={String.raw`(a + b)(b + c)`} /></li>
+  </ol>
+  <p>Tercer ejemplo:</p>
+  <div class="formula"><Formula display tex={String.raw`2x^3 + 4x^2 - 3x - 6`} /></div>
+  <ol>
+    <li>Agrupamos: <Formula tex={String.raw`(2x^3 + 4x^2) + (-3x - 6)`} /></li>
+    <li>Factorizamos: <Formula tex={String.raw`2x^2(x + 2) - 3(x + 2)`} /></li>
+    <li>Factor común final: <Formula tex={String.raw`(2x^2 - 3)(x + 2)`} /></li>
+  </ol>
+</div>
+
+<div id="cuadrado-perfecto" class="lesson-box">
+  <h2>Trinomio cuadrado perfecto</h2>
+  <p>Se reconoce porque sigue la forma:</p>
+  <div class="formula"><Formula display tex={String.raw`a^2 + 2ab + b^2 = (a + b)^2`} /></div>
+  <div class="formula"><Formula display tex={String.raw`a^2 - 2ab + b^2 = (a - b)^2`} /></div>
+  <p>Para verificarlo: el término del medio debe ser el doble del producto de las raíces cuadradas de los extremos.</p>
+  <p>Ejemplos resueltos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`x^2 + 6x + 9`} /> → <Formula tex={String.raw`\sqrt{x^2}=x,\; \sqrt{9}=3,\; 2 \cdot x \cdot 3 = 6x\ \checkmark`} /> → <Formula tex={String.raw`(x + 3)^2`} /></li>
+    <li><Formula tex={String.raw`4a^2 - 12a + 9`} /> → <Formula tex={String.raw`\sqrt{4a^2}=2a,\; \sqrt{9}=3,\; 2 \cdot 2a \cdot 3 = 12a\ \checkmark`} /> → <Formula tex={String.raw`(2a - 3)^2`} /></li>
+    <li><Formula tex={String.raw`m^2 + 10m + 25`} /> → <Formula tex={String.raw`\sqrt{m^2}=m,\; \sqrt{25}=5,\; 2 \cdot m \cdot 5 = 10m\ \checkmark`} /> → <Formula tex={String.raw`(m + 5)^2`} /></li>
+    <li><Formula tex={String.raw`9x^2 + 24x + 16`} /> → <Formula tex={String.raw`\sqrt{9x^2}=3x,\; \sqrt{16}=4,\; 2 \cdot 3x \cdot 4 = 24x\ \checkmark`} /> → <Formula tex={String.raw`(3x + 4)^2`} /></li>
+    <li><Formula tex={String.raw`25y^2 - 20y + 4`} /> → <Formula tex={String.raw`\sqrt{25y^2}=5y,\; \sqrt{4}=2,\; 2 \cdot 5y \cdot 2 = 20y\ \checkmark`} /> → <Formula tex={String.raw`(5y - 2)^2`} /></li>
+  </ul>
+</div>
+
+<div id="diferencia-cuadrados" class="lesson-box">
+  <h2>Diferencia de cuadrados</h2>
+  <p>Cuando un polinomio es de la forma <Formula tex={String.raw`a^2 - b^2`} />, se factoriza como:</p>
+  <div class="formula"><Formula display tex={String.raw`a^2 - b^2 = (a + b)(a - b)`} /></div>
+  <p>Para identificarlo: dos términos perfectos al cuadrado separados por resta.</p>
+  <p>Ejemplos resueltos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`x^2 - 16 \;\to\; (x + 4)(x - 4)`} /></li>
+    <li><Formula tex={String.raw`9a^2 - 25 \;\to\; (3a + 5)(3a - 5)`} /></li>
+    <li><Formula tex={String.raw`4x^2y^2 - 1 \;\to\; (2xy + 1)(2xy - 1)`} /></li>
+    <li><Formula tex={String.raw`49m^2 - 36n^2 \;\to\; (7m + 6n)(7m - 6n)`} /></li>
+    <li><Formula tex={String.raw`100 - x^2 \;\to\; (10 + x)(10 - x)`} /></li>
+  </ul>
+</div>
+
+<div id="trinomio" class="lesson-box">
+  <h2>Trinomio tipo x² + bx + c</h2>
+  <p>Se busca factorizar en dos binomios de la forma <Formula tex={String.raw`(x + m)(x + n)`} />, donde:</p>
+  <ul>
+    <li><Formula tex={String.raw`m \cdot n = c`} /> (producto)</li>
+    <li><Formula tex={String.raw`m + n = b`} /> (suma)</li>
+  </ul>
+  <p>Estrategia: listar los pares de factores de <Formula tex={String.raw`c`} /> y encontrar el que sume <Formula tex={String.raw`b`} />.</p>
+  <p>Ejemplos resueltos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`x^2 + 5x + 6`} /> → <Formula tex={String.raw`m \cdot n = 6,\; m + n = 5`} /> → <Formula tex={String.raw`m = 2,\; n = 3`} /> → <Formula tex={String.raw`(x + 2)(x + 3)`} /></li>
+    <li><Formula tex={String.raw`x^2 - x - 6`} /> → <Formula tex={String.raw`m \cdot n = -6,\; m + n = -1`} /> → <Formula tex={String.raw`m = -3,\; n = 2`} /> → <Formula tex={String.raw`(x - 3)(x + 2)`} /></li>
+    <li><Formula tex={String.raw`x^2 + 7x + 10`} /> → <Formula tex={String.raw`m \cdot n = 10,\; m + n = 7`} /> → <Formula tex={String.raw`m = 2,\; n = 5`} /> → <Formula tex={String.raw`(x + 2)(x + 5)`} /></li>
+    <li><Formula tex={String.raw`x^2 - 9x + 20`} /> → <Formula tex={String.raw`m \cdot n = 20,\; m + n = -9`} /> → <Formula tex={String.raw`m = -4,\; n = -5`} /> → <Formula tex={String.raw`(x - 4)(x - 5)`} /></li>
+    <li><Formula tex={String.raw`x^2 + 2x - 15`} /> → <Formula tex={String.raw`m \cdot n = -15,\; m + n = 2`} /> → <Formula tex={String.raw`m = 5,\; n = -3`} /> → <Formula tex={String.raw`(x + 5)(x - 3)`} /></li>
+  </ul>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Factor común</h3>
+  <p>Factorizar: <Formula tex={String.raw`12x + 18`} /></p>
+  <ol>
+    <li>Factores de 12: 1, 2, 3, 4, 6, 12</li>
+    <li>Factores de 18: 1, 2, 3, 6, 9, 18</li>
+    <li>El mayor factor común es 6</li>
+    <li>Resultado: <Formula tex={String.raw`6(2x + 3)`} /></li>
+  </ol>
+
+  <h3>2) Factor común con variables</h3>
+  <p>Factorizar: <Formula tex={String.raw`15x^2y - 10xy^2 + 5xy`} /></p>
+  <ol>
+    <li>Factor numérico común: <Formula tex={String.raw`\operatorname{mcd}(15, 10, 5) = 5`} /></li>
+    <li>Factor literal común: <Formula tex={String.raw`x^1y^1`} /> (mínimas potencias)</li>
+    <li>Factor común total: <Formula tex={String.raw`5xy`} /></li>
+    <li><Formula tex={String.raw`15x^2y \div 5xy = 3x;\quad -10xy^2 \div 5xy = -2y;\quad 5xy \div 5xy = 1`} /></li>
+    <li>Resultado: <Formula tex={String.raw`5xy(3x - 2y + 1)`} /></li>
+  </ol>
+
+  <h3>3) Factorización por agrupación</h3>
+  <p>Factorizar: <Formula tex={String.raw`x^2 + 5x + 2x + 10`} /></p>
+  <ol>
+    <li>Agrupamos: <Formula tex={String.raw`(x^2 + 5x) + (2x + 10)`} /></li>
+    <li>Factorizamos cada grupo: <Formula tex={String.raw`x(x + 5) + 2(x + 5)`} /></li>
+    <li>Factor común <Formula tex={String.raw`(x + 5)`} />: <Formula tex={String.raw`(x + 2)(x + 5)`} /></li>
+  </ol>
+
+  <h3>4) Trinomio cuadrado perfecto</h3>
+  <p>Factorizar: <Formula tex={String.raw`x^2 + 10x + 25`} /></p>
+  <ol>
+    <li>Verificamos si es cuadrado perfecto:</li>
+    <li><Formula tex={String.raw`\sqrt{x^2} = x,\quad \sqrt{25} = 5,\quad 2 \cdot x \cdot 5 = 10x\ \checkmark`} /></li>
+    <li>Resultado: <Formula tex={String.raw`(x + 5)^2`} /></li>
+  </ol>
+
+  <h3>5) Diferencia de cuadrados</h3>
+  <p>Factorizar: <Formula tex={String.raw`9a^2 - 16`} /></p>
+  <ol>
+    <li>Identificamos cuadrados: <Formula tex={String.raw`9a^2 = (3a)^2,\quad 16 = 4^2`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`a^2 - b^2 = (a + b)(a - b)`} /></li>
+    <li>Resultado: <Formula tex={String.raw`(3a + 4)(3a - 4)`} /></li>
+  </ol>
+
+  <h3>6) Trinomio tipo x² + bx + c</h3>
+  <p>Factorizar: <Formula tex={String.raw`x^2 - 7x + 12`} /></p>
+  <ol>
+    <li>Buscamos <Formula tex={String.raw`m`} /> y <Formula tex={String.raw`n`} /> tal que: <Formula tex={String.raw`m \cdot n = 12`} /> y <Formula tex={String.raw`m + n = -7`} /></li>
+    <li>Pares de factores de 12: (1,12), (2,6), (3,4)</li>
+    <li>Negativos: <Formula tex={String.raw`(-3) \cdot (-4) = 12`} /> y <Formula tex={String.raw`(-3) + (-4) = -7\ \checkmark`} /></li>
+    <li>Resultado: <Formula tex={String.raw`(x - 3)(x - 4)`} /></li>
+  </ol>
+
+  <h3>7) Combinación de métodos</h3>
+  <p>Factorizar completamente: <Formula tex={String.raw`2x^2 - 8`} /></p>
+  <ol>
+    <li>Paso 1: Extraemos factor común 2 → <Formula tex={String.raw`2(x^2 - 4)`} /></li>
+    <li>Paso 2: <Formula tex={String.raw`x^2 - 4`} /> es diferencia de cuadrados → <Formula tex={String.raw`(x + 2)(x - 2)`} /></li>
+    <li>Resultado final: <Formula tex={String.raw`2(x + 2)(x - 2)`} /></li>
+  </ol>
+
+  <h3>8) Trinomio cuadrado perfecto (Diferencia)</h3>
+  <p>Factorizar: <Formula tex={String.raw`4x^2 - 28x + 49`} /></p>
+  <ol>
+    <li>Verificamos: <Formula tex={String.raw`\sqrt{4x^2} = 2x;\quad \sqrt{49} = 7;\quad 2 \cdot 2x \cdot 7 = 28x\ \checkmark`} /></li>
+    <li>Es <Formula tex={String.raw`(a - b)^2`} /> con <Formula tex={String.raw`a = 2x`} /> y <Formula tex={String.raw`b = 7`} /></li>
+    <li>Resultado: <Formula tex={String.raw`(2x - 7)^2`} /></li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Factor común</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`8x + 12`} /></li>
+    <li>b) <Formula tex={String.raw`15a + 20`} /></li>
+    <li>c) <Formula tex={String.raw`6xy + 9x`} /></li>
+    <li>d) <Formula tex={String.raw`10m^2 - 15m`} /></li>
+    <li>e) <Formula tex={String.raw`4a^3b - 8a^2b^2 + 12ab`} /></li>
+    <li>f) <Formula tex={String.raw`21x^2y - 14xy^2 + 7xy`} /></li>
+    <li>g) <Formula tex={String.raw`18x^3 + 24x^2`} /></li>
+    <li>h) <Formula tex={String.raw`25a^2b + 35ab^2`} /></li>
+    <li>i) <Formula tex={String.raw`16m^3n - 12m^2n^2 + 4mn`} /></li>
+    <li>j) <Formula tex={String.raw`9x^2y - 27xy + 3y`} /></li>
+    <li>k) <Formula tex={String.raw`40a^4 - 24a^3 + 16a^2`} /></li>
+    <li>l) <Formula tex={String.raw`6p^2q^3 - 18pq^2 + 30pq`} /></li>
+  </ul>
+
+  <h3>2) Factorización por agrupación</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x^2 + 5x + 2x + 10`} /></li>
+    <li>b) <Formula tex={String.raw`ab + ac + bd + bc`} /></li>
+    <li>c) <Formula tex={String.raw`3x^2 + 6x + 2x + 4`} /></li>
+    <li>d) <Formula tex={String.raw`2x^3 - 6x^2 + x - 3`} /></li>
+    <li>e) <Formula tex={String.raw`mx + nx + my + ny`} /></li>
+  </ul>
+
+  <h3>3) Trinomio cuadrado perfecto</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x^2 + 10x + 25`} /></li>
+    <li>b) <Formula tex={String.raw`4a^2 - 12a + 9`} /></li>
+    <li>c) <Formula tex={String.raw`m^2 + 8m + 16`} /></li>
+    <li>d) <Formula tex={String.raw`9y^2 + 30y + 25`} /></li>
+    <li>e) <Formula tex={String.raw`16x^2 - 40x + 25`} /></li>
+    <li>f) <Formula tex={String.raw`49m^2 + 28mn + 4n^2`} /></li>
+  </ul>
+
+  <h3>4) Diferencia de cuadrados</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x^2 - 49`} /></li>
+    <li>b) <Formula tex={String.raw`9a^2 - 16`} /></li>
+    <li>c) <Formula tex={String.raw`4x^2 - y^2`} /></li>
+    <li>d) <Formula tex={String.raw`25m^2 - 81`} /></li>
+    <li>e) <Formula tex={String.raw`36a^2 - 49b^2`} /></li>
+    <li>f) <Formula tex={String.raw`100 - 9x^2`} /></li>
+  </ul>
+
+  <h3>5) Trinomio tipo x² + bx + c</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x^2 + 7x + 12`} /></li>
+    <li>b) <Formula tex={String.raw`x^2 - x - 6`} /></li>
+    <li>c) <Formula tex={String.raw`x^2 + 5x + 6`} /></li>
+    <li>d) <Formula tex={String.raw`x^2 + 9x + 20`} /></li>
+    <li>e) <Formula tex={String.raw`x^2 - 11x + 30`} /></li>
+    <li>f) <Formula tex={String.raw`x^2 + 3x - 18`} /></li>
+    <li>g) <Formula tex={String.raw`x^2 - 2x - 24`} /></li>
+  </ul>
+
+  <h3>6) Combinación de métodos</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`3x^2 - 27`} /></li>
+    <li>b) <Formula tex={String.raw`2x^2 + 8x + 8`} /></li>
+    <li>c) <Formula tex={String.raw`5x^2 - 20`} /></li>
+    <li>d) <Formula tex={String.raw`4x^3 - 16x`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

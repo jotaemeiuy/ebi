@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* KaTeX: una fórmula nunca se parte en dos líneas.
+   Si no entra, el contenedor .formula la desplaza horizontalmente. */
+.katex {
+  white-space: nowrap;
+}
+
 /* ── Notación matemática ──────────────────────────────────────────────
    Radical: el radicando queda cubierto por la barra horizontal.
    Uso: <span class="raiz"><span class="rad">a² + b²</span></span>
