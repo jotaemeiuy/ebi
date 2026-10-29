@@ -11,7 +11,6 @@ import Formula from "../../../components/Formula.astro";
     <li><a href="#identidad">• Identidades y ecuaciones</a></li>
     <li><a href="#como-reconocer">• ¿Cómo distinguirlas?</a></li>
     <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
-    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
   </ul>
 </div>
 
@@ -88,86 +87,3 @@ import Formula from "../../../components/Formula.astro";
     <li>Se cumple para cualquier <Formula tex={String.raw`x`} /> → es una identidad ✓</li>
   </ol>
 </div>
-
-<div id="ejercicios" class="exercise-box">
-  <h3>Ejercicios de práctica</h3>
-
-  <h3>1) Indica si las igualdades son identidades o ecuaciones</h3>
-  <ul class="exercise-list">
-    <li>a) <Formula tex={String.raw`x + x = 2x`} /></li>
-    <li>b) <Formula tex={String.raw`2(x + 3) = 2x + 6`} /></li>
-    <li>c) <Formula tex={String.raw`x + 5 = 12`} /></li>
-    <li>d) <Formula tex={String.raw`x + x + x = 3x`} /></li>
-    <li>e) <Formula tex={String.raw`2x \cdot x^3 = 2x^4`} /></li>
-    <li>f) <Formula tex={String.raw`\frac{x}{2} = 12`} /></li>
-  </ul>
-
-  <h3>2) Indica el valor de <Formula tex={String.raw`x`} /> para que se cumpla la igualdad</h3>
-  <ul class="exercise-list">
-    <li>a) <Formula tex={String.raw`x - 1 = 2`} /></li>
-    <li>b) <Formula tex={String.raw`x + 7 = 15`} /></li>
-    <li>c) <Formula tex={String.raw`x - 3 = 6`} /></li>
-    <li>d) <Formula tex={String.raw`x + 10 = 5`} /></li>
-    <li>e) <Formula tex={String.raw`x + 4 = 12`} /></li>
-    <li>f) <Formula tex={String.raw`x - 6 = 10`} /></li>
-  </ul>
-
-  <h3>3) Razona qué tipo de igualdad es cada una</h3>
-  <ul class="exercise-list">
-    <li>a) <Formula tex={String.raw`3x = x + x + x`} /></li>
-    <li>b) <Formula tex={String.raw`5x + 2 = 17`} /></li>
-    <li>c) <Formula tex={String.raw`y + y = 2y`} /></li>
-    <li>d) <Formula tex={String.raw`4(x - 2) = 4x - 8`} /></li>
-  </ul>
-</div>
-
-<style is:global>
-  .formula {
-    color: #c4b5fd;
-    font-size: 1.05rem;
-    background: rgba(2, 6, 23, 0.6);
-    border-left: 3px solid #7c3aed;
-    border-radius: 6px;
-    padding: 0.35rem 0.9rem;
-    margin: 0.55rem 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .formula .katex-display {
-    margin: 0.25em 0;
-  }
-  .formula-lg {
-    font-size: 1.22rem;
-    padding: 0.55rem 0.9rem;
-    margin: 0.8rem 0;
-  }
-  .formula::-webkit-scrollbar {
-    height: 6px;
-  }
-  .formula::-webkit-scrollbar-thumb {
-    background: #475569;
-    border-radius: 3px;
-  }
-  @media (max-width: 640px) {
-    .formula {
-      font-size: 0.78rem;
-      padding: 0.45rem 0.65rem;
-    }
-    .formula-lg {
-      font-size: 0.9rem;
-    }
-    li .katex {
-      font-size: 0.88em;
-    }
-  }
-</style>
-
-      <div class="practico-box mt-10">
-        <h3>¿Querés practicar?</h3>
-        <p>Descargá los ejercicios de identidad.</p>
-        <a href="/pdfs/3-2-identidad.pdf" target="_blank" rel="noopener">
-          Descargar práctico (PDF)
-        </a>
-      </div>
-
-</Leccion>
