@@ -98,8 +98,8 @@ function sectionTitle(text) {
   doc.y = y + 30;
 }
 
-function subTitle(text) {
-  newPageIfNeeded(40);
+function subTitle(text, needed = 40) {
+  newPageIfNeeded(needed);
   doc.fontSize(10.5).fillColor(COLOR_FORMULA)
     .text(text, M + 10, doc.y, { width: contentW() - 20 });
   doc.moveDown(0.35);
@@ -120,7 +120,7 @@ function introBox(lines, height) {
 }
 
 function answerLines(n, indent = 20) {
-  const lineH = 15;
+  const lineH = 14;
   for (let i = 0; i < n; i++) {
     const y = doc.y;
     doc.moveTo(M + indent, y).lineTo(pageW() - M, y)
@@ -145,6 +145,65 @@ function textItem(text, lines = 3) {
   doc.fontSize(10.5).fillColor(COLOR_ITEM)
     .text(text, M + 10, doc.y, { width: contentW() - 20 });
   doc.moveDown(0.35);
+  answerLines(lines, 20);
+}
+
+// Llave de sistema: dos ecuaciones apiladas.
+function drawBrace(doc, x, y, h) {
+  const w = 8;
+  const mid = y + h / 2;
+  const xr = x + w;
+  const xs = x + w / 2;
+  const r = 4;
+  doc.save();
+  doc.strokeColor('#4c1d95').lineWidth(1.1).lineCap('round');
+  doc.moveTo(xr, y);
+  doc.quadraticCurveTo(xs, y, xs, y + r);
+  doc.lineTo(xs, mid - r);
+  doc.quadraticCurveTo(xs, mid, x, mid);
+  doc.quadraticCurveTo(xs, mid, xs, mid + r);
+  doc.lineTo(xs, y + h - r);
+  doc.quadraticCurveTo(xs, y + h, xr, y + h);
+  doc.stroke();
+  doc.restore();
+  doc.fillColor(COLOR_ITEM);
+}
+
+function itemSystem(text, lines = 3) {
+  const needed = 40 + lines * 15 + 10;
+  newPageIfNeeded(needed);
+  const m = text.match(/^([a-z])\)\s*(.+)$/);
+  const [e1, e2] = m[2].split(';').map((s) => s.trim());
+  const x0 = M + 10;
+  const y0 = doc.y;
+  doc.fontSize(10.5).fillColor(COLOR_ITEM)
+    .text(`${m[1]})`, x0, y0 + 8, { lineBreak: false });
+  drawBrace(doc, x0 + 18, y0, 30);
+  doc.fontSize(10).fillColor(COLOR_ITEM);
+  doc.text(e1, x0 + 34, y0 + 1, { lineBreak: false });
+  doc.text(e2, x0 + 34, y0 + 15, { lineBreak: false });
+  doc.y = y0 + 36;
+  answerLines(lines, 20);
+}
+
+// Par ordenado + sistema con llave (sección 1).
+function itemPair(text, lines = 2) {
+  const needed = 40 + lines * 15 + 10;
+  newPageIfNeeded(needed);
+  const m = text.match(/^([a-z])\)\s*(\([^)]*\))\s*en\s*(.+)$/);
+  const pair = m[2];
+  const [e1, e2] = m[3].split(';').map((s) => s.trim());
+  const x0 = M + 10;
+  const y0 = doc.y;
+  doc.fontSize(10.5).fillColor(COLOR_ITEM)
+    .text(`${m[1]})`, x0, y0 + 8, { lineBreak: false });
+  doc.text(pair, x0 + 18, y0 + 8, { lineBreak: false });
+  const bx = x0 + 18 + doc.widthOfString(pair) + 14;
+  drawBrace(doc, bx, y0, 30);
+  doc.fontSize(10).fillColor(COLOR_ITEM);
+  doc.text(e1, bx + 16, y0 + 1, { lineBreak: false });
+  doc.text(e2, bx + 16, y0 + 15, { lineBreak: false });
+  doc.y = y0 + 36;
   answerLines(lines, 20);
 }
 
@@ -317,42 +376,34 @@ subTitle('1) ¿El par dado es solución del sistema? Reemplazá y justificá.');
   'a) (2, 3)  en  x + y = 5  ;  x - y = -1',
   'b) (1, 4)  en  2x + y = 6  ;  x - y = 3',
   'c) (3, 1)  en  3x - y = 8  ;  x + 2y = 5',
-  'd) (-1, 2)  en  x + 2y = 3  ;  2x - y = -4',
-  'e) (4, -1)  en  5x + 2y = 18  ;  x - 3y = 7',
-  'f) (0, 0)  en  x + y = 1  ;  2x - y = 0',
-].forEach((e) => item(e, 2));
+  'd) (0, 0)  en  x + y = 1  ;  2x - y = 0',
+].forEach((e) => itemPair(e, 2));
 
-subTitle('2) Resolver por sustitución. Verificá la solución.');
+subTitle('2) Resolver por sustitución. Verificá la solución.', 140);
 [
   'a) x + y = 7  ;  x - y = 1',
   'b) 2x + y = 8  ;  x + y = 5',
   'c) 3x - y = 4  ;  x + 2y = 6',
-  'd) x + 2y = 8  ;  3x - y = 3',
-  'e) 4x + y = 9  ;  2x - 3y = 1',
-  'f) 5x + 2y = 16  ;  x + y = 5',
-].forEach((e) => item(e, 4));
+  'd) 4x + y = 9  ;  2x - 3y = 1',
+].forEach((e) => itemSystem(e, 4));
 
-subTitle('3) Resolver por igualación. Verificá la solución.');
+subTitle('3) Resolver por igualación. Verificá la solución.', 140);
 [
   'a) x + y = 9  ;  x - y = 1',
   'b) 2x + y = 11  ;  x - y = 1',
   'c) 3x + y = 10  ;  x + y = 6',
-  'd) x + 3y = 14  ;  2x - y = 0',
-  'e) 3x - 2y = 5  ;  x + y = 5',
-  'f) 2x + 3y = 12  ;  x - y = 1',
-].forEach((e) => item(e, 4));
+  'd) 2x + 3y = 12  ;  x - y = 1',
+].forEach((e) => itemSystem(e, 4));
 
-subTitle('4) Resolver por reducción. Indicá qué operación hiciste.');
+subTitle('4) Resolver por reducción. Indicá qué operación hiciste.', 140);
 [
   'a) x + y = 5  ;  x - y = 1',
   'b) 2x + y = 9  ;  x - y = 0',
   'c) 3x + 2y = 12  ;  x + 2y = 8',
-  'd) x + 3y = 10  ;  2x - y = 6',
-  'e) 4x + y = 14  ;  2x + 3y = 12',
-  'f) 2x + 3y = 12  ;  3x - 2y = 5',
-].forEach((e) => item(e, 4));
+  'd) 2x + 3y = 12  ;  3x - 2y = 5',
+].forEach((e) => itemSystem(e, 4));
 
-subTitle('5) Clasificar sin graficar. Compará pendientes y ordenadas al origen.');
+subTitle('5) Clasificar sin graficar. Compará pendientes y ordenadas al origen.', 140);
 doc.fontSize(9.5).fillColor('#475569').text(
   'Ayuda: despejá y en las dos ecuaciones. Si las pendientes son distintas, hay una solución. Si son iguales y las ordenadas también, hay infinitas. Si son iguales y las ordenadas distintas, no hay solución.',
   M + 10,
@@ -364,19 +415,14 @@ doc.moveDown(0.5);
   'a) 2x + y = 5  ;  4x + 2y = 10',
   'b) x - y = 2  ;  x - y = 5',
   'c) 3x + 2y = 7  ;  x - y = 1',
-  'd) 2x - 3y = 6  ;  4x - 6y = 12',
-  'e) x + 2y = 4  ;  2x + 4y = 9',
-  'f) 5x - y = 3  ;  2x + 3y = 8',
-].forEach((e) => item(e, 3));
+  'd) x + 2y = 4  ;  2x + 4y = 9',
+].forEach((e) => itemSystem(e, 3));
 
-subTitle('6) Plantear el sistema y resolver.');
+subTitle('6) Plantear el sistema y resolver.', 140);
 [
   'a) La suma de dos números es 15 y su diferencia es 3. ¿Cuáles son?',
-  'b) Un pantalón y una remera cuestan $25.000. El pantalón cuesta $7.000 más que la remera. ¿Cuánto cuesta cada uno?',
-  'c) 3 cuadernos y 2 lápices cuestan $340; 2 cuadernos y 5 lápices cuestan $300. ¿Cuál es el precio de cada uno?',
-  'd) Una madre y su hija suman 46 años. Hace 5 años, la madre triplicaba la edad de la hija. ¿Qué edad tiene cada una hoy?',
-  'e) El perímetro de un rectángulo es 34 cm y el largo mide 5 cm más que el ancho. ¿Cuáles son sus dimensiones?',
-  'f) Se mezclan 10 kg de café de $8 el kg con café de $12 el kg para obtener una mezcla de $9,60 el kg. ¿Cuántos kg de cada tipo se usan?',
+  'b) 3 cuadernos y 2 lápices cuestan $340; 2 cuadernos y 5 lápices cuestan $300. ¿Cuál es el precio de cada uno?',
+  'c) Una madre y su hija suman 46 años. Hace 5 años, la madre triplicaba la edad de la hija. ¿Qué edad tiene cada una hoy?',
 ].forEach((e) => textItem(e, 4));
 
 // ─── BLOQUE B ──────────────────────────────────────────────────
@@ -387,15 +433,14 @@ sectionTitle('BLOQUE B - TRABAJO GRÁFICO');
 
 subTitle('1) Despejar y en cada ecuación.');
 [
-  'a) 2x + y = 6          b) x - 3y = 6          c) 4x + 2y = 8',
-  'd) x + y = 0            e) 3x - y = 5          f) 2x + 5y = 10',
+  'a) 2x + y = 6          b) x - 3y = 6',
+  'c) 4x + 2y = 8          d) 3x - y = 5',
 ].forEach((e) => item(e, 3));
 
 subTitle('2) Completar las tablas de valores para cada sistema.');
 
 const tablas = [
   { t: 'Sistema: x + y = 6  ;  y = 2x', h: ['x', 'y = 6 - x', 'y = 2x'] },
-  { t: 'Sistema: 2x - y = 4  ;  x + y = 5', h: ['x', 'y = 2x - 4', 'y = 5 - x'] },
   { t: 'Sistema: x + y = 5  ;  x - y = 1', h: ['x', 'y = 5 - x', 'y = x - 1'] },
 ];
 
@@ -430,20 +475,19 @@ subTitle('3) Graficá las dos rectas, marcá el punto de corte y clasificá el s
 
 const sistemas = [
   { t: 'a) x + y = 5  ;  x - y = 1', a: [1, 0], b: [-1, 0] },
-  { t: 'b) y = 2x - 1  ;  y = -x + 5', a: [2, -1], b: [-1, 5] },
-  { t: 'c) x + y = 3  ;  2x + 2y = 6', a: [1, 0], b: [-1, 3] },
-  { t: 'd) x + 2y = 4  ;  x + 2y = 6', a: [-0.5, 2], b: [-0.5, 3] },
+  { t: 'b) x + y = 3  ;  2x + 2y = 6', a: [1, 0], b: [-1, 3] },
+  { t: 'c) x + 2y = 4  ;  x + 2y = 6', a: [-0.5, 2], b: [-0.5, 3] },
 ];
 
 sistemas.forEach((s, i) => {
-  newPageIfNeeded(330);
+  newPageIfNeeded(225);
   doc.fontSize(10.5).fillColor(COLOR_ITEM).text(s.t, M + 10, doc.y, {
     width: contentW() - 20,
   });
   doc.moveDown(0.35);
   const gy = doc.y;
-  drawGrid(M + 10, gy, 265);
-  const rx = M + 10 + 265 + 25;
+  drawGrid(M + 10, gy, 190);
+  const rx = M + 10 + 190 + 30;
   doc.fontSize(9.5).fillColor(COLOR_ITEM);
   doc.text('Despejá y:', rx, gy, { lineBreak: false });
   doc.moveTo(rx + 62, gy + 12).lineTo(pageW() - M, gy + 12).strokeColor(COLOR_LINES).lineWidth(0.6).stroke();
@@ -455,12 +499,12 @@ sistemas.forEach((s, i) => {
   doc.text('Verificación:', rx, gy + 126, { lineBreak: false });
   doc.moveTo(rx + 66, gy + 138).lineTo(pageW() - M, gy + 138).strokeColor(COLOR_LINES).lineWidth(0.6).stroke();
   doc.moveTo(rx + 66, gy + 162).lineTo(pageW() - M, gy + 162).strokeColor(COLOR_LINES).lineWidth(0.6).stroke();
-  doc.y = gy + 285;
+  doc.y = gy + 212;
 });
 
 doc.addPage();
 doc.y = M;
-sectionTitle('BLOQUE B (continuación) - MODELAR Y GRAFICAR');
+sectionTitle('BLOQUE B (continuación) - MODELAR Y LEER GRÁFICAS');
 
 function modelItem(text, axisLabel) {
   newPageIfNeeded(315);
@@ -480,34 +524,26 @@ modelItem(
   'a) Un estacionamiento A cobra $300 fijos más $100 por hora. El estacionamiento B cobra $100 fijos más $200 por hora. Escribí el sistema, graficá y averiguá a partir de cuántas horas conviene el A.',
   'y = costo total  /  x = horas'
 );
-modelItem(
-  'b) El tanque A tiene 10 L y se llena a razón de 5 L por minuto. El tanque B tiene 40 L y se vacía a razón de 5 L por minuto. ¿En qué momento tienen la misma cantidad de agua?',
-  'y = litros  /  x = minutos'
-);
+
 
 // ─── BLOQUE B: interpretación ──────────────────────────────────
 
-doc.addPage();
-doc.y = M;
-sectionTitle('BLOQUE B (continuación) - LEER GRÁFICAS');
-
-subTitle('5) Escribí el sistema que representa cada gráfica y su solución.');
+subTitle('5) Escribí el sistema que representa la gráfica y su solución.');
 doc.moveDown(0.2);
 
 const interpretaciones = [
-  { m1: 1, b1: 1, m2: -1, b2: 3, c1: COLOR_LINE_A, c2: COLOR_LINE_B, label: 'Gráfica 1' },
-  { m1: 2, b1: 1, m2: 2, b2: -2, c1: COLOR_LINE_A, c2: COLOR_LINE_B, label: 'Gráfica 2' },
+  { m1: 1, b1: 1, m2: -1, b2: 3, c1: COLOR_LINE_A, c2: COLOR_LINE_B, label: 'Gráfica' },
 ];
 
 interpretaciones.forEach((g) => {
-  newPageIfNeeded(330);
+  newPageIfNeeded(230);
   doc.fontSize(10.5).fillColor(COLOR_ITEM).text(g.label, M + 10, doc.y);
   doc.moveDown(0.3);
   const gy = doc.y;
-  drawGrid(M + 10, gy, 240);
-  drawLine(M + 10, gy, 240, g.m1, g.b1, g.c1);
-  drawLine(M + 10, gy, 240, g.m2, g.b2, g.c2, '6 4');
-  const rx = M + 10 + 240 + 30;
+  drawGrid(M + 10, gy, 200);
+  drawLine(M + 10, gy, 200, g.m1, g.b1, g.c1);
+  drawLine(M + 10, gy, 200, g.m2, g.b2, g.c2, '6 4');
+  const rx = M + 10 + 200 + 30;
   doc.fontSize(9.5).fillColor(COLOR_ITEM);
   doc.text('Recta 1:', rx, gy, { lineBreak: false });
   doc.moveTo(rx + 55, gy + 12).lineTo(pageW() - M, gy + 12).strokeColor(COLOR_LINES).lineWidth(0.6).stroke();
@@ -519,7 +555,7 @@ interpretaciones.forEach((g) => {
   doc.text('Solución:', rx, gy + 140, { lineBreak: false });
   doc.text('( ____ , ____ )', rx + 62, gy + 140, { lineBreak: false });
   doc.text('o  ____________________', rx, gy + 168, { lineBreak: false });
-  doc.y = gy + 250;
+  doc.y = gy + 215;
 });
 
 // ─── BLOQUE C ──────────────────────────────────────────────────
@@ -533,16 +569,24 @@ subTitle('1) Elegí el método más conveniente, resolvé y justificá la elecci
   'a) y = 2x  ;  3x + y = 10',
   'b) 2x + 3y = 7  ;  2x - 3y = 1',
   'c) 3x + 4y = 10  ;  5x - 4y = 6',
-  'd) x/2 + y = 4  ;  x - y = 2',
-].forEach((e) => item(e, 4));
+].forEach((e) => itemSystem(e, 4));
 
 subTitle('2) Encontrá el error y corregilo.');
 doc.fontSize(10.5).fillColor(COLOR_ITEM).text(
-  'Un compañero resolvió el sistema  2x + y = 7  ;  x - y = 2  y escribió:',
+  'Un compañero resolvió este sistema y escribió:',
   M + 10,
   doc.y,
   { width: contentW() - 20 }
 );
+doc.moveDown(0.35);
+{
+  const sy = doc.y;
+  drawBrace(doc, M + 14, sy, 30);
+  doc.fontSize(10).fillColor(COLOR_ITEM);
+  doc.text('2x + y = 7', M + 30, sy + 1, { lineBreak: false });
+  doc.text('x - y = 2', M + 30, sy + 15, { lineBreak: false });
+  doc.y = sy + 38;
+}
 doc.moveDown(0.3);
 doc.fontSize(10.5).fillColor(COLOR_FORMULA).text(
   '"Sumo las ecuaciones: 3x = 9, entonces x = 3. Luego y = 3 + 2 = 5. Solución: (3, 5)."',
@@ -578,62 +622,55 @@ function answersBlock(title, lines) {
 }
 
 answersBlock('1) ¿Es solución?', [
-  'a) Sí.  b) No: 1 - 4 = -3, no 3.  c) Sí.  d) Sí.  e) Sí.  f) No: 0 + 0 no es 1.',
+  'a) Sí.  b) No: 1 - 4 = -3, no 3.  c) Sí.  d) No: 0 + 0 no es 1.',
 ]);
 
 answersBlock('2) Sustitución', [
-  'a) (4, 3)   b) (3, 2)   c) (2, 2)   d) (2, 3)   e) (2, 1)   f) (2, 3)',
+  'a) (4, 3)   b) (3, 2)   c) (2, 2)   d) (2, 1)',
 ]);
 
 answersBlock('3) Igualación', [
-  'a) (5, 4)   b) (4, 3)   c) (2, 4)   d) (2, 4)   e) (3, 2)   f) (3, 2)',
+  'a) (5, 4)   b) (4, 3)   c) (2, 4)   d) (3, 2)',
 ]);
 
 answersBlock('4) Reducción', [
-  'a) (3, 2)   b) (3, 3)   c) (2, 3)   d) (4, 2)   e) (3, 2)   f) (3, 2)',
+  'a) (3, 2)   b) (3, 3)   c) (2, 3)   d) (3, 2)',
 ]);
 
 answersBlock('5) Clasificación', [
   'a) Infinitas soluciones (es la misma recta).   b) Sin solución (rectas paralelas).',
-  'c) Una solución.   d) Infinitas soluciones.   e) Sin solución.   f) Una solución.',
+  'c) Una solución.   d) Sin solución (rectas paralelas).',
 ]);
 
 answersBlock('6) Plantear y resolver', [
-  'a) 9 y 6.   b) Pantalón $16.000 y remera $9.000.',
-  'c) Cuaderno $100 y lápiz $20.   d) Madre 32 años e hija 14 años.',
-  'e) Largo 11 cm y ancho 6 cm.   f) 6 kg de $8 y 4 kg de $12.',
+  'a) 9 y 6.   b) Cuaderno $100 y lápiz $20.   c) Madre 32 años e hija 14 años.',
 ]);
 
 answersBlock('B1) Despejar y', [
-  'a) y = 6 - 2x   b) y = (x - 6)/3   c) y = 4 - 2x',
-  'd) y = -x   e) y = 3x - 5   f) y = (10 - 2x)/5',
+  'a) y = 6 - 2x   b) y = (x - 6)/3   c) y = 4 - 2x   d) y = 3x - 5',
 ]);
 
 answersBlock('B2) Tablas', [
   'x + y = 6 ; y = 2x: (0, 6) y (0, 0); (1, 5) y (1, 2); (2, 4) y (2, 4); (3, 3) y (3, 6). Solución: (2, 4).',
-  '2x - y = 4 ; x + y = 5: (0, -4) y (0, 5); (1, -2) y (1, 4); (2, 0) y (2, 3); (3, 2) y (3, 2). Solución: (3, 2).',
   'x + y = 5 ; x - y = 1: (0, 5) y (0, -1); (1, 4) y (1, 0); (2, 3) y (2, 1); (3, 2) y (3, 2). Solución: (3, 2).',
 ]);
 
 answersBlock('B3) Resolver gráficamente', [
   'a) y = 5 - x  ;  y = x - 1. Solución: (3, 2). Una solución.',
-  'b) y = 2x - 1  ;  y = -x + 5. Solución: (2, 3). Una solución.',
-  'c) y = 3 - x  ;  y = 3 - x. Rectas coincidentes: infinitas soluciones.',
-  'd) y = (4 - x)/2  ;  y = (6 - x)/2. Rectas paralelas: sin solución.',
+  'b) y = 3 - x  ;  y = 3 - x. Rectas coincidentes: infinitas soluciones.',
+  'c) y = (4 - x)/2  ;  y = (6 - x)/2. Rectas paralelas: sin solución.',
 ]);
 
 answersBlock('B4) Modelar', [
   'a) y = 300 + 100x  ;  y = 100 + 200x. Se cortan en (2, 500): a partir de 2 horas conviene el A.',
-  'b) y = 10 + 5x  ;  y = 40 - 5x. Se cortan en (3, 25): a los 3 minutos, con 25 L.',
 ]);
 
 answersBlock('B5) Leer gráficas', [
-  'Gráfica 1: y = x + 1  ;  y = -x + 3. Solución: (1, 2).',
-  'Gráfica 2: y = 2x + 1  ;  y = 2x - 2. Rectas paralelas: sin solución.',
+  'y = x + 1  ;  y = -x + 3. Solución: (1, 2).',
 ]);
 
 answersBlock('C) Integrador', [
-  '1) a) (2, 4)   b) (2, 1)   c) (2, 1)   d) (4, 2)',
+  '1) a) (2, 4)   b) (2, 1)   c) (2, 1)',
   '2) El error está en el despeje: de x - y = 2 se obtiene y = x - 2 = 1, no y = x + 2. Solución: (3, 1).',
   '3) 20 gallinas y 10 conejos. Verificación: 20 + 10 = 30 animales; 20·2 + 10·4 = 80 patas.',
 ]);
