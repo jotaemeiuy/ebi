@@ -1,0 +1,217 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Igualdad Algebraica" unitId={3} unitTitle="Ecuaciones de primer grado">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#concepto">• ¿Qué es una igualdad algebraica?</a></li>
+    <li><a href="#miembros">• Miembros y términos</a></li>
+    <li><a href="#elementos">• Incógnita, coeficiente y grado</a></li>
+    <li><a href="#reglas">• Reglas de la suma y del producto</a></li>
+    <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
+  </ul>
+</div>
+
+<div id="concepto" class="lesson-box">
+  <h2>¿Qué es una igualdad algebraica?</h2>
+  <p>
+    Una <strong>igualdad algebraica</strong> está formada por dos expresiones algebraicas separadas
+    por el signo igual (<strong>=</strong>).
+  </p>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`x + x = 2x`} /></li>
+    <li><Formula tex={String.raw`x + 4 = 10`} /></li>
+    <li><Formula tex={String.raw`5 + 3 = 8`} /></li>
+  </ul>
+  <p>
+    En una igualdad puede haber números, letras (incógnitas) o ambos. Lo importante es que la
+    expresión de la izquierda y la de la derecha representan la misma cantidad.
+  </p>
+</div>
+
+<div id="miembros" class="lesson-box">
+  <h2>Miembros y términos</h2>
+  <div class="formula"><Formula display tex={String.raw`\text{primer miembro} = \text{segundo miembro}`} /></div>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><strong>Primer miembro:</strong> la expresión situada a la izquierda del signo =.</li>
+    <li><strong>Segundo miembro:</strong> la expresión situada a la derecha del signo =.</li>
+    <li><strong>Términos:</strong> cada una de las partes que forman un miembro, separadas por + o −.</li>
+  </ul>
+  <p>Ejemplo resuelto:</p>
+  <div class="formula"><Formula display tex={String.raw`3x + 5 = x + 11`} /></div>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li>Primer miembro: <Formula tex={String.raw`3x + 5`} /> → términos: <Formula tex={String.raw`3x`} /> y <Formula tex={String.raw`5`} /></li>
+    <li>Segundo miembro: <Formula tex={String.raw`x + 11`} /> → términos: <Formula tex={String.raw`x`} /> y <Formula tex={String.raw`11`} /></li>
+  </ul>
+</div>
+
+<div id="elementos" class="lesson-box">
+  <h2>Incógnita, coeficiente y grado</h2>
+  <p>Los elementos que describen una igualdad con letras son:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><strong>Incógnita:</strong> la letra de valor desconocido (<Formula tex={String.raw`x`} />, <Formula tex={String.raw`y`} />, <Formula tex={String.raw`a`} />...).</li>
+    <li><strong>Coeficiente:</strong> el número que multiplica a la incógnita. En <Formula tex={String.raw`3x`} />, el coeficiente es <Formula tex={String.raw`3`} />.</li>
+    <li><strong>Grado de la ecuación:</strong> el mayor exponente de la incógnita.</li>
+  </ul>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`3x + 5 = x + 11`} /> → incógnita <Formula tex={String.raw`x`} />, grado 1 (ecuación de primer grado)</li>
+    <li><Formula tex={String.raw`x^2 + 4 = 20`} /> → incógnita <Formula tex={String.raw`x`} />, grado 2 (ecuación de segundo grado)</li>
+    <li><Formula tex={String.raw`2y - 1 = 9`} /> → incógnita <Formula tex={String.raw`y`} />, grado 1</li>
+  </ul>
+</div>
+
+<div id="reglas" class="lesson-box">
+  <h2>Reglas de la suma y del producto</h2>
+  <p>Para transformar una ecuación en otra equivalente se utilizan dos reglas:</p>
+  <ol>
+    <li>
+      <strong>Regla de la suma:</strong> si sumamos o restamos a los dos miembros de una ecuación
+      un mismo número o expresión algebraica, se obtiene una ecuación equivalente.
+    </li>
+    <li>
+      <strong>Regla del producto:</strong> si multiplicamos o dividimos los dos miembros de una
+      ecuación por un número distinto de cero, se obtiene una ecuación equivalente.
+    </li>
+  </ol>
+  <p>Ejemplo de la regla de la suma:</p>
+  <div class="formula"><Formula display tex={String.raw`x = 5 \;\to\; x + 3 = 5 + 3 \;\to\; x + 3 = 8`} /></div>
+  <p>Ejemplo de la regla del producto:</p>
+  <div class="formula"><Formula display tex={String.raw`x = 5 \;\to\; 2x = 2 \cdot 5 \;\to\; 2x = 10`} /></div>
+  <p>
+    En ambos casos la solución sigue siendo <Formula tex={String.raw`x = 5`} />: las ecuaciones son equivalentes.
+  </p>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Identificar miembros y términos</h3>
+  <p>Señala los miembros y los términos de: <Formula tex={String.raw`2x + 3 = x + 9`} /></p>
+  <ol>
+    <li>Identificamos el signo =</li>
+    <li>Primer miembro: <Formula tex={String.raw`2x + 3`} /> → términos: <Formula tex={String.raw`2x`} /> y <Formula tex={String.raw`3`} /></li>
+    <li>Segundo miembro: <Formula tex={String.raw`x + 9`} /> → términos: <Formula tex={String.raw`x`} /> y <Formula tex={String.raw`9`} /></li>
+  </ol>
+
+  <h3>2) Determinar la incógnita y el grado</h3>
+  <p>Indica la incógnita y el grado de: <Formula tex={String.raw`4x - 1 = 7`} /></p>
+  <ol>
+    <li>Incógnita: <Formula tex={String.raw`x`} /></li>
+    <li>El mayor exponente de la incógnita es 1</li>
+    <li>Es una ecuación de primer grado</li>
+  </ol>
+
+  <h3>3) Comprobar si una igualdad numérica es cierta</h3>
+  <p>¿Es verdadera la igualdad <Formula tex={String.raw`9 + 5 = 2 \cdot 7`} />?</p>
+  <ol>
+    <li>Primer miembro: <Formula tex={String.raw`9 + 5 = 14`} /></li>
+    <li>Segundo miembro: <Formula tex={String.raw`2 \cdot 7 = 14`} /></li>
+    <li><Formula tex={String.raw`14 = 14`} /> → la igualdad es verdadera ✓</li>
+  </ol>
+
+  <h3>4) Aplicar la regla de la suma</h3>
+  <p>Partiendo de <Formula tex={String.raw`x = 8`} />, suma 4 a ambos miembros:</p>
+  <ol>
+    <li><Formula tex={String.raw`x = 8`} /></li>
+    <li>Sumamos 4 a ambos: <Formula tex={String.raw`x + 4 = 8 + 4`} /></li>
+    <li>Resultado: <Formula tex={String.raw`x + 4 = 12`} /> (equivalente, solución <Formula tex={String.raw`x = 8`} />)</li>
+  </ol>
+
+  <h3>5) Aplicar la regla del producto</h3>
+  <p>Partiendo de <Formula tex={String.raw`y = 4`} />, multiplica ambos miembros por 3:</p>
+  <ol>
+    <li><Formula tex={String.raw`y = 4`} /></li>
+    <li>Multiplicamos ambos por 3: <Formula tex={String.raw`3y = 3 \cdot 4`} /></li>
+    <li>Resultado: <Formula tex={String.raw`3y = 12`} /> (equivalente, solución <Formula tex={String.raw`y = 4`} />)</li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Determina el primer miembro, el segundo miembro y los términos</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`4x + 1 = 13`} /></li>
+    <li>b) <Formula tex={String.raw`5 = x - 2`} /></li>
+    <li>c) <Formula tex={String.raw`2x + x = 12`} /></li>
+    <li>d) <Formula tex={String.raw`3a = a + 10`} /></li>
+    <li>e) <Formula tex={String.raw`8 - y = y + 2`} /></li>
+  </ul>
+
+  <h3>2) Indica la incógnita, el coeficiente y el grado</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`3x + 4 = 10`} /></li>
+    <li>b) <Formula tex={String.raw`2y - 1 = 7`} /></li>
+    <li>c) <Formula tex={String.raw`x^2 + 3 = 12`} /></li>
+    <li>d) <Formula tex={String.raw`5a + 2 = 3a + 6`} /></li>
+    <li>e) <Formula tex={String.raw`m + 4 = 9`} /></li>
+  </ul>
+
+  <h3>3) Indica si la igualdad numérica es verdadera o falsa</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`5 + 6 = 11`} /></li>
+    <li>b) <Formula tex={String.raw`3 \cdot 4 = 10 + 2`} /></li>
+    <li>c) <Formula tex={String.raw`15 - 7 = 9`} /></li>
+    <li>d) <Formula tex={String.raw`2 \cdot 8 = 4 \cdot 4`} /></li>
+    <li>e) <Formula tex={String.raw`6 + 6 = 3 \cdot 5`} /></li>
+    <li>f) <Formula tex={String.raw`20 \div 4 = 5`} /></li>
+  </ul>
+
+  <h3>4) Aplica la regla indicada y escribe la ecuación equivalente</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x = 6`} />; suma 4 a ambos</li>
+    <li>b) <Formula tex={String.raw`x = 5`} />; resta 2 a ambos</li>
+    <li>c) <Formula tex={String.raw`x = 8`} />; multiplica por 3</li>
+    <li>d) <Formula tex={String.raw`x = 12`} />; divide entre 4</li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

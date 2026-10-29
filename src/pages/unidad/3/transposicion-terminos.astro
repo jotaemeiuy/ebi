@@ -1,0 +1,187 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Transposición de Términos" unitId={3} unitTitle="Ecuaciones de primer grado">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#reglas">• Reglas de la suma y del producto</a></li>
+    <li><a href="#transposicion">• Transposición de términos</a></li>
+    <li><a href="#regla-suma">• Regla de la suma en la práctica</a></li>
+    <li><a href="#regla-producto">• Regla del producto en la práctica</a></li>
+    <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
+  </ul>
+</div>
+
+<div id="reglas" class="lesson-box">
+  <h2>Reglas de la suma y del producto</h2>
+  <p>Para resolver una ecuación aplicamos dos reglas que conservan la solución:</p>
+  <ol>
+    <li>
+      <strong>Regla de la suma:</strong> si sumamos o restamos a los dos miembros un mismo número o
+      expresión, obtenemos una ecuación equivalente.
+    </li>
+    <li>
+      <strong>Regla del producto:</strong> si multiplicamos o dividimos los dos miembros por un
+      número distinto de cero, obtenemos una ecuación equivalente.
+    </li>
+  </ol>
+  <p>
+    Aplicar estas reglas de forma rápida es lo que llamamos <strong>transponer términos</strong>.
+  </p>
+</div>
+
+<div id="transposicion" class="lesson-box">
+  <h2>Transposición de términos</h2>
+  <p>
+    <strong>Transponer</strong> un término consiste en pasarlo de un miembro al otro cambiándole de
+    signo. Es la forma práctica de aplicar la regla de la suma.
+  </p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li>Un término que <strong>suma</strong> pasa al otro miembro <strong>restando</strong>.</li>
+    <li>Un término que <strong>resta</strong> pasa al otro miembro <strong>sumando</strong>.</li>
+    <li>Un factor que <strong>multiplica</strong> pasa al otro lado <strong>dividiendo</strong>.</li>
+    <li>Un factor que <strong>divide</strong> pasa al otro lado <strong>multiplicando</strong>.</li>
+  </ul>
+</div>
+
+<div id="regla-suma" class="lesson-box">
+  <h2>Regla de la suma en la práctica</h2>
+  <p>Resuelve la ecuación <Formula tex={String.raw`x - 4 = 10`} />.</p>
+  <p>Sumamos 4 en ambos miembros:</p>
+  <div class="formula"><Formula display tex={String.raw`x - 4 + 4 = 10 + 4 \;\to\; x = 14`} /></div>
+  <p>
+    Como la operación se hace por transposición, el <Formula tex={String.raw`-4`} /> "salta" al otro lado como <Formula tex={String.raw`+4`} />:
+  </p>
+  <div class="formula"><Formula display tex={String.raw`x = 10 + 4 \;\to\; x = 14`} /></div>
+
+  <p>Resuelve la ecuación <Formula tex={String.raw`3x = 2x + 9`} />.</p>
+  <p>Restamos <Formula tex={String.raw`2x`} /> en ambos miembros:</p>
+  <div class="formula"><Formula display tex={String.raw`3x - 2x = 9 \;\to\; x = 9`} /></div>
+</div>
+
+<div id="regla-producto" class="lesson-box">
+  <h2>Regla del producto en la práctica</h2>
+  <p>Resuelve la ecuación <Formula tex={String.raw`3x = 12`} />.</p>
+  <p>Dividimos ambos miembros entre 3:</p>
+  <div class="formula"><Formula display tex={String.raw`3x \div 3 = 12 \div 3 \;\to\; x = 4`} /></div>
+
+  <p>Resuelve la ecuación <Formula tex={String.raw`\displaystyle \frac{5x}{4} = 10`} />.</p>
+  <p>Multiplicamos por 4 ambos: <Formula tex={String.raw`5x = 40`} /></p>
+  <p>Dividimos entre 5: <Formula tex={String.raw`x = 8`} /></p>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Transponer una suma</h3>
+  <div class="formula"><Formula display tex={String.raw`x + 9 = 20`} /></div>
+  <ol>
+    <li>Transponemos el <Formula tex={String.raw`+9`} /> como <Formula tex={String.raw`-9`} />: <Formula tex={String.raw`x = 20 - 9`} /></li>
+    <li><Formula tex={String.raw`x = 11`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`11 + 9 = 20`} /> ✓</li>
+  </ol>
+
+  <h3>2) Transponer una resta</h3>
+  <div class="formula"><Formula display tex={String.raw`x - 5 = 12`} /></div>
+  <ol>
+    <li>Transponemos el <Formula tex={String.raw`-5`} /> como <Formula tex={String.raw`+5`} />: <Formula tex={String.raw`x = 12 + 5`} /></li>
+    <li><Formula tex={String.raw`x = 17`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`17 - 5 = 12`} /> ✓</li>
+  </ol>
+
+  <h3>3) Transponer multiplicación y suma</h3>
+  <div class="formula"><Formula display tex={String.raw`3x + 4 = 19`} /></div>
+  <ol>
+    <li>Transponemos el <Formula tex={String.raw`+4`} /> como <Formula tex={String.raw`-4`} />: <Formula tex={String.raw`3x = 19 - 4 \;\to\; 3x = 15`} /></li>
+    <li>Transponemos el <Formula tex={String.raw`3`} /> (multiplica) como divisor: <Formula tex={String.raw`\displaystyle x = \frac{15}{3}`} /></li>
+    <li><Formula tex={String.raw`x = 5`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`3 \cdot 5 + 4 = 15 + 4 = 19`} /> ✓</li>
+  </ol>
+
+  <h3>4) Transponer una división</h3>
+  <div class="formula"><Formula display tex={String.raw`\displaystyle \frac{x}{5} = 8`} /></div>
+  <ol>
+    <li>El <Formula tex={String.raw`\div 5`} /> pasa al otro lado multiplicando: <Formula tex={String.raw`x = 8 \cdot 5`} /></li>
+    <li><Formula tex={String.raw`x = 40`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`\displaystyle \frac{40}{5} = 8`} /> ✓</li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Aplica la transposición de términos y resuelve</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x + 6 = 14`} /></li>
+    <li>b) <Formula tex={String.raw`x + 2 = 4`} /></li>
+    <li>c) <Formula tex={String.raw`x + 10 = 3`} /></li>
+    <li>d) <Formula tex={String.raw`x + 6 = 20`} /></li>
+    <li>e) <Formula tex={String.raw`x + 4 = 16`} /></li>
+    <li>f) <Formula tex={String.raw`x - 4 = 20`} /></li>
+  </ul>
+
+  <h3>2) Resuelve aplicando la regla del producto</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`2x = 10`} /></li>
+    <li>b) <Formula tex={String.raw`6x = 24`} /></li>
+    <li>c) <Formula tex={String.raw`5x = 30`} /></li>
+    <li>d) <Formula tex={String.raw`7x = 56`} /></li>
+  </ul>
+
+  <h3>3) Resuelve combinando transposición</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x - 5 = 3`} /></li>
+    <li>b) <Formula tex={String.raw`2x - 4 = 10`} /></li>
+    <li>c) <Formula tex={String.raw`-15 + x = 4`} /></li>
+    <li>d) <Formula tex={String.raw`2x + 7 = x + 14`} /></li>
+    <li>e) <Formula tex={String.raw`3x + 8 = 12 - x`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

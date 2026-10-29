@@ -1,0 +1,173 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Método General de Resolución de Ecuaciones" unitId={3} unitTitle="Ecuaciones de primer grado">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#pasos">• Pasos del método general</a></li>
+    <li><a href="#reducir">• Reducir términos semejantes</a></li>
+    <li><a href="#metodo">• Aplicación del método completo</a></li>
+    <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
+  </ul>
+</div>
+
+<div id="pasos" class="lesson-box">
+  <h2>Pasos del método general</h2>
+  <p>
+    Para resolver una ecuación de primer grado conviene seguir estos pasos:
+  </p>
+  <ol>
+    <li><strong>Eliminar paréntesis</strong> (si los hay), aplicando la propiedad distributiva.</li>
+    <li><strong>Reducir términos semejantes</strong> en cada miembro.</li>
+    <li><strong>Transponer términos</strong>: agrupar la incógnita en un miembro y los números en el otro.</li>
+    <li><strong>Despejar la incógnita</strong>, aplicando la regla del producto.</li>
+  </ol>
+</div>
+
+<div id="reducir" class="lesson-box">
+  <h2>Reducir términos semejantes</h2>
+  <p>
+    Para resolver ecuaciones de primer grado, los alumnos deben aprender a transponer términos.
+    Primero simplificamos cada miembro combinando los términos que tienen la misma variable.
+  </p>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`3x + 2x = 5x`} /></li>
+    <li><Formula tex={String.raw`5x - x = 4x`} /></li>
+    <li><Formula tex={String.raw`4x + 3 + 2x + 5 = (4x + 2x) + (3 + 5) = 6x + 8`} /></li>
+  </ul>
+</div>
+
+<div id="metodo" class="lesson-box">
+  <h2>Ejemplo resuelto del método completo</h2>
+  <div class="formula"><Formula display tex={String.raw`2(x - 4) = x - 3(x + 4)`} /></div>
+  <p><strong>Paso 1. Eliminar paréntesis:</strong></p>
+  <div class="formula"><Formula display tex={String.raw`2x - 8 = x - 3x - 12`} /></div>
+  <p><strong>Paso 2. Reducir términos semejantes:</strong></p>
+  <div class="formula"><Formula display tex={String.raw`2x - 8 = -2x - 12`} /></div>
+  <p><strong>Paso 3. Transponer términos (agrupar la <Formula tex={String.raw`x`} />):</strong></p>
+  <div class="formula"><Formula display tex={String.raw`2x + 2x = -12 + 8`} /></div>
+  <div class="formula"><Formula display tex={String.raw`4x = -4`} /></div>
+  <p><strong>Paso 4. Despejar la incógnita:</strong></p>
+  <div class="formula"><Formula display tex={String.raw`x = -4 \div 4 = -1`} /></div>
+  <p>
+    <strong>Comprobación:</strong> primer miembro <Formula tex={String.raw`2(-1 - 4) = 2(-5) = -10`} />;
+    segundo miembro <Formula tex={String.raw`(-1) - 3(-1 + 4) = -1 - 9 = -10`} /> ✓
+  </p>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Ecuación sin paréntesis</h3>
+  <div class="formula"><Formula display tex={String.raw`6x - 7 = 2x + 9`} /></div>
+  <ol>
+    <li>Reducir y transponer: <Formula tex={String.raw`6x - 2x = 9 + 7 \;\to\; 4x = 16`} /></li>
+    <li>Despejar: <Formula tex={String.raw`x = 16 \div 4 = 4`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`6 \cdot 4 - 7 = 24 - 7 = 17`} /> y <Formula tex={String.raw`2 \cdot 4 + 9 = 8 + 9 = 17`} /> ✓</li>
+  </ol>
+
+  <h3>2) Ecuación con paréntesis</h3>
+  <div class="formula"><Formula display tex={String.raw`3(2x - 1) = 2(3x + 4)`} /></div>
+  <ol>
+    <li>Eliminar paréntesis: <Formula tex={String.raw`6x - 3 = 6x + 8`} /></li>
+    <li>Transponer: <Formula tex={String.raw`6x - 6x = 8 + 3 \;\to\; 0 = 11`} /> (contradicción)</li>
+    <li>No tiene solución: al reducir desaparece la incógnita y queda una igualdad falsa.</li>
+  </ol>
+
+  <h3>3) Ecuación con paréntesis resolubles</h3>
+  <div class="formula"><Formula display tex={String.raw`5(x - 1) = 3(x + 3)`} /></div>
+  <ol>
+    <li>Eliminar paréntesis: <Formula tex={String.raw`5x - 5 = 3x + 9`} /></li>
+    <li>Transponer: <Formula tex={String.raw`5x - 3x = 9 + 5 \;\to\; 2x = 14`} /></li>
+    <li>Despejar: <Formula tex={String.raw`x = 7`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`5(7 - 1) = 5 \cdot 6 = 30`} /> y <Formula tex={String.raw`3(7 + 3) = 3 \cdot 10 = 30`} /> ✓</li>
+  </ol>
+
+  <h3>4) Ecuación con paréntesis y términos en ambos lados</h3>
+  <div class="formula"><Formula display tex={String.raw`4x - 3(x + 1) = 2(x + 6)`} /></div>
+  <ol>
+    <li>Eliminar paréntesis: <Formula tex={String.raw`4x - 3x - 3 = 2x + 12`} /></li>
+    <li>Reducir: <Formula tex={String.raw`x - 3 = 2x + 12`} /></li>
+    <li>Transponer: <Formula tex={String.raw`x - 2x = 12 + 3 \;\to\; -x = 15`} /></li>
+    <li>Despejar: <Formula tex={String.raw`x = -15`} /></li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Resuelve por el método general</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`3x + 4 = 19`} /></li>
+    <li>b) <Formula tex={String.raw`5x - 6 = 29`} /></li>
+    <li>c) <Formula tex={String.raw`2x + 7 = 21`} /></li>
+    <li>d) <Formula tex={String.raw`4x - 9 = 23`} /></li>
+  </ul>
+
+  <h3>2) Resuelve (con transposición de la incógnita)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`5x + 3 = 2x + 12`} /></li>
+    <li>b) <Formula tex={String.raw`7x - 4 = 3x + 8`} /></li>
+    <li>c) <Formula tex={String.raw`2x + 1 = x + 6`} /></li>
+    <li>d) <Formula tex={String.raw`4x - 5 = x + 10`} /></li>
+    <li>e) <Formula tex={String.raw`6x + 2 = x + 17`} /></li>
+  </ul>
+
+  <h3>3) Resuelve (con paréntesis)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`2(x + 3) = 14`} /></li>
+    <li>b) <Formula tex={String.raw`3(x - 1) = 9`} /></li>
+    <li>c) <Formula tex={String.raw`4(x + 2) = 20`} /></li>
+    <li>d) <Formula tex={String.raw`3(x - 5) = 2(x - 1)`} /></li>
+    <li>e) <Formula tex={String.raw`5(x - 4) + 6 = 4(x + 1)`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

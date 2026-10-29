@@ -1,0 +1,184 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Resolver una Ecuación" unitId={3} unitTitle="Ecuaciones de primer grado">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#proceso">• ¿Qué es resolver una ecuación?</a></li>
+    <li><a href="#reglas">• Reglas de la suma y del producto</a></li>
+    <li><a href="#problema">• Procedimiento para resolver</a></li>
+    <li><a href="#comprobar">• Comprobar la solución</a></li>
+    <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
+  </ul>
+</div>
+
+<div id="proceso" class="lesson-box">
+  <h2>¿Qué es resolver una ecuación?</h2>
+  <p>
+    <strong>Resolver una ecuación</strong> consiste en hallar el valor o valores de la incógnita que
+    hacen cierta la igualdad. A esos valores se les llama <strong>soluciones</strong>.
+  </p>
+  <div class="formula"><Formula display tex={String.raw`x + 4 = 10 \;\to\; \text{solución: } x = 6`} /></div>
+  <p>Para resolverla aprovechamos las reglas de la suma y del producto, que permiten transformar la
+  ecuación original, sencilla de escribir, en otra equivalente donde la incógnita queda despejada.</p>
+</div>
+
+<div id="reglas" class="lesson-box">
+  <h2>Reglas de la suma y del producto</h2>
+  <ol>
+    <li>
+      <strong>Regla de la suma:</strong> si sumamos o restamos a los dos miembros un mismo número o
+      expresión, obtenemos una ecuación equivalente.
+      <div class="formula"><Formula display tex={String.raw`x - 4 = 10 \;\to\; +4 \;\to\; x = 14`} /></div>
+    </li>
+    <li>
+      <strong>Regla del producto:</strong> si multiplicamos o dividimos los dos miembros por un
+      número distinto de cero, obtenemos una ecuación equivalente.
+      <div class="formula"><Formula display tex={String.raw`3x = 12 \;\to\; \div 3 \;\to\; x = 4`} /></div>
+    </li>
+  </ol>
+</div>
+
+<div id="problema" class="lesson-box">
+  <h2>Procedimiento para resolver</h2>
+  <ol>
+    <li>Identificar la incógnita.</li>
+    <li>
+      Aislar la incógnita en un miembro aplicando las reglas de la suma y del producto en ambos lados.
+    </li>
+    <li>Obtener el valor de la incógnita.</li>
+    <li><strong>Comprobar</strong> que la solución hace cierta la igualdad.</li>
+  </ol>
+</div>
+
+<div id="comprobar" class="lesson-box">
+  <h2>Comprobar la solución</h2>
+  <p>
+    La <strong>comprobación</strong> consiste en sustituir la incógnita por el valor hallado y
+    verificar que los dos miembros coinciden.
+  </p>
+  <p>Ejemplo: resuelve <Formula tex={String.raw`5x - 3 = 12`} /> y comprueba.</p>
+  <ol>
+    <li>Regla de la suma: <Formula tex={String.raw`5x - 3 + 3 = 12 + 3 \;\to\; 5x = 15`} /></li>
+    <li>Regla del producto: <Formula tex={String.raw`5x \div 5 = 15 \div 5 \;\to\; x = 3`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`5 \cdot 3 - 3 = 15 - 3 = 12`} /> ✓</li>
+  </ol>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Ecuación con suma</h3>
+  <div class="formula"><Formula display tex={String.raw`x + 7 = 15`} /></div>
+  <ol>
+    <li>Restamos 7 a ambos (regla de la suma): <Formula tex={String.raw`x = 15 - 7`} /></li>
+    <li><Formula tex={String.raw`x = 8`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`8 + 7 = 15`} /> ✓</li>
+  </ol>
+
+  <h3>2) Ecuación con resta</h3>
+  <div class="formula"><Formula display tex={String.raw`x - 4 = 11`} /></div>
+  <ol>
+    <li>Sumamos 4 a ambos: <Formula tex={String.raw`x = 11 + 4`} /></li>
+    <li><Formula tex={String.raw`x = 15`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`15 - 4 = 11`} /> ✓</li>
+  </ol>
+
+  <h3>3) Ecuación con multiplicación</h3>
+  <div class="formula"><Formula display tex={String.raw`3x = 21`} /></div>
+  <ol>
+    <li>Dividimos entre 3: <Formula tex={String.raw`\displaystyle x = \frac{21}{3}`} /></li>
+    <li><Formula tex={String.raw`x = 7`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`3 \cdot 7 = 21`} /> ✓</li>
+  </ol>
+
+  <h3>4) Ecuación con división</h3>
+  <div class="formula"><Formula display tex={String.raw`\displaystyle \frac{x}{5} = 4`} /></div>
+  <ol>
+    <li>Multiplicamos por 5: <Formula tex={String.raw`x = 4 \cdot 5`} /></li>
+    <li><Formula tex={String.raw`x = 20`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`\displaystyle \frac{20}{5} = 4`} /> ✓</li>
+  </ol>
+
+  <h3>5) Ecuación con dos operaciones</h3>
+  <div class="formula"><Formula display tex={String.raw`2x + 5 = 17`} /></div>
+  <ol>
+    <li>Regla de la suma: <Formula tex={String.raw`2x = 17 - 5 \;\to\; 2x = 12`} /></li>
+    <li>Regla del producto: <Formula tex={String.raw`\displaystyle x = \frac{12}{2} = 6`} /></li>
+    <li>Comprobación: <Formula tex={String.raw`2 \cdot 6 + 5 = 17`} /> ✓</li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Resuelve e indica la solución</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`x + 6 = 12`} /></li>
+    <li>b) <Formula tex={String.raw`x - 3 = 9`} /></li>
+    <li>c) <Formula tex={String.raw`4x = 28`} /></li>
+    <li>d) <Formula tex={String.raw`\displaystyle \frac{x}{6} = 5`} /></li>
+    <li>e) <Formula tex={String.raw`x + 9 = 17`} /></li>
+    <li>f) <Formula tex={String.raw`7x = 35`} /></li>
+    <li>g) <Formula tex={String.raw`x - 8 = 4`} /></li>
+    <li>h) <Formula tex={String.raw`\displaystyle \frac{x}{2} = 11`} /></li>
+    <li>i) <Formula tex={String.raw`5x = 30`} /></li>
+    <li>j) <Formula tex={String.raw`x + 12 = 20`} /></li>
+  </ul>
+
+  <h3>2) Resuelve (dos operaciones)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`2x + 1 = 15`} /></li>
+    <li>b) <Formula tex={String.raw`3x - 4 = 11`} /></li>
+    <li>c) <Formula tex={String.raw`5x - 7 = 18`} /></li>
+    <li>d) <Formula tex={String.raw`4x + 3 = 27`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>
