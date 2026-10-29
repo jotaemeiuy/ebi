@@ -11,6 +11,7 @@ import Formula from "../../../components/Formula.astro";
     <li><a href="#identidad">• Identidades y ecuaciones</a></li>
     <li><a href="#como-reconocer">• ¿Cómo distinguirlas?</a></li>
     <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
   </ul>
 </div>
 
@@ -87,3 +88,54 @@ import Formula from "../../../components/Formula.astro";
     <li>Se cumple para cualquier <Formula tex={String.raw`x`} /> → es una identidad ✓</li>
   </ol>
 </div>
+
+
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+      <div class="practico-box mt-10">
+        <h3>¿Querés practicar?</h3>
+        <p>Descargá los ejercicios de identidad.</p>
+        <a href="/pdfs/3-2-identidad.pdf" target="_blank" rel="noopener">Descargar práctico (PDF)</a>
+      </div>
+
+</Leccion>
