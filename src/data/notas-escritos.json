@@ -1,0 +1,1277 @@
+{
+	"9B": {
+		"temas": {
+			"22/06": "Notación científica, porcentajes e interés simple",
+			"27/07": "Operaciones con binomios y propiedad distributiva",
+			"15/09": "Ecuaciones de primer y segundo grado",
+			"19/10": "Trigonometría"
+		},
+		"alumnos": [
+			{
+				"ci": "58687676",
+				"nombre": "BATALLA SERRON, THIAGO BENJAMIN",
+				"escritos": {
+					"22/06": {
+						"nota": 7,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 6,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 5,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59628316",
+				"nombre": "BERARDO GARCIA, CLARA",
+				"escritos": {
+					"22/06": {
+						"nota": 5,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 8,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 6,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 6,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59529368",
+				"nombre": "CORONEL AIRES, DYLAN BENJAMIN",
+				"escritos": {
+					"22/06": {
+						"nota": 7,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 8,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 3,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59408140",
+				"nombre": "DE BRUM DOS SANTOS, DOMINIC VALENTINO",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"27/07": {
+						"nota": 8,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"19/10": {
+						"nota": 5,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58804771",
+				"nombre": "GARCIA MARTINEZ, LAUTARO",
+				"escritos": {
+					"22/06": {
+						"nota": 5,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 7,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 3,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 5,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58467610",
+				"nombre": "GONZALEZ PATRON, YAEL ZOE",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"27/07": {
+						"nota": 1,
+						"obs": "No asisitió."
+					},
+					"15/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59252551",
+				"nombre": "GULARTE LOPEZ, ZULLY MELINA",
+				"escritos": {
+					"22/06": {
+						"nota": 4,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 3,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 3,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 3,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58989341",
+				"nombre": "MARTINEZ DIAZ, SANTIAGO BENJAMIN",
+				"escritos": {
+					"22/06": {
+						"nota": 8,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 6,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 9,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59166075",
+				"nombre": "MARTINEZ RIVERO, MIA EVANGELINE",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"27/07": {
+						"nota": 4,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59224550",
+				"nombre": "MASTRACUCCI ALVEZ, FRANCO EZEQUIEL",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 1,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59595385",
+				"nombre": "NAYMAYER GONZALEZ, JUAN LUCAS",
+				"escritos": {
+					"22/06": {
+						"nota": 4,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 4,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 6,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 2,
+						"obs": "Entrega casi en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59625712",
+				"nombre": "OLIVERA ACOSTA, MAURO GUSTAVO",
+				"escritos": {
+					"22/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"15/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "58940741",
+				"nombre": "PARRABICHINE DOS SANTOS, MAIA BELEN",
+				"escritos": {}
+			},
+			{
+				"ci": "58771342",
+				"nombre": "PEDREIRA HERNANDEZ, THIAGO EMILIANO",
+				"escritos": {
+					"22/06": {
+						"nota": 3,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 4,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 5,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 3,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59333818",
+				"nombre": "PEREZ BRITOS, BAUTISTA",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 4,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 3,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 2,
+						"obs": "Entrega casi en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59495634",
+				"nombre": "PIÑEYRO ARAÚJO, BAUTISTA JAMIL",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"15/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "No asistió"
+					}
+				}
+			},
+			{
+				"ci": "59421091",
+				"nombre": "PONCE SOSA, VICTORIA BELEN",
+				"escritos": {
+					"22/06": {
+						"nota": 1,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"15/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 2,
+						"obs": "Entrega casi en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59106964",
+				"nombre": "RODRIGUEZ CABRERA, JOAQUIN",
+				"escritos": {
+					"22/06": {
+						"nota": 9,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 9,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59501382",
+				"nombre": "RODRIGUEZ CALDAS, MAITE",
+				"escritos": {
+					"22/06": {
+						"nota": 8,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 7,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 6,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 6,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58970148",
+				"nombre": "SILVA HERNANDEZ, MALENA SOFIA",
+				"escritos": {
+					"22/06": {
+						"nota": 3,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 5,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 3,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 2,
+						"obs": "Entrega casi en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59078466",
+				"nombre": "SILVA LEITES, JULIETA ELIZABETH",
+				"escritos": {
+					"22/06": {
+						"nota": 3,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 5,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 3,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 8,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59355157",
+				"nombre": "SILVA RAMOS, TIZIANO RAMIRO",
+				"escritos": {
+					"22/06": {
+						"nota": 3,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 7,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 5,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 5,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59199082",
+				"nombre": "VIERA DA SILVA, ALVARO JESUS",
+				"escritos": {
+					"22/06": {
+						"nota": 10,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 10,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 10,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "66508749",
+				"nombre": "DEL VILLAR GUIIERREZ, SONIA ISABELA",
+				"escritos": {
+					"22/06": {
+						"nota": 6,
+						"obs": ""
+					},
+					"27/07": {
+						"nota": 9,
+						"obs": ""
+					},
+					"15/09": {
+						"nota": 8,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59056105",
+				"nombre": "CACERES MAGALLANES, DANIELA BELEN",
+				"escritos": {
+					"15/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"19/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			}
+		]
+	},
+	"9C": {
+		"temas": {
+			"30/04": "Notación científica",
+			"24/06": "Porcentajes e interés simple",
+			"30/07": "Operaciones con binomios y propiedad distributiva",
+			"17/09": "Ecuaciones de primer y segundo grado",
+			"16/10": "Trigonometría"
+		},
+		"alumnos": [
+			{
+				"ci": "57949025",
+				"nombre": "ACUÑA PEÑA, SOFÍA BELÉN",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "No lo hizo."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "57901429",
+				"nombre": "BARBAS LAVEGA, PIA",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 2,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59484386",
+				"nombre": "BENITEZ MOREIRA, NATASHA AYELEN",
+				"escritos": {}
+			},
+			{
+				"ci": "59384049",
+				"nombre": "BORCHES ALVEZ, DOMINIQUE DELFINA",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "No lo hizo."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "66211237",
+				"nombre": "COLUMBIE PÉREZ, SEBASTIÁN DANIEL",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 6,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió,estaba enfermo."
+					},
+					"16/10": {
+						"nota": 4,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59447853",
+				"nombre": "COR D'ANGELO, FRANCISCO TOMAS",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 6,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 7,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 4,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 3,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59293842",
+				"nombre": "CURBELO GARCIA, BELEN",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"17/09": {
+						"nota": 7,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58205290",
+				"nombre": "DI GENOVA RODRIGUEZ, JEAN LUCAS",
+				"escritos": {
+					"30/04": {
+						"nota": 5,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 4,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 10,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 8,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 2,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "63094703",
+				"nombre": "EMILIANO ROSARIO, INGRID YEILIN",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "No lo hizo."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "Entrega en blanco"
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "58487553",
+				"nombre": "EPISCOPO BANDERA, NAHIAMA PILAR",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"30/07": {
+						"nota": 7,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "59185306",
+				"nombre": "ESTEVEZ SILVA, CLARA VALENTINA",
+				"escritos": {
+					"30/04": {
+						"nota": 7,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 3,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 3,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 3,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59234218",
+				"nombre": "GOMEZ FERNANDEZ, LEONARDO AGUSTIN",
+				"escritos": {
+					"30/04": {
+						"nota": 9,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"17/09": {
+						"nota": 6,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "58722379",
+				"nombre": "GONZALEZ HERNANDEZ, NAHUM JERAMEEL",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "No lo hizo."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "58915601",
+				"nombre": "GUTIÉRREZ COLINA, ANGEL GABRIEL",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "Entrega en blanco"
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "59180099",
+				"nombre": "IMBERT PAEZ, ERIKA DOMINIQUE",
+				"escritos": {
+					"30/04": {
+						"nota": 4,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 3,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 7,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 6,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58959308",
+				"nombre": "MERCADAL PREPELEC, FRANCO EDUARDO",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 6,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 3,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 2,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59300027",
+				"nombre": "MORAIS DULSKI, JULIANA AYELEN",
+				"escritos": {
+					"30/04": {
+						"nota": 8,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 3,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 5,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 8,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58529947",
+				"nombre": "MORAIS DULSKI, THIAGO ALEXIS",
+				"escritos": {
+					"30/04": {
+						"nota": 6,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "Entrega casi en blanco."
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "Entrego en blanco."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					}
+				}
+			},
+			{
+				"ci": "59131292",
+				"nombre": "MOREIRA ECHEVERRIAGA, NATASHA SAHIANNA",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió"
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "66423492",
+				"nombre": "PARADA PEÑA, VICTORIA VANESSA",
+				"escritos": {
+					"30/04": {
+						"nota": 9,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 5,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 9,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 8,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58516180",
+				"nombre": "PUÑALES SAPIA, ALEXIS NICOLAS",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 8,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 8,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "66765971",
+				"nombre": "RAMOS SANDOVAL, CARLOS ADRIANO",
+				"escritos": {
+					"30/04": {
+						"nota": 6,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 6,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 8,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59599626",
+				"nombre": "RODRIGUEZ LOPEZ, BRISA",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 3,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 4,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			},
+			{
+				"ci": "58941331",
+				"nombre": "RODRÍGUEZ ROSSANO, MATEO EZEQUIEL",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 5,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 4,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 2,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59525312",
+				"nombre": "TEIXEIRA BOYARO, CAMILO BENJAMIN",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 7,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"17/09": {
+						"nota": 8,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "64547137",
+				"nombre": "VALENZUELA JIMÉNEZ, ADRIANA ERIBETH",
+				"escritos": {
+					"30/04": {
+						"nota": 7,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 5,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 5,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 8,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59258351",
+				"nombre": "VARELA NUÑEZ, EMILY PRISCILA",
+				"escritos": {
+					"30/04": {
+						"nota": 4,
+						"obs": ""
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"30/07": {
+						"nota": 1,
+						"obs": "Entrega en blanco."
+					},
+					"17/09": {
+						"nota": 8,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 10,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "59017505",
+				"nombre": "VIERA COITO, KAIRO VALENTIN",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 2,
+						"obs": ""
+					},
+					"30/07": {
+						"nota": 6,
+						"obs": ""
+					},
+					"17/09": {
+						"nota": 9,
+						"obs": ""
+					},
+					"16/10": {
+						"nota": 4,
+						"obs": ""
+					}
+				}
+			},
+			{
+				"ci": "58940741",
+				"nombre": "PARRABICHINE DOS SANTOS, MAIA BELEN",
+				"escritos": {
+					"30/04": {
+						"nota": 1,
+						"obs": "No la hizo"
+					},
+					"24/06": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"17/09": {
+						"nota": 1,
+						"obs": "No asistió."
+					},
+					"16/10": {
+						"nota": 1,
+						"obs": "No asistió."
+					}
+				}
+			}
+		]
+	}
+}
