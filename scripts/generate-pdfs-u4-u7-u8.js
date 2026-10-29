@@ -322,72 +322,10 @@ async function generateU5Teoria() {
   });
 }
 
-// ─── UNIDAD 8 ───────────────────────────────────────────────────
-
-async function generateU8Sustitucion() {
-  const topic = 'Sistemas - Metodo de sustitucion';
-  await createDoc('8-1-sistemas-sustitucion.pdf', 8, topic, (doc) => {
-    addIntroBox(doc, 'Despejar una incognita en una ecuacion y reemplazarla en la otra.', 30);
-
-    writeSectionTitle(doc, '1) Resolver por sustitucion', 8, topic);
-    [
-      'a) x + y = 6 ; x - y = 2', 'b) 2x + y = 7 ; x + y = 5',
-      'c) 3x - y = 5 ; x + 2y = 4', 'd) x + 4y = 10 ; 2x - y = 1',
-      'e) 5x + y = 13 ; x - y = 1', 'f) 2x + 3y = 12 ; x - y = 1',
-      'g) x + y = 8 ; 3x - 2y = 4', 'h) 4x + y = 11 ; x + 3y = 11'
-    ].forEach(e => writeExerciseItem(doc, e, 6, 8, topic));
-  });
-}
-
-async function generateU8Igualacion() {
-  const topic = 'Sistemas - Metodo de igualacion';
-  await createDoc('8-2-sistemas-igualacion.pdf', 8, topic, (doc) => {
-    addIntroBox(doc, 'Despejar la misma incognita en ambas ecuaciones e igualar las expresiones.', 30);
-
-    writeSectionTitle(doc, '1) Resolver por igualacion', 8, topic);
-    [
-      'a) x + y = 9 ; x - y = 1', 'b) 2x + y = 11 ; x - y = 1',
-      'c) 3x + y = 10 ; x + y = 6', 'd) x + 3y = 14 ; 2x - y = 0',
-      'e) 4x - y = 9 ; x + 2y = 8', 'f) 2x + 5y = 16 ; x - y = 1',
-      'g) 3x + 2y = 16 ; x + y = 7', 'h) 5x - 3y = 1 ; x + y = 5'
-    ].forEach(e => writeExerciseItem(doc, e, 6, 8, topic));
-  });
-}
-
-async function generateU8Reduccion() {
-  const topic = 'Sistemas - Metodo de reduccion';
-  await createDoc('8-3-sistemas-reduccion.pdf', 8, topic, (doc) => {
-    addIntroBox(doc, 'Sumar o restar las ecuaciones para eliminar una incognita.', 30);
-
-    writeSectionTitle(doc, '1) Resolver por reduccion', 8, topic);
-    [
-      'a) x + y = 5 ; x - y = 1', 'b) 2x + y = 9 ; x - y = 0',
-      'c) 3x + 2y = 12 ; x + 2y = 8', 'd) x + 3y = 10 ; 2x - y = 6',
-      'e) 4x + y = 14 ; 2x + 3y = 12', 'f) 3x - 2y = 1 ; 2x + 3y = 12',
-      'g) 5x + 4y = 22 ; 3x - 2y = 2', 'h) 2x + 5y = 17 ; 3x + 2y = 12'
-    ].forEach(e => writeExerciseItem(doc, e, 6, 8, topic));
-  });
-}
-
-async function generateU8Grafico() {
-  const topic = 'Sistemas - Metodo grafico';
-  await createDoc('8-4-sistemas-grafico.pdf', 8, topic, (doc) => {
-    addIntroBox(doc, 'Despejar y, armar una tabla de valores, graficar e identificar el punto de interseccion.', 34);
-
-    writeSectionTitle(doc, '1) Resolver graficamente y clasificar', 8, topic);
-    [
-      'a) x + y = 5 ; x - y = 1', 'b) 2x + y = 8 ; x - y = 1',
-      'c) x + 3y = 9 ; 2x - y = 4', 'd) 3x + y = 7 ; x + y = 5',
-      'e) x + y = 4 ; 2x + 2y = 8', 'f) x + y = 3 ; x + y = 5',
-      'g) 2x - y = 1 ; x + y = 5', 'h) 4x + 2y = 10 ; x - y = 1'
-    ].forEach(e => writeExerciseItem(doc, e, 8, 8, topic));
-  });
-}
-
 // ─── Main ───────────────────────────────────────────────────────
 
 async function generateAll() {
-  console.log('Generando PDFs de las unidades 4, 5 y 8...');
+  console.log('Generando PDFs de las unidades 4 y 5...');
 
   await generateU4EcuacionAx2C();
   console.log('  OK 4-1-ecuacion-ax2-c.pdf');
@@ -395,15 +333,6 @@ async function generateAll() {
   console.log('  OK 4-2-ecuacion-ax2-bx.pdf');
   await generateU4EcuacionAx2BxC();
   console.log('  OK 4-3-ecuacion-ax2-bx-c.pdf');
-
-  await generateU8Sustitucion();
-  console.log('  OK 8-1-sistemas-sustitucion.pdf');
-  await generateU8Igualacion();
-  console.log('  OK 8-2-sistemas-igualacion.pdf');
-  await generateU8Reduccion();
-  console.log('  OK 8-3-sistemas-reduccion.pdf');
-  await generateU8Grafico();
-  console.log('  OK 8-4-sistemas-grafico.pdf');
 
   console.log('Listo! PDFs en public/pdfs/');
 }
