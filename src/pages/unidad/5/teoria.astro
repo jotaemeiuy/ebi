@@ -1,9 +1,9 @@
 ---
-layout: ../../../layouts/Leccion.astro
-title: "Trigonometría en triángulos rectángulos - Teoría"
-unitId: 5
-unitTitle: "Trigonometría"
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
 ---
+
+<Leccion title="Trigonometría en triángulos rectángulos - Teoría" unitId={5} unitTitle="Trigonometría">
 
 <div class="lesson-box">
   <h2>Contenido de esta lección:</h2>
@@ -41,7 +41,7 @@ unitTitle: "Trigonometría"
     <text x="142.4" y="94.5" text-anchor="middle" fill="#f59e0b" font-size="13" transform="rotate(-35.8 142.4 94.5)">Hipotenusa</text>
   </svg>
   </div>
-  <p class="font-mono text-violet-400">(Hipotenusa)² = (cateto)² + (cateto)²</p>
+  <p class="text-violet-400"><Formula tex={String.raw`(\text{hipotenusa})^2 = (\text{cateto})^2 + (\text{cateto})^2`} /></p>
   <p>En el repartido el recto suele estar en A, la hipotenusa es BC. En otros libros el recto está en C y la hipotenusa es AB. La letra cambia, la idea no: <strong>hipotenusa = frente al 90°</strong>.</p>
 </div>
 
@@ -76,24 +76,22 @@ unitTitle: "Trigonometría"
     <text x="283" y="241" text-anchor="middle" fill="#6ee7b7" font-size="13" font-style="italic">c</text>
   </svg>
   </div>
-  <div class="trig-formula">
-    <span style="color:#6ee7b7">c²</span> = <span style="color:#7dd3fc">a²</span> + <span style="color:#fca5a5">b²</span>
-  </div>
+  <div class="formula formula-lg"><Formula display tex={String.raw`\textcolor{#6ee7b7}{c^2} = \textcolor{#7dd3fc}{a^2} + \textcolor{#fca5a5}{b^2}`} /></div>
   <h3>¿De dónde se deduce?</h3>
-  <p>Cada cuadrado se apoya en un lado del triángulo, así que su área es <strong>ese lado al cuadrado</strong>: el celeste mide a², el rojo b² y el verde c².</p>
+  <p>Cada cuadrado se apoya en un lado del triángulo, así que su área es <strong>ese lado al cuadrado</strong>: el celeste mide <Formula tex={String.raw`a^2`} />, el rojo <Formula tex={String.raw`b^2`} /> y el verde <Formula tex={String.raw`c^2`} />.</p>
   <p>Si sumamos el cuadrado celeste y el rojo, cubren exactamente la misma superficie que el verde. Esa igualdad de áreas es el teorema:</p>
-  <div class="trig-formula">área <span style="color:#6ee7b7">verde</span> = área <span style="color:#7dd3fc">celeste</span> + área <span style="color:#fca5a5">roja</span></div>
+  <div class="formula"><Formula display tex={String.raw`\text{área } \textcolor{#6ee7b7}{\text{verde}} = \text{área } \textcolor{#7dd3fc}{\text{celeste}} + \text{área } \textcolor{#fca5a5}{\text{roja}}`} /></div>
   <p>No hace falta memorizarlo como una fórmula suelta: se comprueba recortando los tres cuadrados y moviéndolos, y vale para <strong>cualquier</strong> triángulo rectángulo, sin importar su tamaño.</p>
   <p>Despejes útiles:</p>
   <ul class="list-disc pl-5 marker:text-red-500">
-    <li>Hipotenusa: c = <span class="raiz"><span class="rad">a² + b²</span></span></li>
-    <li>Cateto: a = <span class="raiz"><span class="rad">c² − b²</span></span> &nbsp;o&nbsp; b = <span class="raiz"><span class="rad">c² − a²</span></span></li>
+    <li>Hipotenusa: <Formula tex={String.raw`c = \sqrt{a^2 + b^2}`} /></li>
+    <li>Cateto: <Formula tex={String.raw`a = \sqrt{c^2 - b^2}`} /> &nbsp;o&nbsp; <Formula tex={String.raw`b = \sqrt{c^2 - a^2}`} /></li>
   </ul>
   <h3>Ejemplo: 6 - 8 - 10</h3>
   <ol>
-    <li>Catetos 6 y 8, hipotenusa c = <span class="raiz"><span class="rad">6² + 8²</span></span></li>
-    <li>c = <span class="raiz"><span class="rad">36 + 64</span></span> = <span class="raiz"><span class="rad">100</span></span> = 10</li>
-    <li>Verificación: 10² = 100, 6² + 8² = 100 ✓</li>
+    <li>Catetos 6 y 8, hipotenusa <Formula tex={String.raw`c = \sqrt{6^2 + 8^2}`} /></li>
+    <li><Formula tex={String.raw`c = \sqrt{36 + 64} = \sqrt{100} = 10`} /></li>
+    <li>Verificación: <Formula tex={String.raw`10^2 = 100`} />, <Formula tex={String.raw`6^2 + 8^2 = 100`} /> ✓</li>
   </ol>
   <div style="display:flex;justify-content:center;margin:1rem 0">
   <svg width="300" height="190" viewBox="0 0 300 190" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triángulo 6 8 10">
@@ -112,7 +110,7 @@ unitTitle: "Trigonometría"
 <div id="pitagoricos" class="lesson-box">
   <h2>3. Triángulos pitagóricos</h2>
   <p>Son triángulos de <strong>lados enteros</strong> que verifican Pitágoras. Los tres más usados:</p>
-  <p class="font-mono text-violet-400">3 - 4 - 5 &nbsp;&nbsp; 5 - 12 - 13 &nbsp;&nbsp; 9 - 40 - 41</p>
+  <p class="font-mono text-violet-400"><span class="whitespace-nowrap">3 - 4 - 5</span> &nbsp;&nbsp; <span class="whitespace-nowrap">5 - 12 - 13</span> &nbsp;&nbsp; <span class="whitespace-nowrap">9 - 40 - 41</span></p>
   <p>Y todos sus múltiplos: 6-8-10 es el doble de 3-4-5; 10-24-26 es el doble de 5-12-13.</p>
   <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin:1rem 0">
   <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triángulo 3 4 5">
@@ -140,7 +138,7 @@ unitTitle: "Trigonometría"
     <text x="72" y="15" text-anchor="middle" fill="#94a3b8" font-size="12">9-40-41</text>
   </svg>
   </div>
-  <p>Si en un ejercicio ves hipotenusa 701 y un cateto 651, sospecha terna: 701² − 651² = 260². La tabla del práctico está armada así.</p>
+  <p>Si en un ejercicio ves hipotenusa 701 y un cateto 651, sospecha terna: <Formula tex={String.raw`701^2 - 651^2 = 260^2`} />. La tabla del práctico está armada así.</p>
 </div>
 
 <div id="lineas" class="lesson-box">
@@ -185,8 +183,8 @@ unitTitle: "Trigonometría"
 
 <div id="coseno" class="lesson-box">
   <h2>5. Coseno: adyacente sobre hipotenusa</h2>
-  <div class="trig-formula">
-    <span class="fn">cos</span>(<span class="var">α</span>) = <span class="frac"><span class="num">cateto adyacente</span><span class="den">hipotenusa</span></span>
+  <div class="formula formula-lg">
+    <Formula display tex={String.raw`\cos(\alpha) = \frac{\text{cateto adyacente}}{\text{hipotenusa}}`} />
   </div>
   <div style="display:flex;justify-content:center;margin:1rem 0">
   <svg width="300" height="210" viewBox="0 0 300 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coseno adyacente hipotenusa">
@@ -203,17 +201,17 @@ unitTitle: "Trigonometría"
   <h3>Ejemplo</h3>
   <p>Hipotenusa AB = 16 cm, BC = 6 cm, recto en C. ¿Coseno de qué ángulo se puede calcular?</p>
   <ol>
-    <li>BC toca al ángulo B y es cateto, AB es hipotenusa → se puede calcular <strong>cos(B) = <span class="frac"><span class="num">6</span><span class="den">16</span></span> = 0,375</strong>.</li>
-    <li>B = cos⁻¹(0,375) ≈ 68,0°.</li>
-    <li>Para cos(A) necesitarías AC = <span class="raiz"><span class="rad">16² − 6²</span></span> ≈ 14,83.</li>
+    <li>BC toca al ángulo B y es cateto, AB es hipotenusa → se puede calcular <strong><Formula tex={String.raw`\cos(B) = \frac{6}{16} = 0{,}375`} /></strong>.</li>
+    <li><Formula tex={String.raw`B = \cos^{-1}(0{,}375) \approx 68{,}0^\circ`} />.</li>
+    <li>Para <Formula tex={String.raw`\cos(A)`} /> necesitarías <Formula tex={String.raw`AC = \sqrt{16^2 - 6^2} \approx 14{,}83`} />.</li>
   </ol>
   <p>Moraleja: el coseno sirve cuando conoces <strong>el lado pegado al ángulo y la hipotenusa</strong>.</p>
 </div>
 
 <div id="seno" class="lesson-box">
   <h2>6. Seno: opuesto sobre hipotenusa</h2>
-  <div class="trig-formula">
-    <span class="fn">sin</span>(<span class="var">α</span>) = <span class="frac"><span class="num">cateto opuesto</span><span class="den">hipotenusa</span></span>
+  <div class="formula formula-lg">
+    <Formula display tex={String.raw`\sin(\alpha) = \frac{\text{cateto opuesto}}{\text{hipotenusa}}`} />
   </div>
   <div style="display:flex;justify-content:center;margin:1rem 0">
   <svg width="300" height="210" viewBox="0 0 300 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seno opuesto hipotenusa">
@@ -230,17 +228,17 @@ unitTitle: "Trigonometría"
   <h3>Ejemplo</h3>
   <p>Recto en C, Â = 25°, AB = 34 cm (hipotenusa).</p>
   <ol>
-    <li>El opuesto a A es BC → sin(25°) = <span class="frac"><span class="num">BC</span><span class="den">34</span></span> → BC = 34 · sin(25°) ≈ 14,37 cm.</li>
-    <li>B = 90° − 25° = 65°.</li>
-    <li>Con sin(65°) = <span class="frac"><span class="num">AC</span><span class="den">34</span></span> → AC = 34 · sin(65°) ≈ 30,81 cm.</li>
+    <li>El opuesto a A es BC → <Formula tex={String.raw`\sin(25^\circ) = \frac{BC}{34} \;\to\; BC = 34 \cdot \sin(25^\circ) \approx 14{,}37\ \text{cm}`} />.</li>
+    <li><Formula tex={String.raw`B = 90^\circ - 25^\circ = 65^\circ`} />.</li>
+    <li>Con <Formula tex={String.raw`\sin(65^\circ) = \frac{AC}{34} \;\to\; AC = 34 \cdot \sin(65^\circ) \approx 30{,}81\ \text{cm}`} />.</li>
   </ol>
   <p>El seno sirve cuando conoces <strong>el lado enfrentado al ángulo y la hipotenusa</strong>.</p>
 </div>
 
 <div id="tangente" class="lesson-box">
   <h2>7. Tangente: opuesto sobre adyacente</h2>
-  <div class="trig-formula">
-    <span class="fn">tan</span>(<span class="var">α</span>) = <span class="frac"><span class="num">cateto opuesto</span><span class="den">cateto adyacente</span></span>
+  <div class="formula formula-lg">
+    <Formula display tex={String.raw`\tan(\alpha) = \frac{\text{cateto opuesto}}{\text{cateto adyacente}}`} />
   </div>
   <div style="display:flex;justify-content:center;margin:1rem 0">
   <svg width="300" height="210" viewBox="0 0 300 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tangente opuesto adyacente">
@@ -258,9 +256,9 @@ unitTitle: "Trigonometría"
   <h3>Ejemplo</h3>
   <p>Recto en A, B = 50°, AB = 12 cm (adyacente a B). Sin hallar la hipotenusa:</p>
   <ol>
-    <li>El opuesto a B es AC → tan(50°) = <span class="frac"><span class="num">AC</span><span class="den">12</span></span>.</li>
-    <li>AC = 12 · tan(50°) ≈ 14,30 cm.</li>
-    <li>Verificación con coseno: BC = <span class="frac"><span class="num">12</span><span class="den">cos(50°)</span></span> ≈ 18,67; <span class="raiz"><span class="rad">18,67² − 12²</span></span> ≈ 14,30 ✓</li>
+    <li>El opuesto a B es AC → <Formula tex={String.raw`\tan(50^\circ) = \frac{AC}{12}`} />.</li>
+    <li><Formula tex={String.raw`AC = 12 \cdot \tan(50^\circ) \approx 14{,}30\ \text{cm}`} />.</li>
+    <li>Verificación con coseno: <Formula tex={String.raw`BC = \frac{12}{\cos(50^\circ)} \approx 18{,}67`} />; <Formula tex={String.raw`\sqrt{18{,}67^2 - 12^2} \approx 14{,}30`} /> ✓</li>
   </ol>
   <p>La tangente es la única que <strong>no usa la hipotenusa</strong>: ideal cuando tienes los dos catetos.</p>
   <div style="display:flex;justify-content:center;margin:1rem 0">
@@ -274,15 +272,15 @@ unitTitle: "Trigonometría"
     <text x="248" y="44" fill="#38bdf8" font-size="12">68,2°</text>
   </svg>
   </div>
-  <p>Catetos 12 y 30: tan = <span class="frac"><span class="num">12</span><span class="den">30</span></span> → ángulo frente al 12 vale arctan(0,4) ≈ 21,8°; el otro 68,2°; hipotenusa <span class="raiz"><span class="rad">12²+30²</span></span> ≈ 32,31 cm.</p>
+  <p>Catetos 12 y 30: <Formula tex={String.raw`\tan\alpha = \frac{12}{30} \;\to\; \alpha = \arctan(0{,}4) \approx 21{,}8^\circ`} /> (el ángulo frente al 12); el otro mide 68,2°; hipotenusa <Formula tex={String.raw`\sqrt{12^2 + 30^2} \approx 32{,}31\ \text{cm}`} />.</p>
 </div>
 
 <div id="memoria" class="lesson-box">
   <h2>8. Cómo recordarlo: SOH - CAH - TOA</h2>
   <ul class="list-disc pl-5 marker:text-red-500">
-    <li><strong>S</strong>eno = <span class="frac"><span class="num"><strong>O</strong>puesto</span><span class="den"><strong>H</strong>ipotenusa</span></span></li>
-    <li><strong>C</strong>oseno = <span class="frac"><span class="num"><strong>A</strong>dyacente</span><span class="den"><strong>H</strong>ipotenusa</span></span></li>
-    <li><strong>T</strong>angente = <span class="frac"><span class="num"><strong>O</strong>puesto</span><span class="den"><strong>A</strong>dyacente</span></span></li>
+    <li><strong>S</strong>eno = <Formula tex={String.raw`\frac{\mathbf{O}\text{puesto}}{\mathbf{H}\text{ipotenusa}}`} /></li>
+    <li><strong>C</strong>oseno = <Formula tex={String.raw`\frac{\mathbf{A}\text{dyacente}}{\mathbf{H}\text{ipotenusa}}`} /></li>
+    <li><strong>T</strong>angente = <Formula tex={String.raw`\frac{\mathbf{O}\text{puesto}}{\mathbf{A}\text{dyacente}}`} /></li>
   </ul>
   <div style="display:flex;justify-content:center;margin:1rem 0">
   <svg width="340" height="130" viewBox="0 0 340 130" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema SOH CAH TOA">
@@ -295,8 +293,8 @@ unitTitle: "Trigonometría"
     <text x="130" y="75" fill="#e2e8f0" font-size="11">cos = ad / hip</text>
     <text x="255" y="50" fill="#34d399" font-size="16" font-weight="bold">TOA</text>
     <text x="240" y="75" fill="#e2e8f0" font-size="11">tan = op / ad</text>
-    <text x="25" y="95" fill="#94a3b8" font-size="10">¿hay hip? → sin/cos</text>
-    <text x="240" y="95" fill="#94a3b8" font-size="10">¿no hay hip? → tan</text>
+    <text x="25" y="95" fill="#94a3b8" font-size="10">con hip → sin/cos</text>
+    <text x="240" y="95" fill="#94a3b8" font-size="10">sin hip → tan</text>
   </svg>
   </div>
   <p>Pregunta guía: ¿qué dos lados conozco o quiero? Esa respuesta elige la herramienta.</p>
@@ -306,18 +304,18 @@ unitTitle: "Trigonometría"
   <h2>9. Calculadora y funciones inversas</h2>
   <ul class="list-disc pl-5 marker:text-red-500">
     <li>Para hallar un <strong>lado</strong>: usa sin, cos o tan del ángulo conocido.</li>
-    <li>Para hallar un <strong>ángulo</strong>: usa la inversa sin⁻¹, cos⁻¹ o tan⁻¹ del cociente.</li>
+    <li>Para hallar un <strong>ángulo</strong>: usa la inversa <Formula tex={String.raw`\sin^{-1}`} />, <Formula tex={String.raw`\cos^{-1}`} /> o <Formula tex={String.raw`\tan^{-1}`} /> del cociente.</li>
     <li>La calculadora debe estar en <strong>DEG</strong> (grados), no en RAD ni GRAD.</li>
-    <li>Los ángulos agudos cumplen: α + β = 90°.</li>
+    <li>Los ángulos agudos cumplen: <Formula tex={String.raw`\alpha + \beta = 90^\circ`} />.</li>
   </ul>
-  <p class="font-mono text-violet-400">Ej.: cos(B) = 0,375 → B = cos⁻¹(0,375) ≈ 68°</p>
-  <p class="font-mono text-violet-400">Ej.: tan(α) = <span class="frac"><span class="num">12</span><span class="den">30</span></span> = 0,4 → α = tan⁻¹(0,4) ≈ 21,8°</p>
+  <p class="text-violet-400">Ej.: <Formula tex={String.raw`\cos(B) = 0{,}375 \;\to\; B = \cos^{-1}(0{,}375) \approx 68^\circ`} /></p>
+  <p class="text-violet-400">Ej.: <Formula tex={String.raw`\tan(\alpha) = \frac{12}{30} = 0{,}4 \;\to\; \alpha = \tan^{-1}(0{,}4) \approx 21{,}8^\circ`} /></p>
 </div>
 
 <div id="resolver" class="lesson-box">
   <h2>10. Resolver un triángulo: los 3 casos</h2>
   <p><strong>Resolver</strong> = hallar los 3 lados y los 2 ángulos agudos (el tercero es 90°).</p>
-  <div style="overflow-x:auto">
+  <div class="tabla-scroll">
   <table>
     <thead><tr><th>Caso</th><th>Dato</th><th>Camino</th></tr></thead>
     <tbody>
@@ -412,8 +410,8 @@ unitTitle: "Trigonometría"
   <ul class="list-disc pl-5 marker:text-red-500">
     <li>Confundir opuesto con adyacente: marca α con color antes de elegir sin/cos/tan.</li>
     <li>Usar Pitágoras con un ángulo: Pitágoras solo relaciona lados, nunca ángulos.</li>
-    <li>Olvidar DEG: en RAD, cos⁻¹(0,375) da 1,19 (radianes), no 68°.</li>
-    <li>No verificar: comprueba siempre con Pitágoras y con α + β = 90°.</li>
+    <li>Olvidar DEG: en RAD, <Formula tex={String.raw`\cos^{-1}(0{,}375)`} /> da 1,19 (radianes), no 68°.</li>
+    <li>No verificar: comprueba siempre con Pitágoras y con <Formula tex={String.raw`\alpha + \beta = 90^\circ`} />.</li>
     <li>Redondear antes de tiempo: guarda 2-3 decimales intermedios, redondea al final.</li>
   </ul>
 </div>
@@ -424,18 +422,56 @@ unitTitle: "Trigonometría"
 </div>
 
 <style>
-  .trig-formula {
-    margin: .85rem 0 1.15rem;
-    padding: .75rem 1rem;
-    text-align: center;
-    background: rgba(2, 6, 23, 0.55);
-    border: 1px solid #334155;
-    border-radius: 10px;
-    font-family: "Cambria Math", "STIX Two Math", Cambria, Georgia, "Times New Roman", serif;
-    font-size: 1.5rem;
-    line-height: 1.2;
-    color: #e2e8f0;
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
-  .trig-formula .fn { font-style: normal; }
-  .trig-formula .var { font-style: italic; }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  .tabla-scroll {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .tabla-scroll table {
+    margin: 0;
+    min-width: 560px;
+  }
+  .tabla-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+  .tabla-scroll::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+  }
 </style>
+
+</Leccion>

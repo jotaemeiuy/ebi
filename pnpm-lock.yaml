@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/markdown-satteri':
+        specifier: 0.4.5
+        version: 0.4.5
       astro:
         specifier: 7.4.2
         version: 7.4.2(@vercel/functions@3.9.11)(esbuild@0.28.1)(jiti@2.6.1)(yaml@2.9.1)
       katex:
         specifier: ^0.19.1
         version: 0.19.1
+      satteri-katex:
+        specifier: ^0.2.0
+        version: 0.2.0(satteri@0.10.5)
       tailwindcss:
         specifier: ^4.2.4
         version: 4.2.4
@@ -1780,6 +1786,12 @@ packages:
     resolution: {integrity: sha512-eTBTTqMR6uHKLgcUqpJP8ntzDI6V4LYA8negAMBEI7gkgVvOdrx6VsvS2Ym+83KhOPdLCHWJu0w7UQFJZhHKNw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
+
+  satteri-katex@0.2.0:
+    resolution: {integrity: sha512-ab5N2EPFEy6Xu/EF2/lJwUqISVHHqe2HatbQ5aymunRiphOuop1XmAXeulwt06I1W9y9a8TUs9AWZSnX0zeuag==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      satteri: ^0.10.0
 
   satteri@0.10.5:
     resolution: {integrity: sha512-Ao1LKpAEa9Wdg0otgbVKViZHEq9ebdXe4DMrp3s9vQAU0HNIuHnFEuMuOcm0ZIXyV0Yzxj91NvhLpvXZJO/5ZQ==}
@@ -3643,6 +3655,11 @@ snapshots:
       '@rolldown/binding-openharmony-arm64': 1.2.14
       '@rolldown/binding-win32-arm64-msvc': 1.2.14
       '@rolldown/binding-win32-x64-msvc': 1.2.14
+
+  satteri-katex@0.2.0(satteri@0.10.5):
+    dependencies:
+      katex: 0.19.1
+      satteri: 0.10.5
 
   satteri@0.10.5:
     dependencies:
