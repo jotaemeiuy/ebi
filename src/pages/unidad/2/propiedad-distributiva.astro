@@ -1,0 +1,281 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Propiedad Distributiva" unitId={2} unitTitle="Álgebra">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#concepto">• ¿Qué es la propiedad distributiva?</a></li>
+    <li><a href="#distributiva-suma">• Distributiva respecto a la suma</a></li>
+    <li><a href="#distributiva-resta">• Distributiva respecto a la resta</a></li>
+    <li><a href="#doble-distributiva">• Doble distributiva (binomio por binomio)</a></li>
+    <li><a href="#distributiva-inversa">• Distributiva inversa (factor común)</a></li>
+    <li><a href="#problemas">• Problemas resueltos paso a paso</a></li>
+    <li><a href="#ejercicios">• Ejercicios de práctica</a></li>
+  </ul>
+</div>
+
+<div id="concepto" class="lesson-box">
+  <h2>¿Qué es la propiedad distributiva?</h2>
+  <p>
+    La propiedad distributiva permite multiplicar un factor por cada uno de los sumandos dentro de un paréntesis y luego sumar los resultados.
+  </p>
+  <p>Fórmula general:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`a \cdot (b + c) = a \cdot b + a \cdot c`} /></div>
+  <p>
+    Esta propiedad es fundamental en álgebra, ya que permite simplificar expresiones y operar con polinomios.
+    También funciona "al revés": si identificamos un factor común, podemos extraerlo.
+  </p>
+</div>
+
+<div id="distributiva-suma" class="lesson-box">
+  <h2>Distributiva respecto a la suma</h2>
+  <p>Fórmula:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`a \cdot (b + c) = a \cdot b + a \cdot c`} /></div>
+  <p>Ejemplos con números:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`3 \cdot (4 + 5) = 3 \cdot 4 + 3 \cdot 5 = 12 + 15 = 27`} /></li>
+    <li><Formula tex={String.raw`5 \cdot (2 + 8) = 5 \cdot 2 + 5 \cdot 8 = 10 + 40 = 50`} /></li>
+    <li><Formula tex={String.raw`-2 \cdot (6 + 3) = -2 \cdot 6 + (-2) \cdot 3 = -12 + (-6) = -18`} /></li>
+    <li><Formula tex={String.raw`7 \cdot (5 + 9) = 7 \cdot 5 + 7 \cdot 9 = 35 + 63 = 98`} /></li>
+  </ul>
+  <p>Ejemplos con variables:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`x \cdot (x + 3) = x^2 + 3x`} /></li>
+    <li><Formula tex={String.raw`2a \cdot (a + 5) = 2a^2 + 10a`} /></li>
+    <li><Formula tex={String.raw`3m \cdot (2m + 4n) = 6m^2 + 12mn`} /></li>
+    <li><Formula tex={String.raw`-4x \cdot (x + 2) = -4x^2 - 8x`} /></li>
+    <li><Formula tex={String.raw`5y \cdot (3y + 2z) = 15y^2 + 10yz`} /></li>
+  </ul>
+</div>
+
+<div id="distributiva-resta" class="lesson-box">
+  <h2>Distributiva respecto a la resta</h2>
+  <p>Fórmula:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`a \cdot (b - c) = a \cdot b - a \cdot c`} /></div>
+  <p>Ejemplos con números:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`4 \cdot (10 - 3) = 4 \cdot 10 - 4 \cdot 3 = 40 - 12 = 28`} /></li>
+    <li><Formula tex={String.raw`6 \cdot (9 - 2) = 6 \cdot 9 - 6 \cdot 2 = 54 - 12 = 42`} /></li>
+    <li><Formula tex={String.raw`-3 \cdot (7 - 5) = -3 \cdot 7 - (-3) \cdot 5 = -21 + 15 = -6`} /></li>
+    <li><Formula tex={String.raw`8 \cdot (12 - 4) = 8 \cdot 12 - 8 \cdot 4 = 96 - 32 = 64`} /></li>
+  </ul>
+  <p>Ejemplos con variables:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`x \cdot (x - 4) = x^2 - 4x`} /></li>
+    <li><Formula tex={String.raw`3a \cdot (2a - 1) = 6a^2 - 3a`} /></li>
+    <li><Formula tex={String.raw`5y \cdot (y - 3) = 5y^2 - 15y`} /></li>
+    <li><Formula tex={String.raw`-2b \cdot (3b - 7) = -6b^2 + 14b`} /></li>
+    <li><Formula tex={String.raw`4mn \cdot (2m - 3n) = 8m^2n - 12mn^2`} /></li>
+  </ul>
+</div>
+
+<div id="doble-distributiva" class="lesson-box">
+  <h2>Doble distributiva (binomio por binomio)</h2>
+  <p>Cuando multiplicamos dos binomios, aplicamos la propiedad distributiva dos veces:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`(a + b)(c + d) = ac + ad + bc + bd`} /></div>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`(x + 2)(x + 3) = x^2 + 3x + 2x + 6 = x^2 + 5x + 6`} /></li>
+    <li><Formula tex={String.raw`(x + 4)(x - 1) = x^2 - x + 4x - 4 = x^2 + 3x - 4`} /></li>
+    <li><Formula tex={String.raw`(2a + 3)(a + 5) = 2a^2 + 10a + 3a + 15 = 2a^2 + 13a + 15`} /></li>
+    <li><Formula tex={String.raw`(3x - 2)(x + 4) = 3x^2 + 12x - 2x - 8 = 3x^2 + 10x - 8`} /></li>
+    <li><Formula tex={String.raw`(m - 3)(m - 5) = m^2 - 5m - 3m + 15 = m^2 - 8m + 15`} /></li>
+    <li><Formula tex={String.raw`(2x + 5)(3x - 1) = 6x^2 - 2x + 15x - 5 = 6x^2 + 13x - 5`} /></li>
+  </ul>
+</div>
+
+<div id="distributiva-inversa" class="lesson-box">
+  <h2>Distributiva inversa (factor común)</h2>
+  <p>
+    La propiedad distributiva también se puede usar "al revés": si todos los términos comparten un factor,
+    podemos extraerlo del paréntesis.
+  </p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`a \cdot b + a \cdot c = a \cdot (b + c)`} /></div>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`6x + 12 = 6(x + 2)`} /></li>
+    <li><Formula tex={String.raw`3a^2 + 9a = 3a(a + 3)`} /></li>
+    <li><Formula tex={String.raw`4xy - 8x = 4x(y - 2)`} /></li>
+    <li><Formula tex={String.raw`5m^2n + 10mn^2 = 5mn(m + 2n)`} /></li>
+    <li><Formula tex={String.raw`15x^3 - 10x^2 + 5x = 5x(3x^2 - 2x + 1)`} /></li>
+    <li><Formula tex={String.raw`14a^2b - 21ab^2 = 7ab(2a - 3b)`} /></li>
+  </ul>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Distributiva con números</h3>
+  <p>Resolver: <Formula tex={String.raw`7 \cdot (8 + 3)`} /></p>
+  <ol>
+    <li>Aplicamos la propiedad distributiva: <Formula tex={String.raw`7 \cdot 8 + 7 \cdot 3`} /></li>
+    <li>Realizamos las multiplicaciones: <Formula tex={String.raw`56 + 21`} /></li>
+    <li>Resultado: <Formula tex={String.raw`77`} /></li>
+  </ol>
+  <p>Comprobamos: <Formula tex={String.raw`7 \cdot 11 = 77\ \checkmark`} /></p>
+
+  <h3>2) Distributiva con variables (trinomio)</h3>
+  <p>Resolver: <Formula tex={String.raw`4x \cdot (3x + 2y - 5)`} /></p>
+  <ol>
+    <li>Distribuimos <Formula tex={String.raw`4x`} /> a cada término del paréntesis</li>
+    <li><Formula tex={String.raw`4x \cdot 3x = 12x^2`} /></li>
+    <li><Formula tex={String.raw`4x \cdot 2y = 8xy`} /></li>
+    <li><Formula tex={String.raw`4x \cdot (-5) = -20x`} /></li>
+    <li>Resultado: <Formula tex={String.raw`12x^2 + 8xy - 20x`} /></li>
+  </ol>
+
+  <h3>3) Doble distributiva</h3>
+  <p>Resolver: <Formula tex={String.raw`(2x + 3)(x - 4)`} /></p>
+  <ol>
+    <li>Distribuimos el primer binomio sobre el segundo</li>
+    <li><Formula tex={String.raw`2x \cdot x = 2x^2`} /></li>
+    <li><Formula tex={String.raw`2x \cdot (-4) = -8x`} /></li>
+    <li><Formula tex={String.raw`3 \cdot x = 3x`} /></li>
+    <li><Formula tex={String.raw`3 \cdot (-4) = -12`} /></li>
+    <li>Sumamos: <Formula tex={String.raw`2x^2 - 8x + 3x - 12`} /></li>
+    <li>Resultado: <Formula tex={String.raw`2x^2 - 5x - 12`} /></li>
+  </ol>
+
+  <h3>4) Distributiva inversa</h3>
+  <p>Extraer factor común de: <Formula tex={String.raw`18a^2b - 12ab^2 + 6ab`} /></p>
+  <ol>
+    <li>Identificamos el factor común: <Formula tex={String.raw`6ab`} /></li>
+    <li>Dividimos cada término por <Formula tex={String.raw`6ab`} />:</li>
+    <li><Formula tex={String.raw`18a^2b \div 6ab = 3a`} /></li>
+    <li><Formula tex={String.raw`-12ab^2 \div 6ab = -2b`} /></li>
+    <li><Formula tex={String.raw`6ab \div 6ab = 1`} /></li>
+    <li>Resultado: <Formula tex={String.raw`6ab(3a - 2b + 1)`} /></li>
+  </ol>
+
+  <h3>5) Distributiva con signo negativo</h3>
+  <p>Resolver: <Formula tex={String.raw`-5x \cdot (2x - 3y + 1)`} /></p>
+  <ol>
+    <li>Distribuimos <Formula tex={String.raw`-5x`} /> a cada término (¡cuidado con los signos!)</li>
+    <li><Formula tex={String.raw`-5x \cdot 2x = -10x^2`} /></li>
+    <li><Formula tex={String.raw`-5x \cdot (-3y) = +15xy`} /></li>
+    <li><Formula tex={String.raw`-5x \cdot 1 = -5x`} /></li>
+    <li>Resultado: <Formula tex={String.raw`-10x^2 + 15xy - 5x`} /></li>
+  </ol>
+
+  <h3>6) Doble distributiva con coeficientes</h3>
+  <p>Resolver: <Formula tex={String.raw`(3a - 2)(4a + 5)`} /></p>
+  <ol>
+    <li><Formula tex={String.raw`3a \cdot 4a = 12a^2`} /></li>
+    <li><Formula tex={String.raw`3a \cdot 5 = 15a`} /></li>
+    <li><Formula tex={String.raw`-2 \cdot 4a = -8a`} /></li>
+    <li><Formula tex={String.raw`-2 \cdot 5 = -10`} /></li>
+    <li>Sumamos y simplificamos: <Formula tex={String.raw`12a^2 + 15a - 8a - 10`} /></li>
+    <li>Resultado: <Formula tex={String.raw`12a^2 + 7a - 10`} /></li>
+  </ol>
+
+  <h3>7) Verificar igualdad usando distributiva</h3>
+  <p>¿Es verdad que <Formula tex={String.raw`6 \cdot (5 + 4) = 6 \cdot 5 + 6 \cdot 4`} />?</p>
+  <ol>
+    <li>Lado izquierdo: <Formula tex={String.raw`6 \cdot 9 = 54`} /></li>
+    <li>Lado derecho: <Formula tex={String.raw`30 + 24 = 54`} /></li>
+    <li>Ambos lados son iguales → la propiedad distributiva se cumple ✓</li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Distributiva respecto a la suma</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`5 \cdot (3 + 7)`} /></li>
+    <li>b) <Formula tex={String.raw`4 \cdot (6 + 2)`} /></li>
+    <li>c) <Formula tex={String.raw`x \cdot (x + 5)`} /></li>
+    <li>d) <Formula tex={String.raw`3a \cdot (a + 4)`} /></li>
+    <li>e) <Formula tex={String.raw`2m \cdot (3m + 7n)`} /></li>
+    <li>f) <Formula tex={String.raw`-6k \cdot (k + 9)`} /></li>
+    <li>g) <Formula tex={String.raw`4pq \cdot (2p + 3q)`} /></li>
+  </ul>
+
+  <h3>2) Distributiva respecto a la resta</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`6 \cdot (10 - 4)`} /></li>
+    <li>b) <Formula tex={String.raw`8 \cdot (7 - 3)`} /></li>
+    <li>c) <Formula tex={String.raw`x \cdot (x - 6)`} /></li>
+    <li>d) <Formula tex={String.raw`4y \cdot (2y - 3)`} /></li>
+    <li>e) <Formula tex={String.raw`-3a \cdot (a - 5)`} /></li>
+    <li>f) <Formula tex={String.raw`7x \cdot (4x - y)`} /></li>
+    <li>g) <Formula tex={String.raw`-2mn \cdot (5m - n)`} /></li>
+  </ul>
+
+  <h3>3) Distributiva con trinomios</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`2x \cdot (x^2 + 3x - 4)`} /></li>
+    <li>b) <Formula tex={String.raw`3a \cdot (2a^2 - a + 5)`} /></li>
+    <li>c) <Formula tex={String.raw`-m \cdot (m^2 + 4m - 7)`} /></li>
+    <li>d) <Formula tex={String.raw`5xy \cdot (x - 2y + 1)`} /></li>
+  </ul>
+
+  <h3>4) Doble distributiva (binomio por binomio)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`(x + 1)(x + 4)`} /></li>
+    <li>b) <Formula tex={String.raw`(x + 5)(x - 2)`} /></li>
+    <li>c) <Formula tex={String.raw`(2a + 1)(a + 3)`} /></li>
+    <li>d) <Formula tex={String.raw`(3x - 4)(x + 2)`} /></li>
+    <li>e) <Formula tex={String.raw`(m - 6)(m - 3)`} /></li>
+    <li>f) <Formula tex={String.raw`(4y + 3)(2y - 5)`} /></li>
+    <li>g) <Formula tex={String.raw`(x - 7)(x + 7)`} /></li>
+  </ul>
+
+  <h3>5) Distributiva inversa (extraer factor común)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`10x + 15`} /></li>
+    <li>b) <Formula tex={String.raw`8a^2 + 4a`} /></li>
+    <li>c) <Formula tex={String.raw`6xy - 9x`} /></li>
+    <li>d) <Formula tex={String.raw`12m^2n + 18mn^2`} /></li>
+    <li>e) <Formula tex={String.raw`20x^3 - 15x^2 + 5x`} /></li>
+    <li>f) <Formula tex={String.raw`21a^2b - 14ab^2`} /></li>
+    <li>g) <Formula tex={String.raw`16x^3y^2 - 8x^2y + 4xy`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>

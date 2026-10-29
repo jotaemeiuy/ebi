@@ -1,0 +1,251 @@
+---
+import Leccion from "../../../layouts/Leccion.astro";
+import Formula from "../../../components/Formula.astro";
+---
+
+<Leccion title="Productos Notables - Cuadrados" unitId={2} unitTitle="Álgebra">
+
+<div class="lesson-box">
+  <h2>Contenido de esta lección:</h2>
+  <ul>
+    <li><a href="#binomio-suma">• Binomio al Cuadrado (Suma)</a></li>
+    <li><a href="#binomio-diferencia">• Binomio al Cuadrado (Diferencia)</a></li>
+    <li><a href="#conjugados">• Binomios Conjugados (Suma por Diferencia)</a></li>
+    <li><a href="#termino-comun">• Binomios con Término Común</a></li>
+    <li><a href="#problemas">• Problemas resueltos</a></li>
+    <li><a href="#ejercicios">• Ejercicios</a></li>
+  </ul>
+</div>
+
+<div id="binomio-suma" class="lesson-box">
+  <h2>Binomio al Cuadrado (Suma)</h2>
+  <p>Fórmula:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`(a + b)^2 = a^2 + 2ab + b^2`} /></div>
+  <p>Regla para recordar: primero al cuadrado + doble producto + segundo al cuadrado.</p>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`(x + 5)^2 = x^2 + 10x + 25`} /></li>
+    <li><Formula tex={String.raw`(2 + y)^2 = 4 + 4y + y^2`} /></li>
+    <li><Formula tex={String.raw`(3a + 7)^2 = 9a^2 + 42a + 49`} /></li>
+    <li><Formula tex={String.raw`(m + n)^2 = m^2 + 2mn + n^2`} /></li>
+    <li><Formula tex={String.raw`(4x + 3)^2 = 16x^2 + 24x + 9`} /></li>
+    <li><Formula tex={String.raw`(2a + 5b)^2 = 4a^2 + 20ab + 25b^2`} /></li>
+  </ul>
+</div>
+
+<div id="binomio-diferencia" class="lesson-box">
+  <h2>Binomio al Cuadrado (Diferencia)</h2>
+  <p>Fórmula:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`(a - b)^2 = a^2 - 2ab + b^2`} /></div>
+  <p>Atención: el término del medio siempre es negativo.</p>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`(x - 5)^2 = x^2 - 10x + 25`} /></li>
+    <li><Formula tex={String.raw`(2 - y)^2 = 4 - 4y + y^2`} /></li>
+    <li><Formula tex={String.raw`(3a - 7)^2 = 9a^2 - 42a + 49`} /></li>
+    <li><Formula tex={String.raw`(m - n)^2 = m^2 - 2mn + n^2`} /></li>
+    <li><Formula tex={String.raw`(5x - 2)^2 = 25x^2 - 20x + 4`} /></li>
+    <li><Formula tex={String.raw`(3m - 4n)^2 = 9m^2 - 24mn + 16n^2`} /></li>
+  </ul>
+</div>
+
+<div id="conjugados" class="lesson-box">
+  <h2>Binomios Conjugados (Suma por Diferencia)</h2>
+  <p>Fórmula:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`(a + b)(a - b) = a^2 - b^2`} /></div>
+  <p>El resultado es siempre una diferencia de cuadrados. El término del medio desaparece.</p>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`(x + 5)(x - 5) = x^2 - 25`} /></li>
+    <li><Formula tex={String.raw`(2 + y)(2 - y) = 4 - y^2`} /></li>
+    <li><Formula tex={String.raw`(3a + 7)(3a - 7) = 9a^2 - 49`} /></li>
+    <li><Formula tex={String.raw`(m + n)(m - n) = m^2 - n^2`} /></li>
+    <li><Formula tex={String.raw`(6x + 1)(6x - 1) = 36x^2 - 1`} /></li>
+    <li><Formula tex={String.raw`(4a + 3b)(4a - 3b) = 16a^2 - 9b^2`} /></li>
+  </ul>
+</div>
+
+<div id="termino-comun" class="lesson-box">
+  <h2>Binomios con Término Común</h2>
+  <p>Fórmula:</p>
+  <div class="formula formula-lg"><Formula display tex={String.raw`(x + a)(x + b) = x^2 + (a + b)x + ab`} /></div>
+  <p>El coeficiente de <Formula tex={String.raw`x`} /> es la suma de los términos independientes, y el término independiente es su producto.</p>
+  <p>Ejemplos:</p>
+  <ul class="list-disc pl-5 marker:text-red-500">
+    <li><Formula tex={String.raw`(x + 3)(x + 5) = x^2 + 8x + 15`} /> &nbsp;<span class="text-slate-400">[suma: 3 + 5 = 8, producto: 3 · 5 = 15]</span></li>
+    <li><Formula tex={String.raw`(x + 2)(x + 7) = x^2 + 9x + 14`} /> &nbsp;<span class="text-slate-400">[suma: 2 + 7 = 9, producto: 2 · 7 = 14]</span></li>
+    <li><Formula tex={String.raw`(x - 4)(x + 6) = x^2 + 2x - 24`} /> &nbsp;<span class="text-slate-400">[suma: -4 + 6 = 2, producto: -4 · 6 = -24]</span></li>
+    <li><Formula tex={String.raw`(x - 3)(x - 8) = x^2 - 11x + 24`} /> &nbsp;<span class="text-slate-400">[suma: -3 + (-8) = -11, producto: (-3)(-8) = 24]</span></li>
+    <li><Formula tex={String.raw`(m + 4)(m + 7) = m^2 + 11m + 28`} /></li>
+    <li><Formula tex={String.raw`(p - 5)(p + 2) = p^2 - 3p - 10`} /></li>
+  </ul>
+</div>
+
+<div id="problemas" class="lesson-box">
+  <h2>Problemas resueltos paso a paso</h2>
+
+  <h3>1) Binomio al cuadrado (Suma)</h3>
+  <p>Calcular <Formula tex={String.raw`(x + 6)^2`} /></p>
+  <ol>
+    <li>Identificamos: <Formula tex={String.raw`a = x,\; b = 6`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(a + b)^2 = a^2 + 2ab + b^2`} /></li>
+    <li><Formula tex={String.raw`x^2 + 2 \cdot x \cdot 6 + 6^2`} /></li>
+    <li>Resultado: <Formula tex={String.raw`x^2 + 12x + 36`} /></li>
+  </ol>
+
+  <h3>2) Binomio al cuadrado (Diferencia)</h3>
+  <p>Calcular <Formula tex={String.raw`(3y - 5)^2`} /></p>
+  <ol>
+    <li>Identificamos: <Formula tex={String.raw`a = 3y,\; b = 5`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(a - b)^2 = a^2 - 2ab + b^2`} /></li>
+    <li><Formula tex={String.raw`(3y)^2 - 2 \cdot 3y \cdot 5 + 5^2`} /></li>
+    <li><Formula tex={String.raw`9y^2 - 30y + 25`} /></li>
+    <li>Resultado: <Formula tex={String.raw`9y^2 - 30y + 25`} /></li>
+  </ol>
+
+  <h3>3) Binomios conjugados</h3>
+  <p>Calcular <Formula tex={String.raw`(5a + 4)(5a - 4)`} /></p>
+  <ol>
+    <li>Identificamos: <Formula tex={String.raw`a = 5a,\; b = 4`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(a + b)(a - b) = a^2 - b^2`} /></li>
+    <li><Formula tex={String.raw`(5a)^2 - 4^2`} /></li>
+    <li>Resultado: <Formula tex={String.raw`25a^2 - 16`} /></li>
+  </ol>
+
+  <h3>4) Binomios con término común</h3>
+  <p>Calcular <Formula tex={String.raw`(x - 3)(x + 8)`} /></p>
+  <ol>
+    <li>Identificamos: <Formula tex={String.raw`a = x,\; b = -3,\; c = 8`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(x + b)(x + c) = x^2 + (b + c)x + bc`} /></li>
+    <li>Suma: <Formula tex={String.raw`-3 + 8 = 5`} /></li>
+    <li>Producto: <Formula tex={String.raw`-3 \cdot 8 = -24`} /></li>
+    <li>Resultado: <Formula tex={String.raw`x^2 + 5x - 24`} /></li>
+  </ol>
+
+  <h3>5) Binomio al cuadrado con coeficiente</h3>
+  <p>Calcular <Formula tex={String.raw`(2x + 3y)^2`} /></p>
+  <ol>
+    <li>Identificamos: <Formula tex={String.raw`a = 2x,\; b = 3y`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(a + b)^2 = a^2 + 2ab + b^2`} /></li>
+    <li><Formula tex={String.raw`(2x)^2 + 2 \cdot 2x \cdot 3y + (3y)^2`} /></li>
+    <li><Formula tex={String.raw`4x^2 + 12xy + 9y^2`} /></li>
+    <li>Resultado: <Formula tex={String.raw`4x^2 + 12xy + 9y^2`} /></li>
+  </ol>
+
+  <h3>6) Cálculo numérico usando productos notables</h3>
+  <p>Calcular <Formula tex={String.raw`99^2`} /> de forma rápida</p>
+  <ol>
+    <li>Escribimos: <Formula tex={String.raw`(100 - 1)^2`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(a - b)^2 = a^2 - 2ab + b^2`} /></li>
+    <li><Formula tex={String.raw`100^2 - 2 \cdot 100 \cdot 1 + 1^2`} /></li>
+    <li><Formula tex={String.raw`10000 - 200 + 1`} /></li>
+    <li>Resultado: <Formula tex={String.raw`9801`} /></li>
+  </ol>
+
+  <h3>7) Conjugados con expresiones compuestas</h3>
+  <p>Calcular <Formula tex={String.raw`(3x^2 + 2)(3x^2 - 2)`} /></p>
+  <ol>
+    <li>Identificamos: <Formula tex={String.raw`a = 3x^2,\; b = 2`} /></li>
+    <li>Aplicamos <Formula tex={String.raw`(a + b)(a - b) = a^2 - b^2`} /></li>
+    <li><Formula tex={String.raw`(3x^2)^2 - 2^2`} /></li>
+    <li>Resultado: <Formula tex={String.raw`9x^4 - 4`} /></li>
+  </ol>
+</div>
+
+<div id="ejercicios" class="exercise-box">
+  <h3>Ejercicios de práctica</h3>
+
+  <h3>1) Binomio al cuadrado (Suma)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`(x + 7)^2`} /></li>
+    <li>b) <Formula tex={String.raw`(y + 4)^2`} /></li>
+    <li>c) <Formula tex={String.raw`(2 + z)^2`} /></li>
+    <li>d) <Formula tex={String.raw`(3a + 5)^2`} /></li>
+    <li>e) <Formula tex={String.raw`(m + n)^2`} /></li>
+    <li>f) <Formula tex={String.raw`(5x + 2)^2`} /></li>
+    <li>g) <Formula tex={String.raw`(4a + 3b)^2`} /></li>
+  </ul>
+
+  <h3>2) Binomio al cuadrado (Diferencia)</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`(x - 7)^2`} /></li>
+    <li>b) <Formula tex={String.raw`(y - 4)^2`} /></li>
+    <li>c) <Formula tex={String.raw`(2 - z)^2`} /></li>
+    <li>d) <Formula tex={String.raw`(3a - 5)^2`} /></li>
+    <li>e) <Formula tex={String.raw`(m - n)^2`} /></li>
+    <li>f) <Formula tex={String.raw`(6y - 1)^2`} /></li>
+    <li>g) <Formula tex={String.raw`(2x - 3y)^2`} /></li>
+  </ul>
+
+  <h3>3) Binomios conjugados</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`(x + 8)(x - 8)`} /></li>
+    <li>b) <Formula tex={String.raw`(y + 5)(y - 5)`} /></li>
+    <li>c) <Formula tex={String.raw`(2 + z)(2 - z)`} /></li>
+    <li>d) <Formula tex={String.raw`(3a + 7)(3a - 7)`} /></li>
+    <li>e) <Formula tex={String.raw`(10x + 3)(10x - 3)`} /></li>
+    <li>f) <Formula tex={String.raw`(5m + 4n)(5m - 4n)`} /></li>
+  </ul>
+
+  <h3>4) Binomios con término común</h3>
+  <ul class="exercise-list">
+    <li>a) <Formula tex={String.raw`(x + 3)(x + 6)`} /></li>
+    <li>b) <Formula tex={String.raw`(y + 2)(y + 5)`} /></li>
+    <li>c) <Formula tex={String.raw`(a - 4)(a + 9)`} /></li>
+    <li>d) <Formula tex={String.raw`(m - 4)(m - 9)`} /></li>
+    <li>e) <Formula tex={String.raw`(p + 2)(p + 7)`} /></li>
+    <li>f) <Formula tex={String.raw`(z - 6)(z + 10)`} /></li>
+    <li>g) <Formula tex={String.raw`(k - 5)(k - 3)`} /></li>
+  </ul>
+
+  <h3>5) Cálculo numérico con productos notables</h3>
+  <ul class="exercise-list">
+    <li>a) Calcular <Formula tex={String.raw`101^2`} /> usando <Formula tex={String.raw`(100 + 1)^2`} /></li>
+    <li>b) Calcular <Formula tex={String.raw`98^2`} /> usando <Formula tex={String.raw`(100 - 2)^2`} /></li>
+    <li>c) Calcular <Formula tex={String.raw`51 \cdot 49`} /> usando <Formula tex={String.raw`(50 + 1)(50 - 1)`} /></li>
+    <li>d) Calcular <Formula tex={String.raw`103 \cdot 97`} /> usando <Formula tex={String.raw`(100 + 3)(100 - 3)`} /></li>
+  </ul>
+</div>
+
+<style is:global>
+  .formula {
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    background: rgba(2, 6, 23, 0.6);
+    border-left: 3px solid #7c3aed;
+    border-radius: 6px;
+    padding: 0.35rem 0.9rem;
+    margin: 0.55rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .formula .katex-display {
+    margin: 0.25em 0;
+  }
+  .formula-lg {
+    font-size: 1.22rem;
+    padding: 0.55rem 0.9rem;
+    margin: 0.8rem 0;
+  }
+  .formula::-webkit-scrollbar {
+    height: 6px;
+  }
+  .formula::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  @media (max-width: 640px) {
+    .formula {
+      font-size: 0.78rem;
+      padding: 0.45rem 0.65rem;
+    }
+    .formula-lg {
+      font-size: 0.9rem;
+    }
+    li .katex {
+      font-size: 0.88em;
+    }
+  }
+</style>
+
+</Leccion>
