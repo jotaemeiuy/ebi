@@ -42,7 +42,7 @@ unitTitle: "Ecuaciones de segundo grado"
     <span class="fb-frac">
       <span class="fb-num">
         <span>−b ±</span>
-        <span class="fb-sqrt">√<span class="fb-rad">b² − 4ac</span></span>
+        <span class="raiz"><span class="rad">b² − 4ac</span></span>
       </span>
       <span class="fb-den">2a</span>
     </span>
@@ -54,8 +54,8 @@ unitTitle: "Ecuaciones de segundo grado"
 
   <p>El símbolo <strong>±</strong> genera las dos soluciones:</p>
   <ul class="list-disc pl-5 marker:text-red-500">
-    <li>Con <strong>+</strong>: x₁ = ( −b + √(b² − 4ac) ) / 2a</li>
-    <li>Con <strong>−</strong>: x₂ = ( −b − √(b² − 4ac) ) / 2a</li>
+    <li>Con <strong>+</strong>: x₁ = ( −b + <span class="raiz"><span class="rad">b² − 4ac</span></span> ) / 2a</li>
+    <li>Con <strong>−</strong>: x₂ = ( −b − <span class="raiz"><span class="rad">b² − 4ac</span></span> ) / 2a</li>
   </ul>
   <p>Esta fórmula sirve para <strong>todas</strong> las ecuaciones cuadráticas completas, sin importar si a = 1 o a ≠ 1, y sin necesidad de factorizar.</p>
 </div>
@@ -74,8 +74,8 @@ unitTitle: "Ecuaciones de segundo grado"
     <p class="font-mono text-violet-400">2x² + 5x + 3 = 0</p>
     <ol>
       <li>a = 2, b = 5, c = 3</li>
-      <li>x = (−5 ± √(5² − 4 · 2 · 3)) / (2 · 2)</li>
-      <li>x = (−5 ± √(25 − 24)) / 4 = (−5 ± √1) / 4</li>
+      <li>x = (−5 ± <span class="raiz"><span class="rad">5² − 4 · 2 · 3</span></span>) / (2 · 2)</li>
+      <li>x = (−5 ± <span class="raiz"><span class="rad">25 − 24</span></span>) / 4 = (−5 ± <span class="raiz"><span class="rad">1</span></span>) / 4</li>
       <li>x₁ = (−5 + 1)/4 = −4/4 = <strong>−1</strong></li>
       <li>x₂ = (−5 − 1)/4 = −6/4 = <strong>−3/2</strong></li>
     </ol>
@@ -89,8 +89,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>1) x² + 5x + 6 = 0</h3>
   <ol>
     <li>a = 1, b = 5, c = 6</li>
-    <li>x = (−5 ± √(5² − 4 · 1 · 6)) / (2 · 1)</li>
-    <li>x = (−5 ± √(25 − 24)) / 2 = (−5 ± √1) / 2</li>
+    <li>x = (−5 ± <span class="raiz"><span class="rad">5² − 4 · 1 · 6</span></span>) / (2 · 1)</li>
+    <li>x = (−5 ± <span class="raiz"><span class="rad">25 − 24</span></span>) / 2 = (−5 ± <span class="raiz"><span class="rad">1</span></span>) / 2</li>
     <li>x₁ = (−5 + 1)/2 = −4/2 = <strong>−2</strong></li>
     <li>x₂ = (−5 − 1)/2 = −6/2 = <strong>−3</strong></li>
   </ol>
@@ -99,8 +99,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>2) x² − x − 12 = 0</h3>
   <ol>
     <li>a = 1, b = −1, c = −12</li>
-    <li>x = (1 ± √((−1)² − 4 · 1 · (−12))) / 2</li>
-    <li>x = (1 ± √(1 + 48)) / 2 = (1 ± √49) / 2</li>
+    <li>x = (1 ± <span class="raiz"><span class="rad">(−1)² − 4 · 1 · (−12)</span></span>) / 2</li>
+    <li>x = (1 ± <span class="raiz"><span class="rad">1 + 48</span></span>) / 2 = (1 ± <span class="raiz"><span class="rad">49</span></span>) / 2</li>
     <li>x₁ = (1 + 7)/2 = 8/2 = <strong>4</strong></li>
     <li>x₂ = (1 − 7)/2 = −6/2 = <strong>−3</strong></li>
   </ol>
@@ -109,8 +109,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>3) x² − 8x + 15 = 0</h3>
   <ol>
     <li>a = 1, b = −8, c = 15</li>
-    <li>x = (8 ± √((−8)² − 4 · 1 · 15)) / 2</li>
-    <li>x = (8 ± √(64 − 60)) / 2 = (8 ± √4) / 2</li>
+    <li>x = (8 ± <span class="raiz"><span class="rad">(−8)² − 4 · 1 · 15</span></span>) / 2</li>
+    <li>x = (8 ± <span class="raiz"><span class="rad">64 − 60</span></span>) / 2 = (8 ± <span class="raiz"><span class="rad">4</span></span>) / 2</li>
     <li>x₁ = (8 + 2)/2 = 10/2 = <strong>5</strong></li>
     <li>x₂ = (8 − 2)/2 = 6/2 = <strong>3</strong></li>
   </ol>
@@ -119,8 +119,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>4) x² + 2x − 15 = 0</h3>
   <ol>
     <li>a = 1, b = 2, c = −15</li>
-    <li>x = (−2 ± √(2² − 4 · 1 · (−15))) / 2</li>
-    <li>x = (−2 ± √(4 + 60)) / 2 = (−2 ± √64) / 2</li>
+    <li>x = (−2 ± <span class="raiz"><span class="rad">2² − 4 · 1 · (−15)</span></span>) / 2</li>
+    <li>x = (−2 ± <span class="raiz"><span class="rad">4 + 60</span></span>) / 2 = (−2 ± <span class="raiz"><span class="rad">64</span></span>) / 2</li>
     <li>x₁ = (−2 + 8)/2 = 6/2 = <strong>3</strong></li>
     <li>x₂ = (−2 − 8)/2 = −10/2 = <strong>−5</strong></li>
   </ol>
@@ -129,8 +129,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>5) x² − 9x + 20 = 0</h3>
   <ol>
     <li>a = 1, b = −9, c = 20</li>
-    <li>x = (9 ± √((−9)² − 4 · 1 · 20)) / 2</li>
-    <li>x = (9 ± √(81 − 80)) / 2 = (9 ± √1) / 2</li>
+    <li>x = (9 ± <span class="raiz"><span class="rad">(−9)² − 4 · 1 · 20</span></span>) / 2</li>
+    <li>x = (9 ± <span class="raiz"><span class="rad">81 − 80</span></span>) / 2 = (9 ± <span class="raiz"><span class="rad">1</span></span>) / 2</li>
     <li>x₁ = (9 + 1)/2 = 10/2 = <strong>5</strong></li>
     <li>x₂ = (9 − 1)/2 = 8/2 = <strong>4</strong></li>
   </ol>
@@ -139,8 +139,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>6) 2x² + 5x + 3 = 0</h3>
   <ol>
     <li>a = 2, b = 5, c = 3</li>
-    <li>x = (−5 ± √(5² − 4 · 2 · 3)) / (2 · 2)</li>
-    <li>x = (−5 ± √(25 − 24)) / 4 = (−5 ± √1) / 4</li>
+    <li>x = (−5 ± <span class="raiz"><span class="rad">5² − 4 · 2 · 3</span></span>) / (2 · 2)</li>
+    <li>x = (−5 ± <span class="raiz"><span class="rad">25 − 24</span></span>) / 4 = (−5 ± <span class="raiz"><span class="rad">1</span></span>) / 4</li>
     <li>x₁ = (−5 + 1)/4 = −4/4 = <strong>−1</strong></li>
     <li>x₂ = (−5 − 1)/4 = −6/4 = <strong>−3/2</strong></li>
   </ol>
@@ -149,8 +149,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>7) 3x² − 10x + 8 = 0</h3>
   <ol>
     <li>a = 3, b = −10, c = 8</li>
-    <li>x = (10 ± √((−10)² − 4 · 3 · 8)) / (2 · 3)</li>
-    <li>x = (10 ± √(100 − 96)) / 6 = (10 ± √4) / 6</li>
+    <li>x = (10 ± <span class="raiz"><span class="rad">(−10)² − 4 · 3 · 8</span></span>) / (2 · 3)</li>
+    <li>x = (10 ± <span class="raiz"><span class="rad">100 − 96</span></span>) / 6 = (10 ± <span class="raiz"><span class="rad">4</span></span>) / 6</li>
     <li>x₁ = (10 + 2)/6 = 12/6 = <strong>2</strong></li>
     <li>x₂ = (10 − 2)/6 = 8/6 = <strong>4/3</strong></li>
   </ol>
@@ -159,8 +159,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>8) 2x² − 4x + 2 = 0</h3>
   <ol>
     <li>a = 2, b = −4, c = 2</li>
-    <li>x = (4 ± √((−4)² − 4 · 2 · 2)) / 4</li>
-    <li>x = (4 ± √(16 − 16)) / 4 = (4 ± √0) / 4</li>
+    <li>x = (4 ± <span class="raiz"><span class="rad">(−4)² − 4 · 2 · 2</span></span>) / 4</li>
+    <li>x = (4 ± <span class="raiz"><span class="rad">16 − 16</span></span>) / 4 = (4 ± <span class="raiz"><span class="rad">0</span></span>) / 4</li>
     <li>x = 4/4 = <strong>1</strong></li>
   </ol>
   <p class="font-mono text-violet-400">Solución: x = 1</p>
@@ -168,8 +168,8 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>9) x² + x + 1 = 0</h3>
   <ol>
     <li>a = 1, b = 1, c = 1</li>
-    <li>x = (−1 ± √(1² − 4 · 1 · 1)) / 2</li>
-    <li>x = (−1 ± √(1 − 4)) / 2 = (−1 ± √−3) / 2</li>
+    <li>x = (−1 ± <span class="raiz"><span class="rad">1² − 4 · 1 · 1</span></span>) / 2</li>
+    <li>x = (−1 ± <span class="raiz"><span class="rad">1 − 4</span></span>) / 2 = (−1 ± <span class="raiz"><span class="rad">−3</span></span>) / 2</li>
     <li>Dentro de la raíz queda un número negativo, que no tiene raíz cuadrada real.</li>
   </ol>
   <p class="font-mono text-violet-400">No tiene soluciones reales</p>
@@ -250,14 +250,4 @@ unitTitle: "Ecuaciones de segundo grado"
     padding-top: 0.35rem;
   }
 
-  .fb-sqrt {
-    display: inline-flex;
-    align-items: flex-start;
-  }
-
-  .fb-rad {
-    border-top: 2px solid currentColor;
-    margin-top: 0.12em;
-    padding: 0.05rem 0.25rem 0;
-  }
 </style>

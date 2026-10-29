@@ -1,0 +1,21 @@
+---
+import katex from "katex";
+
+interface Props {
+  /** Expresión en LaTeX, sin los delimitadores $ ... $ */
+  tex: string;
+  /** true = fórmula en bloque (centrada); false = en línea */
+  display?: boolean;
+}
+
+const { tex, display = false } = Astro.props;
+
+const html = katex.renderToString(tex, {
+  displayMode: display,
+  strict: false,
+  trust: false,
+  output: "htmlAndMathml",
+});
+---
+
+<Fragment set:html={html} />

@@ -83,11 +83,11 @@ unitTitle: "Álgebra"
   <p>Para verificarlo: el término del medio debe ser el doble del producto de las raíces cuadradas de los extremos.</p>
   <p>Ejemplos resueltos:</p>
   <ul class="list-disc pl-5 marker:text-red-500">
-    <li>x² + 6x + 9 → √x²=x, √9=3, doble producto=6x ✓ → (x + 3)²</li>
-    <li>4a² - 12a + 9 → √4a²=2a, √9=3, doble producto=12a ✓ → (2a - 3)²</li>
-    <li>m² + 10m + 25 → √m²=m, √25=5, doble producto=10m ✓ → (m + 5)²</li>
-    <li>9x² + 24x + 16 → √9x²=3x, √16=4, doble producto=24x ✓ → (3x + 4)²</li>
-    <li>25y² - 20y + 4 → √25y²=5y, √4=2, doble producto=20y ✓ → (5y - 2)²</li>
+    <li>x² + 6x + 9 → <span class="raiz"><span class="rad">x²</span></span>=x, <span class="raiz"><span class="rad">9</span></span>=3, doble producto=6x ✓ → (x + 3)²</li>
+    <li>4a² - 12a + 9 → <span class="raiz"><span class="rad">4a²</span></span>=2a, <span class="raiz"><span class="rad">9</span></span>=3, doble producto=12a ✓ → (2a - 3)²</li>
+    <li>m² + 10m + 25 → <span class="raiz"><span class="rad">m²</span></span>=m, <span class="raiz"><span class="rad">25</span></span>=5, doble producto=10m ✓ → (m + 5)²</li>
+    <li>9x² + 24x + 16 → <span class="raiz"><span class="rad">9x²</span></span>=3x, <span class="raiz"><span class="rad">16</span></span>=4, doble producto=24x ✓ → (3x + 4)²</li>
+    <li>25y² - 20y + 4 → <span class="raiz"><span class="rad">25y²</span></span>=5y, <span class="raiz"><span class="rad">4</span></span>=2, doble producto=20y ✓ → (5y - 2)²</li>
   </ul>
 </div>
 
@@ -158,7 +158,7 @@ unitTitle: "Álgebra"
   <p>Factorizar: x² + 10x + 25</p>
   <ol>
     <li>Verificamos si es cuadrado perfecto:</li>
-    <li>√x² = x &nbsp;&nbsp; √25 = 5 &nbsp;&nbsp; 2 · x · 5 = 10x ✓</li>
+    <li><span class="raiz"><span class="rad">x²</span></span> = x &nbsp;&nbsp; <span class="raiz"><span class="rad">25</span></span> = 5 &nbsp;&nbsp; 2 · x · 5 = 10x ✓</li>
     <li>Resultado: (x + 5)²</li>
   </ol>
 
@@ -190,7 +190,7 @@ unitTitle: "Álgebra"
   <h3>8) Trinomio cuadrado perfecto (Diferencia)</h3>
   <p>Factorizar: 4x² - 28x + 49</p>
   <ol>
-    <li>Verificamos: √4x² = 2x; √49 = 7; 2 · 2x · 7 = 28x ✓</li>
+    <li>Verificamos: <span class="raiz"><span class="rad">4x²</span></span> = 2x; <span class="raiz"><span class="rad">49</span></span> = 7; 2 · 2x · 7 = 28x ✓</li>
     <li>Es (a - b)² con a = 2x y b = 7</li>
     <li>Resultado: (2x - 7)²</li>
   </ol>

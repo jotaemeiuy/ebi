@@ -50,14 +50,14 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>Pasar el término independiente al otro miembro: ax² = −c.</li>
     <li>Dividir entre a: x² = −c/a.</li>
-    <li>Aplicar raíz cuadrada: x = ±√(−c/a).</li>
+    <li>Aplicar raíz cuadrada: x = ±<span class="raiz"><span class="rad">−c/a</span></span>.</li>
     <li>Simplificar las soluciones.</li>
   </ol>
   <p>Ejemplo:</p>
   <p class="font-mono text-violet-400">x² − 9 = 0</p>
   <ol>
     <li>x² = 9</li>
-    <li>x = ±√9</li>
+    <li>x = ±<span class="raiz"><span class="rad">9</span></span></li>
     <li>x = 3 y x = −3</li>
   </ol>
 </div>
@@ -69,7 +69,7 @@ unitTitle: "Ecuaciones de segundo grado"
     Si el número de la derecha es <strong>negativo</strong>, no existe ningún número real
     cuyo cuadrado sea negativo.
   </p>
-  <p class="font-mono text-violet-400">x² = −4 → x = ±√(−4) → no tiene solución real</p>
+  <p class="font-mono text-violet-400">x² = −4 → x = ±<span class="raiz"><span class="rad">−4</span></span> → no tiene solución real</p>
   <p>En cambio, si queda <strong>x² = 0</strong>, la única solución es x = 0.</p>
 </div>
 
@@ -79,7 +79,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>1) x² − 25 = 0</h3>
   <ol>
     <li>x² = 25</li>
-    <li>x = ±√25</li>
+    <li>x = ±<span class="raiz"><span class="rad">25</span></span></li>
     <li>x = 5 y x = −5</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 5 y x = −5</p>
@@ -87,7 +87,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <h3>2) x² − 49 = 0</h3>
   <ol>
     <li>x² = 49</li>
-    <li>x = ±√49</li>
+    <li>x = ±<span class="raiz"><span class="rad">49</span></span></li>
     <li>x = 7 y x = −7</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 7 y x = −7</p>
@@ -96,7 +96,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>4x² = 16</li>
     <li>x² = 16/4 = 4</li>
-    <li>x = ±√4</li>
+    <li>x = ±<span class="raiz"><span class="rad">4</span></span></li>
     <li>x = 2 y x = −2</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 2 y x = −2</p>
@@ -105,7 +105,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>9x² = 36</li>
     <li>x² = 36/9 = 4</li>
-    <li>x = ±√4</li>
+    <li>x = ±<span class="raiz"><span class="rad">4</span></span></li>
     <li>x = 2 y x = −2</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 2 y x = −2</p>
@@ -114,7 +114,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>2x² = 50</li>
     <li>x² = 50/2 = 25</li>
-    <li>x = ±√25</li>
+    <li>x = ±<span class="raiz"><span class="rad">25</span></span></li>
     <li>x = 5 y x = −5</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 5 y x = −5</p>
@@ -123,7 +123,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>3x² = 27</li>
     <li>x² = 27/3 = 9</li>
-    <li>x = ±√9</li>
+    <li>x = ±<span class="raiz"><span class="rad">9</span></span></li>
     <li>x = 3 y x = −3</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 3 y x = −3</p>
@@ -132,7 +132,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>25x² = 4</li>
     <li>x² = 4/25</li>
-    <li>x = ±√(4/25) = ±2/5</li>
+    <li>x = ±<span class="raiz"><span class="rad">4/25</span></span> = ±2/5</li>
     <li>x = 2/5 y x = −2/5</li>
   </ol>
   <p class="font-mono text-violet-400">Soluciones: x = 2/5 y x = −2/5</p>
@@ -141,7 +141,7 @@ unitTitle: "Ecuaciones de segundo grado"
   <ol>
     <li>2x² = −8</li>
     <li>x² = −8/2 = −4</li>
-    <li>x = ±√(−4)</li>
+    <li>x = ±<span class="raiz"><span class="rad">−4</span></span></li>
     <li>No existe raíz cuadrada real de un número negativo.</li>
   </ol>
   <p class="font-mono text-violet-400">No tiene soluciones reales</p>
