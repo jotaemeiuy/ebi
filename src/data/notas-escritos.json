@@ -540,7 +540,8 @@
 			"24/06": "Porcentajes e interés simple",
 			"30/07": "Operaciones con binomios y propiedad distributiva",
 			"17/09": "Ecuaciones de primer y segundo grado",
-			"16/10": "Trigonometría"
+			"16/10": "Trigonometría",
+      "5/11": "Funciones lineales y gráficos"
 		},
 		"alumnos": [
 			{
@@ -549,7 +550,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -566,8 +567,12 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
-				}
+					},
+          "5/11": {
+              "nota": 1,
+              "obs": "No asistió."
+            }
+          }
 			},
 			{
 				"ci": "57901429",
@@ -575,7 +580,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 2,
@@ -592,13 +597,12 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
-				}
-			},
-			{
-				"ci": "59484386",
-				"nombre": "BENITEZ MOREIRA, NATASHA AYELEN",
-				"escritos": {}
+					},
+          "5/11": {
+              "nota": 1,
+              "obs": "No asistió."
+            }
+          }
 			},
 			{
 				"ci": "59384049",
@@ -606,7 +610,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -623,8 +627,12 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
-				}
+					},
+          "5/11": {
+              "nota": 1,
+              "obs": "No asistió."
+            }
+          }
 			},
 			{
 				"ci": "66211237",
@@ -632,7 +640,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 6,
@@ -649,8 +657,12 @@
 					"16/10": {
 						"nota": 4,
 						"obs": ""
-					}
-				}
+					},
+          "5/11": {
+              "nota": 8,
+              "obs": ""
+            }
+      	}
 			},
 			{
 				"ci": "59447853",
@@ -658,7 +670,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 6,
@@ -675,8 +687,12 @@
 					"16/10": {
 						"nota": 3,
 						"obs": ""
-					}
-				}
+					},
+          "5/11": {
+              "nota": 5,
+              "obs": ""
+            }
+          }
 			},
 			{
 				"ci": "59293842",
@@ -684,7 +700,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -701,8 +717,13 @@
 					"16/10": {
 						"nota": 10,
 						"obs": ""
-					}
-				}
+					},
+          "5/11": {
+              "nota": 10,
+              "obs": ""
+            }
+          }
+
 			},
 			{
 				"ci": "58205290",
@@ -727,8 +748,13 @@
 					"16/10": {
 						"nota": 2,
 						"obs": ""
-					}
-				}
+					},
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+          }
+
 			},
 			{
 				"ci": "63094703",
@@ -736,7 +762,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -753,7 +779,12 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
+					},
+            "5/11": {
+              "nota": 1,
+              "obs": "No asistió."
+            }
+
 				}
 			},
 			{
@@ -762,7 +793,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -779,7 +810,12 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
+					},
+            "5/11": {
+              "nota": 1,
+              "obs": "No asistió."
+            }
+
 				}
 			},
 			{
@@ -788,7 +824,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 7,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 2,
@@ -805,7 +841,12 @@
 					"16/10": {
 						"nota": 3,
 						"obs": ""
-					}
+					},
+            "5/11": {
+              "nota": 3,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -831,7 +872,11 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+            "5/11": {
+              "nota": 4,
+              "obs": ""
+            }
 				}
 			},
 			{
@@ -840,7 +885,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -857,8 +902,14 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
-				}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+          }
+
 			},
 			{
 				"ci": "58915601",
@@ -866,7 +917,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -883,8 +934,14 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
-				}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+          }
+
 			},
 			{
 				"ci": "59180099",
@@ -909,7 +966,13 @@
 					"16/10": {
 						"nota": 6,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 3,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -918,7 +981,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 6,
@@ -935,7 +998,13 @@
 					"16/10": {
 						"nota": 10,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 5,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -961,7 +1030,13 @@
 					"16/10": {
 						"nota": 8,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 8,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -987,7 +1062,13 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+
+            "5/11": {
+              "nota": 3,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -996,7 +1077,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -1013,7 +1094,13 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+
 				}
 			},
 			{
@@ -1039,7 +1126,13 @@
 					"16/10": {
 						"nota": 8,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 8,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -1048,7 +1141,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -1065,7 +1158,13 @@
 					"16/10": {
 						"nota": 8,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+
 				}
 			},
 			{
@@ -1091,7 +1190,13 @@
 					"16/10": {
 						"nota": 10,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 4,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -1100,7 +1205,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 3,
@@ -1117,7 +1222,13 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
+					},
+
+            "5/11": {
+              "nota": 3,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -1126,7 +1237,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 2,
@@ -1143,7 +1254,13 @@
 					"16/10": {
 						"nota": 2,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 7,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -1152,7 +1269,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asisitió."
 					},
 					"24/06": {
 						"nota": 7,
@@ -1169,7 +1286,13 @@
 					"16/10": {
 						"nota": 10,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 10,
+              "obs": ""
+            }
+
 				}
 			},
 			{
@@ -1195,7 +1318,13 @@
 					"16/10": {
 						"nota": 8,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+
 				}
 			},
 			{
@@ -1221,7 +1350,13 @@
 					"16/10": {
 						"nota": 10,
 						"obs": ""
-					}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+
 				}
 			},
 			{
@@ -1230,7 +1365,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 2,
@@ -1247,7 +1382,11 @@
 					"16/10": {
 						"nota": 4,
 						"obs": ""
-					}
+					},
+          "5/11": {
+              "nota": 3,
+              "obs": ""
+            }
 				}
 			},
 			{
@@ -1256,7 +1395,7 @@
 				"escritos": {
 					"30/04": {
 						"nota": 1,
-						"obs": "No la hizo"
+						"obs": "No asistió"
 					},
 					"24/06": {
 						"nota": 1,
@@ -1269,8 +1408,14 @@
 					"16/10": {
 						"nota": 1,
 						"obs": "No asistió."
-					}
-				}
+					},
+
+            "5/11": {
+              "nota": 1,
+              "obs": "No asisitió."
+            }
+          }
+
 			}
 		]
 	}
