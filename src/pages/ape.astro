@@ -1,0 +1,281 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { existsSync } from "node:fs";
+import path from "node:path";
+
+const pdfsDir = path.join(process.cwd(), "public", "pdfs", "ape");
+
+const versiones = [
+	{
+		title: "Versión breve",
+		desc: "La prueba completa en su versión base",
+		file: "Prueba_APE_9EBI_Corta.pdf",
+		tag: "Base",
+	},
+	{
+		title: "Versión C",
+		desc: "Mismos 5 ejercicios, con otros valores",
+		file: "Prueba_APE_9EBI_Corta_C.pdf",
+	},
+	{
+		title: "Versión D",
+		desc: "Mismos 5 ejercicios, con otros valores",
+		file: "Prueba_APE_9EBI_Corta_D.pdf",
+	},
+	{
+		title: "Versión E",
+		desc: "Mismos 5 ejercicios, con otros valores",
+		file: "Prueba_APE_9EBI_Corta_E.pdf",
+	},
+].map((v) => ({
+	...v,
+	url: `/pdfs/ape/${v.file}`,
+	disponible: existsSync(path.join(pdfsDir, v.file)),
+}));
+
+const temas = [
+	{ n: 1, title: "Notación científica", slug: "/unidad/1/notacion-cientifica" },
+	{ n: 2, title: "Binomios y productos notables", slug: "/unidad/2/productos-notables" },
+	{ n: 3, title: "Porcentajes", slug: "/unidad/1/porcentajes" },
+	{
+		n: 4,
+		title: "Ecuaciones (1.° y 2.° grado)",
+		slug: "/unidad/3/metodo-general-resolucion-ecuaciones",
+	},
+	{ n: 5, title: "Funciones lineales", slug: "/unidad/6/funcion-lineal-teoria" },
+];
+
+const disponibles = versiones.filter((v) => v.disponible).length;
+---
+
+<Layout
+	title="APE - Período de nivelación | EBI 9C"
+	description="Pruebas de práctica para el período APE: ejercicios de todos los temas del año en 4 versiones."
+>
+	<section class="relative overflow-hidden py-16 sm:py-20">
+		<div
+			class="absolute inset-0 bg-linear-to-b from-violet-900/20 via-slate-950 to-slate-950"
+		>
+		</div>
+		<div
+			class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-violet-600/10 rounded-full blur-3xl"
+		>
+		</div>
+
+		<div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<!-- Breadcrumb -->
+			<nav class="flex items-center gap-2 text-sm text-slate-400 mb-8">
+				<a href="/" class="hover:text-violet-400 transition-colors">Inicio</a>
+				<span>/</span>
+				<span class="text-slate-300">APE</span>
+			</nav>
+
+			<div class="text-center">
+				<span
+					class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-sm font-medium mb-6"
+				>
+					<span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+					Matemática · 9° EBI
+				</span>
+				<h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+					<span
+						class="bg-linear-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent"
+					>
+						Período APE
+					</span>
+				</h1>
+				<p class="text-lg text-slate-400 max-w-2xl mx-auto">
+					Es el período extraordinario para quienes no alcanzaron el suficiente:
+					la nota se puede levantar, pero hay poco tiempo. Son
+					<strong class="text-slate-200">4 clases en 2 semanas</strong>, así que
+					organizate: descargá la prueba, practicá y no dejes nada para el
+					final.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="relative pb-4 -mt-6">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex items-center justify-between mb-6">
+				<h2 class="text-2xl font-semibold text-slate-100">
+					Pruebas de práctica
+				</h2>
+				<span
+					class="inline-flex items-center rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300"
+				>
+					{disponibles} de {versiones.length} disponibles
+				</span>
+			</div>
+
+			<div class="grid gap-4">
+				{
+					versiones.map((v) => (
+						<a
+							href={v.disponible ? v.url : undefined}
+							target={v.disponible ? "_blank" : undefined}
+							rel="noopener noreferrer"
+							aria-disabled={!v.disponible}
+							class:list={[
+								"group flex items-center gap-4 p-4 rounded-xl border transition-all",
+								v.disponible
+									? "bg-slate-900/50 border-slate-800 hover:border-violet-500/50 cursor-pointer"
+									: "bg-slate-900/30 border-slate-800/50 opacity-60 cursor-not-allowed",
+							]}
+						>
+							<div class="w-10 h-10 shrink-0 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="w-5 h-5"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+									/>
+								</svg>
+							</div>
+							<div class="flex-1 min-w-0">
+								<h3
+									class:list={[
+										"font-medium flex items-center gap-2 flex-wrap",
+										v.disponible
+											? "text-slate-100 group-hover:text-violet-300 transition-colors"
+											: "text-slate-400",
+									]}
+								>
+									{v.title}
+									{v.tag && (
+										<span class="inline-flex items-center rounded-full bg-violet-500/20 px-2 py-0.5 text-xs font-medium text-violet-300">
+											{v.tag}
+										</span>
+									)}
+								</h3>
+								<p class="text-sm text-slate-500 truncate">{v.desc}</p>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class:list={[
+									"w-5 h-5 shrink-0 transition-colors",
+									v.disponible
+										? "text-slate-500 group-hover:text-violet-400"
+										: "text-slate-700",
+								]}
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								{v.disponible ? (
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+									/>
+								) : (
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M12 8v4m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z"
+									/>
+								)}
+							</svg>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Contenido de la prueba -->
+	<section class="pb-20">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-2xl font-semibold text-slate-100 mb-6">
+				¿Qué ejercicios trae la prueba?
+			</h2>
+			<p class="text-slate-400 mb-6">
+				La prueba son <strong class="text-slate-200">5 ejercicios</strong> de los
+				temas vistos este año. Si alguno se te complica, repasá la teoría acá:
+			</p>
+
+			<div class="grid sm:grid-cols-2 gap-4">
+				{
+					temas.map((tema) => (
+						<a
+							href={tema.slug}
+							class="group flex items-center gap-3 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/50 transition-all"
+						>
+							<div class="w-8 h-8 shrink-0 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400 text-sm font-semibold">
+								{tema.n}
+							</div>
+							<span class="flex-1 font-medium text-slate-100 group-hover:text-violet-300 transition-colors">
+								{tema.title}
+							</span>
+							<span class="text-xs text-slate-500 shrink-0">Teoría</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="w-4 h-4 shrink-0 text-slate-500 group-hover:text-violet-400 transition-colors"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M9 5l7 7-7 7"
+								/>
+							</svg>
+						</a>
+					))
+				}
+			</div>
+
+			<!-- Consejo -->
+			<div
+				class="mt-10 rounded-xl bg-violet-500/10 border border-violet-500/30 p-6"
+			>
+				<h3 class="text-lg font-semibold text-violet-400 mb-2">
+					¿Por dónde empezar?
+				</h3>
+				<p class="text-slate-300">
+					Inspirate en tus escritos: poné más esfuerzo en los temas donde
+					sacaste nota más baja. Podés consultar tus notas
+					<a
+						href="/notas"
+						class="text-violet-300 hover:text-violet-200 underline decoration-violet-500/50 underline-offset-2">acá</a
+					>, y practicar con las distintas versiones: mismos ejercicios, otros
+					valores.
+				</p>
+			</div>
+
+			<!-- Volver -->
+			<div class="mt-12">
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-5 h-5"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+					</svg>
+					Volver al inicio
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

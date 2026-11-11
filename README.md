@@ -12,6 +12,19 @@ Sitio web de matemática para 9° EBI - UTU Uruguay.
 - **Unidad 6**: Función lineal
 - **Unidad 7**: Función cuadrática
 - **Unidad 8**: Sistemas de Ecuaciones
+- **APE**: Prácticos de nivelación (período extraordinario) — `src/pages/ape.astro`
+
+### PDFs del APE
+
+Los prácticos van en `public/pdfs/ape/`. La página (`/ape`) verifica en
+build-time que existan y muestra "Próximamente" si falta alguno:
+
+| Versión       | Archivo                      |
+| :------------ | :--------------------------- |
+| Breve (base)  | `Prueba_APE_9EBI_Corta.pdf`  |
+| Versión C     | `Prueba_APE_9EBI_Corta_C.pdf` |
+| Versión D     | `Prueba_APE_9EBI_Corta_D.pdf` |
+| Versión E     | `Prueba_APE_9EBI_Corta_E.pdf` |
 
 ## 🚀 Deploy
 
