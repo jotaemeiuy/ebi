@@ -4,7 +4,8 @@
 			"22/06": "Notación científica, porcentajes e interés simple",
 			"27/07": "Operaciones con binomios y propiedad distributiva",
 			"15/09": "Ecuaciones de primer y segundo grado",
-			"19/10": "Trigonometría"
+			"19/10": "Trigonometría",
+      "10/11": "Funciones lineales y gráficos"
 		},
 		"alumnos": [
 			{
@@ -26,7 +27,11 @@
 					"19/10": {
 						"nota": 5,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "Entrega en blanco"
+          }
 				}
 			},
 			{
@@ -48,7 +53,11 @@
 					"19/10": {
 						"nota": 6,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 8,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -70,7 +79,11 @@
 					"19/10": {
 						"nota": 3,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 4,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -92,7 +105,11 @@
 					"19/10": {
 						"nota": 5,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 6,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -114,10 +131,14 @@
 					"19/10": {
 						"nota": 5,
 						"obs": ""
-					}
-				}
-			},
-			{
+					},
+          "10/11":{
+            "nota": 2,
+            "obs": ""
+				  }
+			  }
+      },
+    {
 				"ci": "58467610",
 				"nombre": "GONZALEZ PATRON, YAEL ZOE",
 				"escritos": {
@@ -136,7 +157,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "Entrega en blanco."
+          }
 				}
 			},
 			{
@@ -158,7 +183,11 @@
 					"19/10": {
 						"nota": 3,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "No asisitió."
+          }
 				}
 			},
 			{
@@ -180,7 +209,11 @@
 					"19/10": {
 						"nota": 9,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 10,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -202,7 +235,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "No asisitió."
+          }
 				}
 			},
 			{
@@ -224,7 +261,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "Entrega en blanco"
+          }
 				}
 			},
 			{
@@ -246,7 +287,11 @@
 					"19/10": {
 						"nota": 2,
 						"obs": "Entrega casi en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 4,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -268,7 +313,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "No asisitió."
+          }
 				}
 			},
 			{
@@ -295,7 +344,11 @@
 					"19/10": {
 						"nota": 3,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 5,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -317,7 +370,11 @@
 					"19/10": {
 						"nota": 2,
 						"obs": "Entrega casi en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 3,
+            "obs": ""
+          }
 				}
 			},
 			{
@@ -339,7 +396,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "No asistió"
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "Entrega en blanco"
+          }
 				}
 			},
 			{
@@ -361,7 +422,11 @@
 					"19/10": {
 						"nota": 2,
 						"obs": "Entrega casi en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 1,
+            "obs": "Entrega en blanco."
+          }
 				}
 			},
 			{
@@ -383,7 +448,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 4,
+            "obs": "Entrega en blanco."
+          }
 				}
 			},
 			{
@@ -405,9 +474,13 @@
 					"19/10": {
 						"nota": 6,
 						"obs": ""
-					}
-				}
-			},
+					},
+          "10/11":{
+            "nota": 6,
+            "obs": ""
+				  }
+        }
+      },
 			{
 				"ci": "58970148",
 				"nombre": "SILVA HERNANDEZ, MALENA SOFIA",
@@ -427,9 +500,13 @@
 					"19/10": {
 						"nota": 2,
 						"obs": "Entrega casi en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 3,
+            "obs": ""
 				}
-			},
+      }
+      },
 			{
 				"ci": "59078466",
 				"nombre": "SILVA LEITES, JULIETA ELIZABETH",
@@ -449,8 +526,12 @@
 					"19/10": {
 						"nota": 8,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 6,
+            "obs": ""
 				}
+      }
 			},
 			{
 				"ci": "59355157",
@@ -471,8 +552,12 @@
 					"19/10": {
 						"nota": 5,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 7,
+            "obs": ""
 				}
+      }
 			},
 			{
 				"ci": "59199082",
@@ -493,12 +578,16 @@
 					"19/10": {
 						"nota": 10,
 						"obs": ""
-					}
-				}
-			},
+					},
+        "10/11":{
+            "nota": 10,
+            "obs": ""
+        }
+      }
+      },
 			{
 				"ci": "66508749",
-				"nombre": "DEL VILLAR GUIIERREZ, SONIA ISABELA",
+				"nombre": "DEL VILLAR GUTIERREZ, SONIA ISABELA",
 				"escritos": {
 					"22/06": {
 						"nota": 6,
@@ -515,8 +604,12 @@
 					"19/10": {
 						"nota": 10,
 						"obs": ""
-					}
+					},
+          "10/11":{
+            "nota": 7,
+            "obs": ""
 				}
+        }
 			},
 			{
 				"ci": "59056105",
@@ -529,7 +622,11 @@
 					"19/10": {
 						"nota": 1,
 						"obs": "Entrega en blanco."
-					}
+					},
+          "10/11":{
+            "nota": 3,
+            "obs": ""
+          }
 				}
 			}
 		]
@@ -542,6 +639,7 @@
 			"17/09": "Ecuaciones de primer y segundo grado",
 			"16/10": "Trigonometría",
       "5/11": "Funciones lineales y gráficos"
+
 		},
 		"alumnos": [
 			{
